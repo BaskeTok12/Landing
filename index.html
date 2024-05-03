@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canadian Cars - Global Auto Exporter</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html" style="color: inherit; text-decoration: none;">
+                    <img src="assets/images/logo-white.png" alt="Canadian Cars" style="height: 50px;">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Buy a car</a></li>
+                    <li><a href="#">Video</a></li>
+                    <li><a href="#">Why choose us</a></li>
+                    <li><a href="#">Export</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="contact-number">+1 267 282 6010</div>
+        </div>
+    </header>
+
+
+   
+    <div class="hero">
+        <div class="content-left">
+            <h1>CANADIAN CARS GLOBAL AUTO EXPORTER</h1>
+            <p>Explore over 500 exquisite cars, supercars, SSSH vehicles and certified used cars directly from Canadian manufacturers in one click</p>
+            <a href="inventory.html" class="btn">Check Inventory</a>
+            <div class="social-links">
+                <a href="#"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="assets/icons/telegram.svg" alt="Telegram"></a>
+            </div>
+        </div>
+        <div class="contact-form">
+            <div class="form-tabs">
+                <button class="tab-btn active" onclick="showForm('buy')">Buy a Car</button>
+                <button class="tab-btn" onclick="showForm('consult')">Get a Consultation</button>
+            </div>
+            <form id="buy-form" class="form-content">
+                <!-- Fields for the 'Buy a Car' form -->
+                <input type="text" name="name" placeholder="Name*" required>
+                <input type="tel" name="phone" placeholder="+1 000 000 0000" required>
+                <select name="messenger">
+                    <option value="whatsapp">WhatsApp</option>
+                    <option value="telegram">Telegram</option>
+                </select>
+                <input type="text" name="nickname" placeholder="@nickname*" required>
+                <select name="model">
+                    <!-- Populate models dynamically -->
+                </select>
+                <select name="make">
+                    <!-- Populate makes dynamically -->
+                </select>
+                <select name="color">
+                    <!-- Color options -->
+                </select>
+                <select name="year">
+                    <!-- Year options -->
+                </select>
+                <select name="country" required>
+                    <option value="usa">United States</option>
+                    <option value="canada">Canada</option>
+                    <!-- More countries -->
+                </select>
+                <textarea placeholder="Type your comment here..."></textarea>
+                <input type="checkbox" name="consent" required> I consent to the processing of personal data
+                <button type="submit" class="submit-btn">Contact Me</button>
+            </form>
+            <form id="consult-form" class="form-content" style="display:none">
+                <!-- Fields for the 'Get a Consultation' form -->
+                <input type="text" name="name" placeholder="Name*" required>
+                <input type="tel" name="phone" placeholder="+1 000 000 0000" required>
+                <textarea placeholder="Type your query here..."></textarea>
+                <input type="checkbox" name="consent" required> I consent to the processing of personal data
+                <button type="submit" class="submit-btn">Contact Me</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <footer>
+        <div class="social-links">
+            <a href="#"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+            <a href="#"><img src="assets/icons/telegram.svg" alt="Telegram"></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

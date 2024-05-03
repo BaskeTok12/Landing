@@ -1,0 +1,167 @@
+/* Основные стили */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background-color: #000; /* Черный фон для подчеркивания элементов */
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/* Стилизация навигационной панели */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color:#141414; /* Полупрозрачный черный фон */
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    padding: 0 15px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.contact-number {
+    color: orange;
+    font-weight: bold;
+}
+
+/* Геройский баннер */
+.hero {
+    display: flex;
+    justify-content: space-between; /* Align sub-blocks side by side */
+    align-items: center; /* Center the content vertically */
+    padding: 50px; /* Adjust padding as needed */
+    background: url('../assets/images/background.png') no-repeat center center/cover;
+    text-align: left; /* Align text to the left for the left content */
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.content-left {
+    flex: 1; /* Flex-grow to take necessary space */
+    max-width: 600px; /* Optional: limit width of the left content */
+}
+
+.btn {
+    background-color: orange;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+/* Стилизация контактной формы */
+.contact-form {
+    flex: 1; /* Flex-grow to take necessary space */
+    max-width: 350px; /* Adjust width as necessary */
+    margin-left: 20px; /* Spacing between the form and the content */
+    position: relative; /* Adjust positioning context */
+    top: 0; /* Reset positioning */
+    right: 0; /* Reset positioning */
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.form-tabs .tab-btn {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-tabs .tab-btn.active {
+    background-color: orange;
+    color: black;
+}
+
+.form-content {
+    display: none; /* Скрыть форму по умолчанию */
+}
+
+.form-content input, .form-content select, .form-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.form-content .submit-btn {
+    width: 100%;
+    background-color: orange;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Подвал с социальными ссылками */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 20px;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    
+}
+
+.social-links svg {
+    fill: white; /* Установите цвет заливки иконок */
+    transition: fill 0.3s; /* Плавный переход цвета при наведении */
+}
+
+.social-links a:hover svg {
+    fill: orange; /* Цвет при наведении */
+}
+
+/* Улучшенные стили для контактной формы */
+.contact-form input[type="text"],
+.contact-form input[type="tel"],
+.contact-form select,
+.contact-form textarea {
+    background: #333; /* Темный фон для полей ввода */
+    color: white; /* Белый текст */
+    border: 1px solid #444; /* Немного контраста */
+    box-shadow: none; /* Убрать тени */
+}
