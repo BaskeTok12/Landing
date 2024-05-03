@@ -13,15 +13,35 @@ a {
 }
 
 
-
 /* Стилизация навигационной панели */
 .navbar {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color:#141414; /* Полупрозрачный черный фон */
+    background-color: #141414; /* Adjust the color as needed */
+    height: 80px; /* Set a specific height */
 }
+
+.navbar::before, .navbar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 10px; /* Height of the fading stripe */
+    background: linear-gradient(to left, transparent, #333 50%, transparent);
+    z-index: 1;
+}
+
+.navbar::before {
+    top: 0;
+}
+
+.navbar::after {
+    bottom: 0; /* Should align to the bottom of the navbar */
+}
+
 
 .navbar ul {
     list-style-type: none;
@@ -46,10 +66,10 @@ a {
 
 /* Геройский баннер */
 .hero {
+    padding: 0;
     display: flex;
     justify-content: space-between; /* Align sub-blocks side by side */
     align-items: center; /* Center the content vertically */
-    padding: 50px; /* Adjust padding as needed */
     background: url('../assets/images/background.png') no-repeat center center/cover;
     text-align: left; /* Align text to the left for the left content */
 }
@@ -80,14 +100,17 @@ a {
 
 /* Стилизация контактной формы */
 .contact-form {
+    width: 100%;
+    max-width: none; /* Adjust width as necessary */
     flex: 1; /* Flex-grow to take necessary space */
-    max-width: 350px; /* Adjust width as necessary */
     margin-left: 20px; /* Spacing between the form and the content */
     position: relative; /* Adjust positioning context */
     top: 0; /* Reset positioning */
     right: 0; /* Reset positioning */
-    background: rgba(0, 0, 0, 0.8);
+    margin: 0;
     padding: 20px;
+    box-sizing: border-box;
+    background: #141414;
     border-radius: 10px;
 }
 
