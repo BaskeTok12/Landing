@@ -192,6 +192,59 @@ footer {
     border: 1px solid #444; /* Немного контраста */
     box-shadow: none; /* Убрать тени */
 }
+.premium-section {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+.premium-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.column {
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+.higher {
+    margin-top: 50px;
+}
+
+.feature {
+    display: flex; /* Используем flex для горизонтального расположения */
+    align-items: center; /* Центрирование элементов по вертикали */
+    margin: 10px;
+    text-align: left;
+}
+
+.feature img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px; /* Отступ между изображением и текстом */
+    border-radius: 50%;
+}
+
+.feature-text {
+    flex-grow: 1;
+}
+
+.feature h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.feature p {
+    font-size: 14px;
+}
 
 .advantages-section {
     display: flex;
