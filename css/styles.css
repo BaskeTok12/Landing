@@ -192,3 +192,113 @@ footer {
     border: 1px solid #444; /* Немного контраста */
     box-shadow: none; /* Убрать тени */
 }
+
+.advantages-section {
+    display: flex;
+    align-items: flex-start;
+    padding: 50px;
+    background-color: #f5f5f5;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.advantage-title {
+    color: #000;
+}
+
+.advantage-description{
+    color: #000;
+}
+.advantage-list li {
+    font-size: 18px; /* Установите желаемый размер шрифта для текста списка */
+    color: #333; /* Цвет текста списка */
+    /* ...другие стили... */
+}
+
+.advantage-number {
+    font-weight: bold; /* Делает шрифт жирным */
+    font-size: 22px; /* Устанавливает размер шрифта для чисел больше, чем у остального текста */
+}
+
+.left-block {
+    width: 50%;
+    padding-right: 50px;
+}
+
+.right-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 10px;
+    flex-grow: 1;
+}
+
+.tile-long {
+    flex-basis: calc(66% - 20px);
+    background-size: cover;
+    background-position: center;
+}
+
+.tile-square {
+    flex-basis: calc(33% - 20px);
+    background-size: cover;
+    background-position: center;
+}
+
+.left-block {
+    width: 50%;
+    padding-right: 50px;
+}
+
+.right-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 10px;
+    flex-grow: 1;
+}
+
+.tile-long {
+    flex-basis: calc(50% - 20px);
+    background-size: cover;
+    background-position: center;
+}
+
+.tile-square {
+    flex-basis: calc(33% - 20px);
+    background-size: cover;
+    background-position: center;
+}
+
+.tile-title {
+    font-size: 18px; /* Меньший размер для заголовка */
+    margin: 0;
+    padding-top: 10px; /* Добавляем небольшой отступ сверху */
+    color: #ffff;
+}
+
+.tile-text {
+    font-size: 14px; /* Меньший размер для текста */
+    margin: 0;
+    align-self: center;
+    padding-bottom: 10px; /* Добавляем небольшой отступ снизу */
+    color: #ffff;
+}
