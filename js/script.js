@@ -27,3 +27,37 @@ function showForm(formType) {
 document.addEventListener('DOMContentLoaded', function() {
     showForm('buy'); // По умолчанию показываем форму 'Buy a Car'
 });
+
+
+let currentIndex = 0; // Starting index of visible gallery item
+
+function next() {
+    const items = document.querySelectorAll('.gallery-item');
+    if (currentIndex < items.length - 1) {
+        currentIndex++;
+        updateGalleryPosition();
+    }
+}
+
+function previous() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateGalleryPosition();
+    }
+}
+
+function updateGalleryPosition() {
+    const slider = document.querySelector('.gallery-slider');
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function openModal(vehicleId) {
+    // Logic to open modal window with more info about the vehicle
+    console.log(`More info about: ${vehicleId}`);
+    // You will need to implement modal functionality
+}
+
+function updateNeedle(position) {
+    const degrees = -120 + position * 120; // Примерное вычисление угла вращения
+    document.querySelector('.needle').style.transform = `rotate(${degrees}deg)`;
+}
