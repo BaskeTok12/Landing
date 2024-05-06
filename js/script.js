@@ -61,3 +61,4 @@ function updateNeedle(position) {
     const degrees = -120 + position * 120; // Примерное вычисление угла вращения
     document.querySelector('.needle').style.transform = `rotate(${degrees}deg)`;
 }
+
