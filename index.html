@@ -1,273 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Canadian Cars - Global Auto Exporter</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="js/script.js"></script>
-
-</head>
-<body>
+    
+  </head>
+  <body>
     <header>
-        <div class="navbar">
-            <div class="logo">
-                <a href="index.html" style="color: inherit; text-decoration: none;">
-                    <img src="assets/images/logo-white.png" alt="Canadian Cars" style="height: 50px;">
-                </a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Buy a car</a></li>
-                    <li><a href="#">Video</a></li>
-                    <li><a href="#">Why choose us</a></li>
-                    <li><a href="#">Export</a></li>
-                    <li><a href="#">Contacts</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </nav>
-            <div class="contact-number">+1 267 282 6010</div>
+      <div class="navbar">
+        <div class="logo">
+          <a href="index.html" style="color: inherit; text-decoration: none">
+            <img
+              src="assets/images/logo-white.png"
+              alt="Canadian Cars"
+              style="height: 50px"
+            />
+          </a>
         </div>
+        <nav>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Buy a car</a></li>
+            <li><a href="#">Video</a></li>
+            <li><a href="#">Why choose us</a></li>
+            <li><a href="#">Export</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </nav>
+        <div class="contact-number">+1 267 282 6010</div>
+      </div>
     </header>
 
-
-   
     <div class="hero">
-        <div class="content-left">
-            <h1>CANADIAN CARS GLOBAL AUTO EXPORTER</h1>
-            <p>Explore over 500 exquisite cars, supercars, SSSH vehicles and certified used cars directly from Canadian manufacturers in one click</p>
-            <a href="inventory.html" class="btn">Check Inventory</a>
-            <div class="social-links">
-                <a href="#"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
-                <a href="#"><img src="assets/icons/telegram.svg" alt="Telegram"></a>
-            </div>
+      <div class="content-left">
+        <h1>CANADIAN CARS GLOBAL AUTO EXPORTER</h1>
+        <p>
+          Explore over 500 exquisite cars, supercars, SSSH vehicles and
+          certified used cars directly from Canadian manufacturers in one click
+        </p>
+        <a href="inventory.html" class="btn">Check Inventory</a>
+        <div class="social-links">
+          <a href="#"
+            ><img src="assets/icons/instagram.svg" alt="Instagram"
+          /></a>
+          <a href="#"><img src="assets/icons/telegram.svg" alt="Telegram" /></a>
         </div>
-        <div class="contact-form">
-            <div class="form-tabs">
-                <button class="tab-btn active" onclick="showForm('buy')">Buy a Car</button>
-                <button class="tab-btn" onclick="showForm('consult')">Get a Consultation</button>
-            </div>
-            <form id="buy-form" class="form-content">
-                <!-- Fields for the 'Buy a Car' form -->
-                <input type="text" name="name" placeholder="Name*" required>
-                <input type="tel" name="phone" placeholder="+1 000 000 0000" required>
-                <select name="messenger">
-                    <option value="whatsapp">WhatsApp</option>
-                    <option value="telegram">Telegram</option>
-                </select>
-                <input type="text" name="nickname" placeholder="@nickname*" required>
-                <select name="model">
-                    <!-- Populate models dynamically -->
-                </select>
-                <select name="make">
-                    <!-- Populate makes dynamically -->
-                </select>
-                <select name="color">
-                    <!-- Color options -->
-                </select>
-                <select name="year">
-                    <!-- Year options -->
-                </select>
-                <select name="country" required>
-                    <option value="usa">United States</option>
-                    <option value="canada">Canada</option>
-                    <!-- More countries -->
-                </select>
-                <textarea placeholder="Type your comment here..."></textarea>
-                <input type="checkbox" name="consent" required> I consent to the processing of personal data
-                <button type="submit" class="submit-btn">Contact Me</button>
-            </form>
-            <form id="consult-form" class="form-content" style="display:none">
-                <!-- Fields for the 'Get a Consultation' form -->
-                <input type="text" name="name" placeholder="Name*" required>
-                <input type="tel" name="phone" placeholder="+1 000 000 0000" required>
-                <textarea placeholder="Type your query here..."></textarea>
-                <input type="checkbox" name="consent" required> I consent to the processing of personal data
-                <button type="submit" class="submit-btn">Contact Me</button>
-            </form>
+      </div>
+      <div class="contact-form">
+        <div class="form-tabs">
+          <button class="tab-btn active" onclick="showForm('buy')">
+            Buy a Car
+          </button>
+          <button class="tab-btn" onclick="showForm('consult')">
+            Get a Consultation
+          </button>
         </div>
+        <form id="buy-form" class="form-content">
+          <!-- Fields for the 'Buy a Car' form -->
+          <input type="text" name="name" placeholder="Name*" required />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="+1 000 000 0000"
+            required
+          />
+          <select name="messenger">
+            <option value="whatsapp">WhatsApp</option>
+            <option value="telegram">Telegram</option>
+          </select>
+          <input
+            type="text"
+            name="nickname"
+            placeholder="@nickname*"
+            required
+          />
+          <select name="model">
+            <!-- Populate models dynamically -->
+          </select>
+          <select name="make">
+            <!-- Populate makes dynamically -->
+          </select>
+          <select name="color">
+            <!-- Color options -->
+          </select>
+          <select name="year">
+            <!-- Year options -->
+          </select>
+          <select name="country" required>
+            <option value="usa">United States</option>
+            <option value="canada">Canada</option>
+            <!-- More countries -->
+          </select>
+          <textarea placeholder="Type your comment here..."></textarea>
+          <input type="checkbox" name="consent" required /> I consent to the
+          processing of personal data
+          <button type="submit" class="submit-btn">Contact Me</button>
+        </form>
+        <form id="consult-form" class="form-content" style="display: none">
+          <!-- Fields for the 'Get a Consultation' form -->
+          <input type="text" name="name" placeholder="Name*" required />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="+1 000 000 0000"
+            required
+          />
+          <textarea placeholder="Type your query here..."></textarea>
+          <input type="checkbox" name="consent" required /> I consent to the
+          processing of personal data
+          <button type="submit" class="submit-btn">Contact Me</button>
+        </form>
+      </div>
     </div>
-
 
     <div class="premium-section">
-        <h2>CHOOSE US FOR PREMIUM BRANDS AT LOWER MARKET PRICES</h2>
-        <div class="features">
-            <div class="feature-column-left">
-                <div class="feature">
-                    <img src="assets/images/premium-img-1.png" alt="Feature 3">
-                    <div class="feature-info">
-                        <h3>FEATURE TITLE THREE</h3>
-                        <p>Description of feature three...</p>
-                    </div>
-                </div>
-                <div class="feature">
-                    <img src="assets/images/premium-img-2.png" alt="Feature 4">
-                    <div class="feature-info">
-                        <h3>FEATURE TITLE FOUR</h3>
-                        <p>Description of feature four...</p>
-                    </div>
-                </div>
+      <h2>CHOOSE US FOR PREMIUM BRANDS AT LOWER MARKET PRICES</h2>
+      <div class="features">
+        <div class="feature-column-left">
+          <div class="feature">
+            <img src="assets/images/premium-img-1.png" alt="Feature 3" />
+            <div class="feature-info">
+              <h3>Your Global Gateway to Premier Automotive Brands</h3>
+              <p>
+                Our extensive network of suppliers and export specialists offer
+                unparalleled access to the world's most prestigious automotive
+                brands, ensuring customer satisfaction regardless of their
+                location.
+              </p>
             </div>
-            <div class="feature-column-right">
-                <div class="feature">
-                    <img src="assets/images/premium-img-3.png" alt="Feature 1">
-                    <div class="feature-info">
-                        <h3>FEATURE TITLE ONE</h3>
-                        <p>Description of feature one...</p>
-                    </div>
-                </div>
-                <div class="feature">
-                    <img src="assets/images/premium-img-4.png" alt="Feature 2">
-                    <div class="feature-info">
-                        <h3>FEATURE TITLE TWO</h3>
-                        <p>Description of feature two...</p>
-                    </div>
-                </div>
+          </div>
+          <div class="feature">
+            <img src="assets/images/premium-img-2.png" alt="Feature 4" />
+            <div class="feature-info">
+              <h3>Legal Assurance</h3>
+              <p>
+                Our company guarantees a transparent and legally sound
+                purchasing process, giving customers peace of mind.
+              </p>
             </div>
+          </div>
         </div>
+        <div class="feature-column-right">
+          <div class="feature">
+            <img src="assets/images/premium-img-3.png" alt="Feature 1" />
+            <div class="feature-info">
+              <h3>100% Legal Transparency</h3>
+              <p>
+                We guarantee complete legal integrity in transactions and
+                provide all necessary documents proving the car's clean history,
+                including no liens (pledges), financial claims, and more.
+              </p>
+            </div>
+          </div>
+          <div class="feature">
+            <img src="assets/images/premium-img-4.png" alt="Feature 2" />
+            <div class="feature-info">
+              <h3>Highest Quality Delivered To You</h3>
+              <p>
+                We guarantee the highest quality and safety standards in every
+                delivered car, fostering unwavering confidence and peace of mind
+                for our esteemed customers' investments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    
-    
 
     <div class="advantages-section">
-        <div class="left-block">
-            <h1 class="advantage-title">Reliable Export Solutions</h1>
-            <p class="advantage-description">
-                Trust our comprehensive service that connects you to over 5,000 premium automobiles and vehicles directly from esteemed Canadian manufacturers.Experience the assurance of reliable export solutions with our dedicated service. We prioritise efficiency, security, and customer satisfaction to ensure a seamless global transportation process for your valued cars. 
-Trust our expertise to handle your export needs with utmost professionalism and care.
-            </p>
-            
-            <ul class="advantage-list">
-                <li><span class="advantage-number">25+</span> Representing over 25 Global Brands</li>
-                <li><span class="advantage-number">20+</span> Deliveries to over 20 Countries Worldwide</li>
-                <li><span class="advantage-number">24/7</span> Multilingual customer support</li>
-            </ul>
-            
+      <div class="left-block">
+        <h1 class="advantage-title">Reliable Export Solutions</h1>
+        <p class="advantage-description">
+          Trust our comprehensive service that connects you to over 5,000
+          premium automobiles and vehicles directly from esteemed Canadian
+          manufacturers.Experience the assurance of reliable export solutions
+          with our dedicated service. We prioritise efficiency, security, and
+          customer satisfaction to ensure a seamless global transportation
+          process for your valued cars. Trust our expertise to handle your
+          export needs with utmost professionalism and care.
+        </p>
+
+        <ul class="advantage-list">
+          <li>
+            <span class="advantage-number">25+</span> Representing over 25
+            Global Brands
+          </li>
+          <li>
+            <span class="advantage-number">20+</span> Deliveries to over 20
+            Countries Worldwide
+          </li>
+          <li>
+            <span class="advantage-number">24/7</span> Multilingual customer
+            support
+          </li>
+        </ul>
+      </div>
+      <div class="right-block">
+        <div
+          class="tile tile-long"
+          style="background-image: url('assets/images/logistics-block.png')"
+        >
+          <h3 class="tile-title">LOGISTICS</h3>
+          <p class="tile-text">
+            Efficient 2-6 week shipping tailored to your country for prompt and
+            secure delivery.
+          </p>
         </div>
-        <div class="right-block">
-            <div class="tile tile-long" style="background-image: url('assets/images/logistics-block.png');">
-                <h3 class="tile-title">LOGISTICS</h3>
-                <p class="tile-text">Efficient 2-6 week shipping tailored to your country for prompt and secure delivery.</p>
-            </div>
-            <div class="tile tile-square" style="background-color: #333;">
-                <h3 class="tile-title">INSURANCE</h3>
-                <p class="tile-text">Comprehensive coverage included, ensuring peace of mind for your investment within your country.</p>
-            </div>
-            <div class="tile tile-square" style="background-color: #222;">
-                <h3 class="tile-title">CAR CHECK</h3>
-                <p class="tile-text">Thorough inspections assure quality, guaranteeing a reliable and top-notch vehicle in your country.</p>
-            </div>
-            <div class="tile tile-long" style="background-image: url('assets/images/official-agreement.png');">
-                <h3 class="tile-title">OFFICIAL AGREEMENT</h3>
-                <p class="tile-text">Transparent transactions with official agreements, fostering trust and outlining terms for purchases in your country.</p>
-            </div>
+        <div class="tile tile-square" style="background-color: #333">
+          <h3 class="tile-title">INSURANCE</h3>
+          <p class="tile-text">
+            Comprehensive coverage included, ensuring peace of mind for your
+            investment within your country.
+          </p>
         </div>
+        <div class="tile tile-square" style="background-color: #222">
+          <h3 class="tile-title">CAR CHECK</h3>
+          <p class="tile-text">
+            Thorough inspections assure quality, guaranteeing a reliable and
+            top-notch vehicle in your country.
+          </p>
+        </div>
+        <div
+          class="tile tile-long"
+          style="background-image: url('assets/images/official-agreement.png')"
+        >
+          <h3 class="tile-title">OFFICIAL AGREEMENT</h3>
+          <p class="tile-text">
+            Transparent transactions with official agreements, fostering trust
+            and outlining terms for purchases in your country.
+          </p>
+        </div>
+      </div>
     </div>
 
     <div class="vehicle-gallery">
-        <h2>VEHICLE GALLERY</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, feugiat eget eget adipiscing malesuada gravida.</p>
-        <div class="gallery-container">
-            <div class="gallery-slider">
-                <div class="gallery-item">
-                    <img src="assets/images/Mercedes-Benz-G550.png" alt="Mercedes Benz G550">
-                    <div class="info-panel">
-                        <h3>Mercedes Benz G550</h3>
-                        <p>Night</p>
-                        <button onclick="openModal('MercedesBenzG550')">More Info</button>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/mercedes-benz-gle-450.png" alt="Mercedes Benz GLE 450">
-                    <div class="info-panel">
-                        <h3>Mercedes Benz GLE 450</h3>
-                        <p>Grey</p>
-                        <button onclick="openModal('MercedesBenzGLE450')">More Info</button>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/toyota4runner.png" alt="Toyota 4Runner">
-                    <div class="info-panel">
-                        <h3>Toyota 4Runner</h3>
-                        <p>TRD Pro</p>
-                        <button onclick="openModal('Toyota4Runner')">More Info</button>
-                    </div>
-                </div>
-                <!-- Add more items similarly -->
+      <h2>VEHICLE GALLERY</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, feugiat eget eget adipiscing
+        malesuada gravida.
+      </p>
+      <div class="gallery-container">
+        <div class="gallery-slider">
+          <div class="gallery-item">
+            <img
+              src="assets/images/Mercedes-Benz-G550.png"
+              alt="Mercedes Benz G550"
+            />
+            <div class="info-panel">
+              <h3>Mercedes Benz G550</h3>
+              <p>Night</p>
+              <button onclick="openModal('MercedesBenzG550')">More Info</button>
             </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="assets/images/mercedes-benz-gle-450.png"
+              alt="Mercedes Benz GLE 450"
+            />
+            <div class="info-panel">
+              <h3>Mercedes Benz GLE 450</h3>
+              <p>Grey</p>
+              <button onclick="openModal('MercedesBenzGLE450')">
+                More Info
+              </button>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/toyota4runner.png" alt="Toyota 4Runner" />
+            <div class="info-panel">
+              <h3>Toyota 4Runner</h3>
+              <p>TRD Pro</p>
+              <button onclick="openModal('Toyota4Runner')">More Info</button>
+            </div>
+          </div>
+          <!-- Add more items similarly -->
         </div>
-        <div class="gallery-controls">
-            <button onclick="previous()">❮</button>
-            <span>3/25</span>
-            <button onclick="next()">❯</button>
-        </div>
+      </div>
+      <div class="gallery-controls">
+        <button onclick="previous()">❮</button>
+        <span>3/25</span>
+        <button onclick="next()">❯</button>
+      </div>
     </div>
 
     <div class="consultation-block">
-        <img src="assets/images/consultation-background.png" alt="Background" class="consultation-background-image">
-        <div class=""></div>
-        <div class="consultation-text">
-            <p>GET BENEFIT FROM <span style="color: #FF5A00;">COMPLIMENTARY <br> CONSULTATION</span> AND PERSONAL</p>
-        </div>
-        <div class="centered-text">
-            <p>ASSISTANCE TAILORED <br> TO YOUR NEEDS</p>
-        </div>
-        <div class="consultation-description">
-            <p>OUR EXPERT WILL FIND THE PERFECT VEHICLE MATCHING <br> YOUR REQUIREMENTS.</p>
-        </div>
-        <button>GET A CONSULTATION</button>
+      <img
+        src="assets/images/consultation-background.png"
+        alt="Background"
+        class="consultation-background-image"
+      />
+      <div class=""></div>
+      <div class="consultation-text">
+        <p>
+          GET BENEFIT FROM
+          <span style="color: #ff5a00"
+            >COMPLIMENTARY <br />
+            CONSULTATION</span
+          >
+          AND PERSONAL
+        </p>
+      </div>
+      <div class="centered-text">
+        <p>
+          ASSISTANCE TAILORED <br />
+          TO YOUR NEEDS
+        </p>
+      </div>
+      <div class="consultation-description">
+        <p>
+          OUR EXPERT WILL FIND THE PERFECT VEHICLE MATCHING <br />
+          YOUR REQUIREMENTS.
+        </p>
+      </div>
+      <button>GET A CONSULTATION</button>
     </div>
 
     <div class="quiz-section">
-        <div class="quiz-container">
-            <div class="speedometer-container">
-                <img src="assets/images/speedometr.png" alt="Speedometer Background" class="speedometer">
-                <div class="needle" style="transform: rotate(0deg);"></div>
-         </div>
-         <div class="quiz-intro">
-              <h1>DISCOVER YOUR <br> PERFECT CAR IN <br> 4 SIMPLE STEPS</h1>
-             <p>Answer these simple questions to receive <br> personalised offer from our expert.</p>
-              <button class="start-button" onclick="startQuiz()">START</button>
-         </div>
-         </div>
+      <div class="quiz-container">
+        <div class="speedometer-container">
+          <img
+            src="assets/images/speedometr.png"
+            alt="Speedometer Background"
+            class="speedometer"
+          />
+          <div class="needle" style="transform: rotate(0deg)"></div>
+        </div>
+        <div class="quiz-content-container">
+          <div class="quiz-intro">
+            <h1>
+              DISCOVER YOUR <br />
+              PERFECT CAR IN <br />
+              4 SIMPLE STEPS
+            </h1>
+            <p>
+              Answer these simple questions to receive <br />
+              personalised offer from our expert.
+            </p>
+            <button class="start-button" onclick="startQuiz()">START</button>
+          </div>
+          <div class="quiz-content" id="quiz-stage-1" style="display: none">
+            <div class="quiz-progress">
+              <span>Progress 1<span style="opacity: 0.4">/4</span></span>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 25%"></div>
+              </div>
+            </div>
+            <div class="quiz-question">
+              <h2>1. TELL US A LITTLE ABOUT YOURSELF.<br />I AM...</h2>
+            </div>
+            <div
+              class="quiz-answers"
+              style="
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+              "
+            >
+              <button class="answer-button">
+                Car dealership owner/platform
+              </button>
+              <button class="answer-button">Car founder</button>
+              <button class="answer-button">Showroom manager</button>
+              <button class="answer-button">Private individual</button>
+            </div>
+            <button class="next-button" onclick="nextStage()">NEXT →</button>
+          </div>
+          <div id="quiz-stage-2" class="quiz-content" style="display: none">
+            <div class="quiz-progress">
+              <span>Progress 2<span style="opacity: 0.4">/4</span></span>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 50%"></div>
+              </div>
+            </div>
+            <div class="quiz-question">
+              <h2>2. WHAT IS YOUR PREFERRED CAR TYPE?</h2>
+            </div>
+            <div class="quiz-answers">
+              <button class="answer-button">BMW</button>
+              <button class="answer-button">Mercedes Benz</button>
+              <button class="answer-button">Lexus</button>
+              <button class="answer-button">Porsche</button>
+              <button class="answer-button">Toyota</button>
+              <button class="answer-button">Other</button>
+            </div>
+            <button class="next-button" onclick="nextStage()">NEXT →</button>
+          </div>
+          <div id="quiz-stage-3" class="quiz-content" style="display: none">
+            <div class="quiz-progress">
+              <span>Progress 3<span style="opacity: 0.4">/4</span></span>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="quiz-question">
+              <h2>3. WHICH LANGUAGE DO YOU PREFER?</h2>
+            </div>
+            <div class="quiz-answers">
+              <select class="answer-dropdown" name="language">
+                <option value="english">English</option>
+                <option value="french">French</option>
+                <option value="spanish">Spanish</option>
+                <!-- other options -->
+            </select>
+            </div>
+            <button class="next-button" onclick="nextStage()">NEXT →</button>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    
 
     <div class="faq-container">
-        <div class="faq-header">
-            <h2>FAQ</h2>
-            <p>Everything you need to know about exporting cars with us.</p>
+      <div class="faq-header">
+        <h2>FAQ</h2>
+        <p>Everything you need to know about exporting cars with us.</p>
+      </div>
+      <div class="faq-content">
+        <!-- FAQ items -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ('faq1')">
+            WHERE TO LOOK FOR AUTOMOBILES?
+          </button>
+          <div class="faq-answer" id="faq1">
+            <p>Answer to where to look for automobiles...</p>
+          </div>
         </div>
-        <div class="faq-content">
-            <!-- FAQ items -->
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFAQ('faq1')">WHERE TO LOOK FOR AUTOMOBILES?</button>
-                <div class="faq-answer" id="faq1">
-                    <p>Answer to where to look for automobiles...</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleFAQ('faq2')">HOW IS THE DELIVERY CARRIED OUT?</button>
-                <div class="faq-answer" id="faq2">
-                    <p>Answer to how the delivery is carried out...</p>
-                </div>
-            </div>
-            <!-- Repeat for other FAQ items -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ('faq2')">
+            HOW IS THE DELIVERY CARRIED OUT?
+          </button>
+          <div class="faq-answer" id="faq2">
+            <p>Answer to how the delivery is carried out...</p>
+          </div>
         </div>
+        <!-- Repeat for other FAQ items -->
+      </div>
     </div>
-    
-    
+
     <footer>
-        <div class="social-links">
-            <a href="#"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
-            <a href="#"><img src="assets/icons/telegram.svg" alt="Telegram"></a>
-        </div>
+      <div class="social-links">
+        <a href="#"><img src="assets/icons/instagram.svg" alt="Instagram" /></a>
+        <a href="#"><img src="assets/icons/telegram.svg" alt="Telegram" /></a>
+      </div>
     </footer>
-    <script src="script.js"></script>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>
-
-
-
