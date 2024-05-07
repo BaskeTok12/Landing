@@ -4,102 +4,105 @@
     <meta charset="UTF-8" />
     <title>Canadian Cars - Global Auto Exporter</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <script src="js/script.js"></script>
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <div class="navbar">
-        <div class="logo">
-          <a href="index.html" style="color: inherit; text-decoration: none">
+    <header class="text-white">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="index.html">
             <img
               src="assets/images/logo-white.png"
               alt="Canadian Cars"
-              style="height: 50px"
+              height="50"
             />
           </a>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Buy a car</a></li>
-            <li><a href="#">Video</a></li>
-            <li><a href="#">Why choose us</a></li>
-            <li><a href="#">Export</a></li>
-            <li><a href="#">Contacts</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Buy a car</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">Video</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Why choose us</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">Export</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacts</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <span class="navbar-text">
+            <i class="bi bi-telephone-fill"></i>
+            <img src="assets/icons/phone-icon.svg" alt="Phone" style="height: 24px; margin-right: 10px;">
+            +1 267 282 6010
+          </span>
+          <div class="header-stripes"></div>
         </nav>
-        <div class="contact-number">+1 267 282 6010</div>
       </div>
     </header>
 
     <div class="hero">
-      <div class="content-left">
-        <h1>CANADIAN CARS GLOBAL AUTO EXPORTER</h1>
-        <p>
-          Explore over 500 exquisite cars, supercars, SSSH vehicles and
-          certified used cars directly from Canadian manufacturers in one click
-        </p>
-        <a href="inventory.html" class="btn">Check Inventory</a>
-        <div class="social-links">
-          <a href="#"
-            ><img src="assets/icons/instagram.svg" alt="Instagram"
-          /></a>
-          <a href="#"><img src="assets/icons/telegram.svg" alt="Telegram" /></a>
-        </div>
-      </div>
-      <div class="contact-form">
-        <div class="form-tabs">
-          <button class="tab-btn active" onclick="showForm('buy')">
-            Buy a Car
-          </button>
-          <button class="tab-btn" onclick="showForm('consult')">
-            Get a Consultation
-          </button>
-        </div>
-        <form id="buy-form" class="form-content">
-          <!-- Fields for the 'Buy a Car' form -->
-          <input type="text" name="name" placeholder="Name*" required />
-          <input
-            type="tel"
-            name="phone"
-            placeholder="+1 000 000 0000"
-            required
-          />
-          <select name="messenger">
-            <option value="whatsapp">WhatsApp</option>
-            <option value="telegram">Telegram</option>
-          </select>
-          <input
-            type="text"
-            name="nickname"
-            placeholder="@nickname*"
-            required
-          />
-          <select name="model">
-            <!-- Populate models dynamically -->
-          </select>
-          <select name="make">
-            <!-- Populate makes dynamically -->
-          </select>
-          <select name="color">
-            <!-- Color options -->
-          </select>
-          <select name="year">
-            <!-- Year options -->
-          </select>
-          <select name="country" required>
-            <option value="usa">United States</option>
-            <option value="canada">Canada</option>
-            <!-- More countries -->
-          </select>
-          <textarea placeholder="Type your comment here..."></textarea>
-          <input type="checkbox" name="consent" required /> I consent to the
-          processing of personal data
-          <button type="submit" class="submit-btn">Contact Me</button>
-        </form>
-        <form id="consult-form" class="form-content" style="display: none">
+      <div class="container-fluid h-100">
+        <div class="row h-100">
+          <div class="col-lg-8 d-flex flex-column justify-content-center">
+            <h1>CANADIAN CARS GLOBAL AUTO EXPORTER</h1>
+            <p>Explore over 500 exquisite cars, supercars, SSSH vehicles and certified used cars directly from Canadian manufacturers in one click</p>
+            <a href="inventory.html" class="btn btn-primary mt-auto">Check Inventory</a>
+            <div class="social-links mt-2">
+              <a href="#"><img src="assets/icons/instagram.svg" alt="Instagram" /></a>
+              <a href="#"><img src="assets/icons/telegram.svg" alt="Telegram" /></a>
+            </div>
+          </div>
+          <div class="col-lg-4 text-white d-flex align-items-center p-0">
+            <div class="contact-form w-100">
+              <div class="form-tabs">
+                <button class="tab-btn active" onclick="showForm('buy')">Buy a Car</button>
+                <button class="tab-btn" onclick="showForm('consult')">Get a Consultation</button>
+              </div>
+              <form id="buy-form" class="form-content show">
+                <input type="text" name="name" placeholder="Name*" required />
+                <input type="tel" name="phone" placeholder="+1 000 000 0000" required />
+                <select name="messenger">
+                  <option value="whatsapp">WhatsApp</option>
+                  <option value="telegram">Telegram</option>
+                </select>
+                <input type="text" name="nickname" placeholder="@nickname*" required />
+                <select name="model"></select>
+                <select name="make"></select>
+                <select name="color"></select>
+                <select name="year"></select>
+                <select name="country" required>
+                  <option value="usa">United States</option>
+                  <option value="canada">Canada</option>
+                </select>
+                <textarea placeholder="Type your comment here..."></textarea>
+                <input type="checkbox" name="consent" required /> I consent to the processing of personal data
+                <button type="submit" class="submit-btn">Contact Me</button>
+              </form>
+              <form id="consult-form" class="form-content" style="display: none;">
+                <form id="consult-form" class="form-content" style="display: none">
           <!-- Fields for the 'Get a Consultation' form -->
           <input type="text" name="name" placeholder="Name*" required />
           <input
@@ -113,8 +116,13 @@
           processing of personal data
           <button type="submit" class="submit-btn">Contact Me</button>
         </form>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    
 
     <div class="premium-section">
       <h2>CHOOSE US FOR PREMIUM BRANDS AT LOWER MARKET PRICES</h2>
@@ -399,12 +407,12 @@
               <h2>3. WHICH LANGUAGE DO YOU PREFER?</h2>
             </div>
             <div class="quiz-answers">
-              <select class="answer-dropdown" name="language">
-                <option value="english">English</option>
-                <option value="french">French</option>
-                <option value="spanish">Spanish</option>
-                <!-- other options -->
-            </select>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
             </div>
             <button class="next-button" onclick="nextStage()">NEXT →</button>
           </div>
@@ -445,6 +453,8 @@
         <a href="#"><img src="assets/icons/telegram.svg" alt="Telegram" /></a>
       </div>
     </footer>
+
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
