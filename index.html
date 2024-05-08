@@ -77,11 +77,16 @@
           </div>
           <div class="col-lg-4 text-white d-flex align-items-center p-0">
             <div class="contact-form w-100">
-              <div class="form-tabs">
+              <div class="form-header text-center">
+                <h2>Get more info about actual inventory</h2>
+                <p>Fill simple form, our manager contact you shortly</p>
+              </div>
+              <div class="form-tabs d-flex justify-content-center position-relative">
                 <button class="tab-btn active" onclick="showForm('buy')">Buy a Car</button>
                 <button class="tab-btn" onclick="showForm('consult')">Get a Consultation</button>
+                <div class="tab-indicator"></div>
               </div>
-              <form id="buy-form" class="form-content show">
+              <form id="buy-form" class="form-content show grid-form">
                 <input type="text" name="name" placeholder="Name*" required />
                 <input type="tel" name="phone" placeholder="+1 000 000 0000" required />
                 <select name="messenger">
@@ -93,29 +98,23 @@
                 <select name="make"></select>
                 <select name="color"></select>
                 <select name="year"></select>
-                <select name="country" required>
+                <select name="country" required class="full-width">
                   <option value="usa">United States</option>
                   <option value="canada">Canada</option>
                 </select>
-                <textarea placeholder="Type your comment here..."></textarea>
-                <input type="checkbox" name="consent" required /> I consent to the processing of personal data
-                <button type="submit" class="submit-btn">Contact Me</button>
+                <textarea placeholder="Type your comment here..." class="full-width"></textarea>
+                <input type="checkbox" name="consent" required />
+                <label>I consent to the processing of personal data</label>
+                <button type="submit" class="submit-btn full-width">Contact Me</button>
               </form>
-              <form id="consult-form" class="form-content" style="display: none;">
-                <form id="consult-form" class="form-content" style="display: none">
-          <!-- Fields for the 'Get a Consultation' form -->
-          <input type="text" name="name" placeholder="Name*" required />
-          <input
-            type="tel"
-            name="phone"
-            placeholder="+1 000 000 0000"
-            required
-          />
-          <textarea placeholder="Type your query here..."></textarea>
-          <input type="checkbox" name="consent" required /> I consent to the
-          processing of personal data
-          <button type="submit" class="submit-btn">Contact Me</button>
-        </form>
+              <form id="consult-form" class="form-content grid-form" style="display: none">
+                <input type="text" name="name" placeholder="Name*" required />
+                <input type="tel" name="phone" placeholder="+1 000 000 0000" required />
+                <textarea placeholder="Type your query here..." class="full-width"></textarea>
+                <input type="checkbox" name="consent" required />
+                <label>I consent to the processing of personal data</label>
+                <button type="submit" class="submit-btn full-width">Contact Me</button>
+              </form>
               </form>
             </div>
           </div>
