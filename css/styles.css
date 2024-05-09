@@ -23,6 +23,10 @@ img,
   height: auto;
 }
 
+.highlight {
+    color: #B3B3B3;
+  }
+  
 /* Улучшенная стилизация элементов, используя переменные и классы Bootstrap */
 :root {
   --bs-primary: white; /* Переопределение основного цвета Bootstrap */
@@ -325,11 +329,12 @@ footer {
   background-color: #fff;
   color: #000;
   padding: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .premium-section h2 {
-  font-size: 24px;
+    padding: 20px;
+  font-size: 54px;
   margin-bottom: 20px;
 }
 
@@ -358,15 +363,34 @@ footer {
 }
 
 .feature img {
-  width: 150px; /* Увеличиваем ширину изображений */
-  height: 150px; /* Увеличиваем высоту изображений */
-  margin-right: 15px; /* Пространство между изображением и текстом */
-  border-radius: 50%;
-  object-fit: cover;
-}
-
+    width: 150px; /* Set the initial width for all images */
+    height: 150px; /* Set the initial height for all images */
+    margin-right: 15px; /* Spacing between image and text */
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .feature-column-left .feature:nth-child(1) img {
+    transform: scale(1); /* Увеличиваем первое изображение */
+  }
+  
+  .feature-column-left .feature:nth-child(2) img {
+    transform: scale(0.8); /* Уменьшаем второе изображение */
+  }
+  
+  .feature-column-right .feature:nth-child(1) img {
+    transform: scale(1.1); /* Уменьшаем третье изображение */
+  }
+  
+  .feature-column-right .feature:nth-child(2) img {
+    transform: scale(0.9); /* Уменьшаем четвертое изображение */
+  }
+  
+  
 .feature-info {
   flex: 1;
+  text-align: left;
+  padding-left: 20px;
 }
 
 .feature-info h3 {
@@ -485,7 +509,6 @@ footer {
   padding-bottom: 10px; /* Добавляем небольшой отступ снизу */
   color: #ffff;
 }
-
 .vehicle-gallery {
   text-align: center;
   background: #141414;
