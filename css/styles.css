@@ -252,7 +252,7 @@ img,
 
 /* Подвал с социальными ссылками */
 footer {
-  position: fixed;
+
   left: 0;
   bottom: 0;
   width: 100%;
@@ -416,6 +416,12 @@ footer {
 .advantage-description {
   color: #000;
 }
+
+.advantage-list {
+  list-style-type: none; /* Убираем маркеры списка */
+  padding-left: 0; /* Убираем отступ слева */
+}
+
 .advantage-list li {
   font-size: 18px; /* Установите желаемый размер шрифта для текста списка */
   color: #333; /* Цвет текста списка */
@@ -444,9 +450,23 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  border-radius: 15px;
   margin: 10px;
   flex-grow: 1;
+}
+
+.tile-title {
+  font-size: 18px; /* Меньший размер для заголовка */
+  margin: 0;
+  padding-top: 10px; /* Добавляем небольшой отступ сверху */
+  color: #ffff;
+}
+
+.tile-text {
+  font-size: 14px; /* Меньший размер для текста */
+  margin: 0;
+  align-self: center;
+  padding-bottom: 10px; /* Добавляем небольшой отступ снизу */
+  color: #ffff;
 }
 
 .tile-long {
@@ -473,69 +493,87 @@ footer {
   width: 50%;
 }
 
-.tile {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 20px;
-  border-radius: 15px;
-  margin: 10px;
-  flex-grow: 1;
-}
+/* Galery */
 
-.tile-long {
-  flex-basis: calc(50% - 20px);
-  background-size: cover;
-  background-position: center;
-}
-
-.tile-square {
-  flex-basis: calc(33% - 20px);
-  background-size: cover;
-  background-position: center;
-}
-
-.tile-title {
-  font-size: 18px; /* Меньший размер для заголовка */
-  margin: 0;
-  padding-top: 10px; /* Добавляем небольшой отступ сверху */
-  color: #ffff;
-}
-
-.tile-text {
-  font-size: 14px; /* Меньший размер для текста */
-  margin: 0;
-  align-self: center;
-  padding-bottom: 10px; /* Добавляем небольшой отступ снизу */
-  color: #ffff;
-}
 .vehicle-gallery {
   text-align: center;
-  background: #141414;
+  background: radial-gradient(circle, rgba(25, 25, 25, 0.001) 0.001%, #141414 60%);
   color: #fff;
   padding: 20px;
+  position: relative;
 }
 
+.vehicle-gallery h2{
+  font-size: 54px;
+}
+
+.vehicle-gallery p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 5px auto;
+  padding: 0;
+  width: 500px;
+  text-align: center;
+}
+
+  
 .gallery-container {
   display: flex;
   overflow: hidden;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 }
+
 
 .gallery-slider {
   display: flex;
   transition: transform 0.5s ease;
 }
 
+.gallery-item .info-panel {
+  position: relative; /* Ensure relative positioning for absolute positioning of children */
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  height: 100px; /* Maintain fixed height for uniformity */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  background-color: #FFFFFF; /* White background for better readability */
+}
+
+.more-info-link {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  text-decoration: underline;
+  color: #6c757d; /* Bootstrap's gray color */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-transform: uppercase; /* Converts text to uppercase */
+}
+.more-info-link:hover {
+  text-decoration: none; /* Optional: Remove underline on hover */
+  color: #5a6268; /* A slightly darker gray for hover */
+}
+
 .gallery-item {
-  width: 300px; /* Set a specific width for each gallery item */
+  width: 430px; /* Width corrected to 430px */
+  height: 360px; /* Height remains 360px */
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensures no overflow outside the boundaries */
 }
 
 .gallery-item img {
-  width: 100%; /* Responsive image */
+  width: 100%;
+  height: 260px; /* Adjusted to fit the new height constraint while keeping the info panel height */
+  object-fit: cover;
   display: block;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0; /* Rounds only the top corners */
 }
 
 .info-panel {
@@ -543,8 +581,13 @@ footer {
   color: black;
   text-align: left;
   padding: 10px;
-  border-radius: 0 0 10px 10px; /* Only round the bottom corners */
+  border-radius: 0 0 10px 10px;
+  height: 100px; /* Maintain fixed height for uniformity */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
 }
+
 
 .gallery-controls button {
   background: none;
@@ -559,35 +602,125 @@ footer {
   color: white;
 }
 
-.button {
-  padding: 5px 10px;
-  margin-top: 10px;
-  background-color: #007bff;
+/* Galery */
+
+/* Modal */
+.modal {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed; /* Фиксированное позиционирование */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ширина всего экрана */
+  height: 100%; /* Высота всего экрана */
+  overflow: auto; /* При необходимости показывает полосы прокрутки */
+  background-color: rgba(0, 0, 0, 0.8); /* Темный фон с некоторой прозрачностью */
+  z-index: 1000; /* Убедитесь, что модальное окно находится над остальными элементами */
+}
+
+.modal-content {
+  position: relative; /* Для абсолютного позиционирования крестика */
+  width: 80%; /* Или другая ширина по вашему усмотрению */
+  margin: 5% auto; /* Центрирует содержимое по вертикали и горизонтали */
+  padding: 20px; /* Отступы внутри контента */
+  background: white; /* Фон содержимого, может быть любым цветом */
+}
+
+.modal-body {
+  display: flex;
+  width: 80%;
+  height: 80%;
+}
+
+.gallery {
+  width: 60%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+}
+
+.thumbnails {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.thumbnail {
+  width: 80px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+.gallery-prev, .gallery-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
   color: white;
   border: none;
-  border-radius: 5px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.gallery-prev {
+  left: 10px;
+}
+
+.gallery-next {
+  right: 10px;
+}
+
+.info {
+  width: 40%;
+  overflow-y: auto;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
+.close {
+  position: absolute; /* Абсолютное позиционирование внутри .modal-content */
+  top: 10px; /* Отступ сверху */
+  right: 10px; /* Отступ справа */
+  color: #aaa; /* Цвет крестика, можно изменить */
+  font-size: 28px; /* Размер шрифта крестика */
+  font-weight: bold; /* Жирность шрифта */
+  cursor: pointer; /* Курсор в виде руки при наведении */
+}
+
+.close:hover {
+  color: black; /* Цвет крестика при наведении */
+}
+
+
+.contact-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
   cursor: pointer;
 }
 
-.faq-container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  overflow: hidden;
+.contact-btn.telegram {
+  background-color: #0088cc;
 }
 
-.faq-header {
-  flex-basis: 45%; /* Takes up less than half the container */
-  padding: 20px; /* Add some padding */
+.contact-btn.whatsapp {
+  background-color: #25d366;
 }
 
-.faq-content {
-  flex-basis: 55%; /* Takes up a bit more than half the container */
-  padding: 20px; /* Add some padding */
-}
+
+/* Modal */
 
 .consultation-block {
   background-color: #fff; /* Фоновый оранжевый цвет */
@@ -849,3 +982,117 @@ footer {
   border-color: #0056b3 !important; /* Более темный голубой при фокусе */
   box-shadow: none !important; /* Убираем стандартную тень */
 }
+
+/* Faq */
+.faq-header {
+  padding-right: 20px; /* Add some padding to the right of the header */
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.faq-container {
+  width: 100%;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+
+}
+
+.faq-container h2 {
+  font-size: 2rem !important;
+  margin-bottom: 10px;
+}
+
+.faq-container p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.accordion-button {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff !important; /* Ensure the color is black */
+  background-color: #141414 !important; /* Ensure the background color is black */
+  border: none;
+}
+.accordion-button:after {
+  content: '+'; /* Default content for the closed state */
+  position: absolute;
+  right: 20px;
+  font-size: 1.2rem;
+  color: #fff; /* White color for the icon */
+}
+
+
+.accordion-button:not(.collapsed):after {
+  content: '-'; /* Content for the open state */
+}
+
+.accordion-body {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+}
+/* Faq */
+
+/* carousel */
+.video-carousel-container {
+  background-color: #141414;
+  color: white;
+  padding: 20px;
+}
+
+.video-carousel-header h2 {
+  font-size: 60px;
+  font-weight: bold;
+  color: #B3B3B3;
+}
+
+.indent-text {
+  margin-left: 50px; /* Adjust the value as needed to start the text from the middle */
+}
+
+.video-carousel-header .description {
+  color: orange;
+  margin-left: 50px;
+}
+
+.carousel-inner {
+  height: 500px; /* Increase the height of the video block */
+}
+
+.carousel-inner iframe {
+  height: 100%; /* Ensure the iframe takes up the full height */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  display: none; /* Hide default Bootstrap arrows */
+}
+
+.video-carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.video-carousel-controls .btn-prev,
+.video-carousel-controls .btn-next {
+  background-color: transparent;
+  border: none;
+  color: orange;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#video-index {
+  font-size: 1rem;
+  color: white;
+  margin: 0 10px;
+}
+
+/* carousel */

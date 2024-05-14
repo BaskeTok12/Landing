@@ -207,73 +207,57 @@
         </ul>
       </div>
       <div class="right-block">
-        <div
-          class="tile tile-long"
-          style="background-image: url('assets/images/logistics-block.png')"
-        >
+        <div class="tile tile-long" style="background-image: url('assets/images/logistics-block.png'); height: 250px;">
           <h3 class="tile-title">LOGISTICS</h3>
           <p class="tile-text">
-            Efficient 2-6 week shipping tailored to your country for prompt and
-            secure delivery.
+            Efficient 2-6 week shipping tailored to your country for prompt and secure delivery.
           </p>
         </div>
-        <div class="tile tile-square" style="background-color: #333">
+        <div class="tile tile-square" style="background-color: #FF5A00; height: 250px;">
           <h3 class="tile-title">INSURANCE</h3>
           <p class="tile-text">
-            Comprehensive coverage included, ensuring peace of mind for your
-            investment within your country.
+            Comprehensive coverage included, ensuring peace of mind for your investment within your country.
           </p>
         </div>
-        <div class="tile tile-square" style="background-color: #222">
+        <div class="tile tile-square" style="background-color: #222; height:200px;">
           <h3 class="tile-title">CAR CHECK</h3>
           <p class="tile-text">
-            Thorough inspections assure quality, guaranteeing a reliable and
-            top-notch vehicle in your country.
+            Thorough inspections assure quality, guaranteeing a reliable and top-notch vehicle in your country.
           </p>
         </div>
-        <div
-          class="tile tile-long"
-          style="background-image: url('assets/images/official-agreement.png')"
-        >
+        <div class="tile tile-long" style="background-image: url('assets/images/official-agreement.png'); height: 200px;">
           <h3 class="tile-title">OFFICIAL AGREEMENT</h3>
           <p class="tile-text">
-            Transparent transactions with official agreements, fostering trust
-            and outlining terms for purchases in your country.
+            Transparent transactions with official agreements, fostering trust and outlining terms for purchases in your country.
           </p>
         </div>
       </div>
+      
     </div>
 
+    
     <div class="vehicle-gallery">
       <h2>VEHICLE GALLERY</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur, feugiat eget eget adipiscing
-        malesuada gravida.
+        Lorem ipsum dolor sit amet consectetur, feugiat eget eget adipiscing malesuada gravida.
       </p>
       <div class="gallery-container">
         <div class="gallery-slider">
+          <!-- Existing items -->
           <div class="gallery-item">
-            <img
-              src="assets/images/Mercedes-Benz-G550.png"
-              alt="Mercedes Benz G550"
-            />
+            <img src="assets/images/Mercedes-Benz-G550.png" alt="Mercedes Benz G550" />
             <div class="info-panel">
               <h3>Mercedes Benz G550</h3>
               <p>Night</p>
-              <button onclick="openModal('MercedesBenzG550')">More Info</button>
+              <a href="#" onclick="openModal(1)" class="more-info-link">More Info</a>
             </div>
           </div>
           <div class="gallery-item">
-            <img
-              src="assets/images/mercedes-benz-gle-450.png"
-              alt="Mercedes Benz GLE 450"
-            />
+            <img src="assets/images/mercedes-benz-gle-450.png" alt="Mercedes Benz GLE 450" />
             <div class="info-panel">
               <h3>Mercedes Benz GLE 450</h3>
               <p>Grey</p>
-              <button onclick="openModal('MercedesBenzGLE450')">
-                More Info
-              </button>
+              <a href="#" onclick="openModal(2)" class="more-info-link">More Info</a>
             </div>
           </div>
           <div class="gallery-item">
@@ -284,15 +268,24 @@
               <button onclick="openModal('Toyota4Runner')">More Info</button>
             </div>
           </div>
-          <!-- Add more items similarly -->
+          <!-- New item -->
+          <div class="gallery-item">
+            <img src="assets/images/lexus-rx350.jpg" alt="2024 Lexus RX350" />
+            <div class="info-panel">
+              <h3>2024 Lexus RX350</h3>
+              <p>Ultra luxury</p>
+              <button onclick="openModal('NewVehicle')">More Info</button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="gallery-controls">
         <button onclick="previous()">❮</button>
-        <span>3/25</span>
+        <span id="gallery-index">1/25</span>
         <button onclick="next()">❯</button>
       </div>
     </div>
+    
 
     <div class="consultation-block">
       <img
@@ -420,32 +413,217 @@
       </div>
     </div>
 
-    <div class="faq-container">
-      <div class="faq-header">
-        <h2>FAQ</h2>
-        <p>Everything you need to know about exporting cars with us.</p>
-      </div>
-      <div class="faq-content">
-        <!-- FAQ items -->
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ('faq1')">
-            WHERE TO LOOK FOR AUTOMOBILES?
-          </button>
-          <div class="faq-answer" id="faq1">
-            <p>Answer to where to look for automobiles...</p>
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="faq-header">
+            <h2>FAQ</h2>
+            <p>Everything you need to know about exporting cars with us.</p>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFAQ('faq2')">
-            HOW IS THE DELIVERY CARRIED OUT?
-          </button>
-          <div class="faq-answer" id="faq2">
-            <p>Answer to how the delivery is carried out...</p>
+        <div class="col-md-7">
+          <div class="faq-container">
+            <div class="faq-content">
+              <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      WHICH COUNTRIES DO WE DELIVER CARS?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      Answer to which countries we deliver cars...
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      HOW CAN I CONTACT YOU?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      Answer to how can I contact you...
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      ARE DIESEL CARS COMMON IN CANADA?
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      Answer to are diesel cars common in Canada...
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      DO WE WORK WITH RETAIL CUSTOMERS?
+                    </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      Answer to do we work with retail customers...
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      WHAT PAYMENT METHODS DO WE ACCEPT?
+                    </button>
+                  </h2>
+                  <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      Answer to what payment methods do we accept...
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingSix">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                      FOUND THE CAR YOU WANT. WHAT'S THE NEXT STEP?
+                    </button>
+                  </h2>
+                  <div id="collapseSix" class="accordion-collapse collapse show" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                      We accept various payment methods, including Swift bank transfers, crypto payments, and cash payments at our offices. We strive to accommodate a suitable payment method for our clients.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <!-- Repeat for other FAQ items -->
       </div>
     </div>
+    
+    <div class="container-fluid mt-5 video-carousel-container">
+      <div class="row">
+        <div class="col-md-5 d-flex flex-column justify-content-center">
+          <div class="video-carousel-header">
+            <h2>
+              CANADIAN
+              <br />
+              CARS IS YOUR
+              <br />
+              <span class="indent-text">TRUSTED</span>
+              <br />
+              <span class="indent-text">CAR-BUYING</span>
+              <br />
+              <span class="indent-text">PARTNER</span>
+            </h2>
+            <p class="description">Explore our exclusive selection of luxury vehicles, sourced directly from Canada's finest manufacturers.</p>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <!-- 15 video items -->
+              <div class="carousel-item active">
+                <iframe src="https://www.youtube.com/embed/example1" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe src="https://www.youtube.com/embed/example2" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe src="https://www.youtube.com/embed/example3" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe src="https://www.youtube.com/embed/example4" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe src="https://www.youtube.com/embed/example5" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe src="https://www.youtube.com/embed/example6" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe src="https://www.youtube.com/embed/example7" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe src="https://www.youtube.com/embed/example8" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe src="https://www.youtube.com/embed/example9" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe src="https://www.youtube.com/embed/example10" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe src="https://www.youtube.com/embed/example11" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe src="https://www.youtube.com/embed/example12" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe src="https://www.youtube.com/embed/example13" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe src="https://www.youtube.com/embed/example14" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+              <div class="carousel-item">
+                <iframe src="https://www.youtube.com/embed/example15" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="video-carousel-controls">
+            <button class="btn-prev" id="prevBtn">❮</button>
+            <span id="video-index">1/15</span>
+            <button class="btn-next" id="nextBtn">❯</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Include Bootstrap JS (required for the carousel to work) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Include your custom JS script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        const videoCarousel = document.getElementById('videoCarousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const videoIndex = document.getElementById('video-index');
+        const totalItems = document.querySelectorAll('#videoCarousel .carousel-item').length;
+    
+        const updateIndex = () => {
+          const currentIndex = document.querySelector('#videoCarousel .carousel-item.active').dataset.index;
+          videoIndex.textContent = `${currentIndex}/${totalItems}`;
+        };
+    
+        videoCarousel.addEventListener('slid.bs.carousel', updateIndex);
+    
+        prevBtn.addEventListener('click', () => {
+          const carousel = new bootstrap.Carousel(videoCarousel);
+          carousel.prev();
+        });
+    
+        nextBtn.addEventListener('click', () => {
+          const carousel = new bootstrap.Carousel(videoCarousel);
+          carousel.next();
+        });
+    
+        // Set data-index attributes for carousel items
+        document.querySelectorAll('#videoCarousel .carousel-item').forEach((item, index) => {
+          item.dataset.index = index + 1;
+        });
+    
+        // Initial index update
+        updateIndex();
+      });
+    </script>
+    
+    
+    
+    
 
     <footer>
       <div class="social-links">
@@ -456,5 +634,6 @@
 
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
   </body>
 </html>
