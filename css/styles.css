@@ -149,11 +149,6 @@ img,
   flex: 2; /* Flex-grow to take necessary space */
 }
 
-.hero,
-.container-fluid {
-  height: 100%;
-}
-
 .container-fluid {
   padding-right: 0;
   padding-left: 0;
@@ -248,16 +243,6 @@ img,
   cursor: pointer;
   border-radius: 5px;
   margin-top: 10px;
-}
-
-/* Подвал с социальными ссылками */
-footer {
-
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px 20px;
 }
 
 .social-links img {
@@ -995,7 +980,8 @@ footer {
   background-color: #f8f9fa;
   border-radius: 8px;
   padding: 20px;
-
+  min-height: 50vh; /* Уменьшение высоты блока */
+  max-height: 600px; /* Максимальная высота, чтобы блок не был слишком высоким */
 }
 
 .faq-container h2 {
@@ -1096,3 +1082,198 @@ footer {
 }
 
 /* carousel */
+
+/* Inst */
+
+.instagram-section {
+  background-color: #fff;
+  padding: 20px 0; /* Adjust padding as needed */
+  text-align: left;
+}
+
+.instagram-section .container {
+  margin: 0 auto !important; /* Center the container */
+  padding: 0 15px !important; /* Adjust padding as needed */
+  max-width: 100% !important; /* Ensure it takes full width if needed */
+}
+
+.section-title {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.instagram-posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Reduced gap between posts */
+}
+
+.instagram-post {
+  width: 280px; /* Adjust the width as needed */
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.instagram-post img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* Inst */
+
+/* Map */
+.map-container {
+  width: 100% !important;
+  height: 40vh !important; /* Set the height to 40% of the viewport height */
+  margin: 20px 0 !important; /* Adjust the margins as needed */
+  position: relative !important;
+}
+
+.map-responsive {
+  overflow: hidden !important;
+  height: 100% !important; /* Ensure it takes up the full height of the container */
+  position: relative !important;
+}
+
+.map-responsive iframe {
+  left: 0 !important;
+  top: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  position: absolute !important;
+}
+
+/* Map */
+
+/* Footer */
+
+.footer {
+  background-color: #141414;
+  color: #fff;
+  padding: 40px 0;
+  font-size: 14px;
+  height: 500px; /* Set height to approximately 500px */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer .container-fluid {
+  height: 100%;
+}
+
+.footer .row {
+  width: 100%;
+}
+
+.footer-logo-column {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 15px;
+}
+
+.footer-logo {
+  margin-bottom: 20px;
+  max-width: 150px; /* Adjust the logo size as needed */
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  max-width: 180px; /* Reduce column width */
+}
+
+.footer h5 {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: row; /* Align input and button in a row */
+  width: 100%;
+  padding-left: 15px;
+}
+
+.newsletter-form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+  font-size: 14px;
+  width: 70%; /* Adjust width */
+}
+
+.newsletter-form button {
+  background-color: #ff5a00;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 0 5px 5px 0; /* Rounded corners on the right */
+  cursor: pointer;
+  font-size: 14px;
+  width: 30%; /* Adjust width */
+}
+
+.newsletter-form button:hover {
+  background-color: #e64a00;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5); /* Transparent border */
+  background: linear-gradient(to right, rgba(20, 20, 20, 1), rgba(20, 20, 20, 0));
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.footer-bottom a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Footer */
