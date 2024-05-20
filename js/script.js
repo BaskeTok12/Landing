@@ -200,11 +200,10 @@ const cars = [
     engine: "4L",
     power: "416 HP",
     fuelRating: "12/6/2.4",
-    description:
-      "Spacious, advanced, luxurious and timeless, the G550 is an icon of capability and pure design. Crafted by hand, with an exceptional variety of ways to personalize it, you can take your G virtually anywhere you want.",
-    images: ["C:/Users/Ivan/Desktop/Landing/assets/images/venicle-galery/1/1-mercedes-g550", "path/to/image2.jpg"],
-  },
-  // Добавьте другие машины аналогично
+    description: "Spacious, advanced, luxurious and timeless, the G550 is an icon of capability and pure design. Crafted by hand, with an exceptional variety of ways to personalize it, you can take your G virtually anywhere you want.",
+    images: ["Landing/assets/images/venicle-galery/1/1-mercedes-g550.png", "Landing/assets/images/venicle-galery/1/2-mercedes-g550.png"],
+  }
+  // other cars...
 ];
 
 function createModal(car) {
