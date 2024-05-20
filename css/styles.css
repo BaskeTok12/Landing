@@ -24,9 +24,9 @@ img,
 }
 
 .highlight {
-    color: #B3B3B3;
-  }
-  
+  color: #b3b3b3;
+}
+
 /* Улучшенная стилизация элементов, используя переменные и классы Bootstrap */
 :root {
   --bs-primary: white; /* Переопределение основного цвета Bootstrap */
@@ -84,7 +84,8 @@ img,
 
 /* Геройский баннер */
 .hero {
-  background: url("../assets/images/background.png") no-repeat center center / cover;
+  background: url("../assets/images/background.png") no-repeat center center /
+    cover;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -167,7 +168,6 @@ img,
   display: flex;
   flex-direction: column;
 }
-
 
 .btn-check-inventory {
   position: relative;
@@ -433,7 +433,7 @@ img,
 }
 
 .premium-section h2 {
-    padding: 20px;
+  padding: 20px;
   font-size: 54px;
   margin-bottom: 20px;
 }
@@ -463,30 +463,29 @@ img,
 }
 
 .feature img {
-    width: 150px; /* Set the initial width for all images */
-    height: 150px; /* Set the initial height for all images */
-    margin-right: 15px; /* Spacing between image and text */
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .feature-column-left .feature:nth-child(1) img {
-    transform: scale(1); /* Увеличиваем первое изображение */
-  }
-  
-  .feature-column-left .feature:nth-child(2) img {
-    transform: scale(0.8); /* Уменьшаем второе изображение */
-  }
-  
-  .feature-column-right .feature:nth-child(1) img {
-    transform: scale(1.1); /* Уменьшаем третье изображение */
-  }
-  
-  .feature-column-right .feature:nth-child(2) img {
-    transform: scale(0.9); /* Уменьшаем четвертое изображение */
-  }
-  
-  
+  width: 150px; /* Set the initial width for all images */
+  height: 150px; /* Set the initial height for all images */
+  margin-right: 15px; /* Spacing between image and text */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.feature-column-left .feature:nth-child(1) img {
+  transform: scale(1); /* Увеличиваем первое изображение */
+}
+
+.feature-column-left .feature:nth-child(2) img {
+  transform: scale(0.8); /* Уменьшаем второе изображение */
+}
+
+.feature-column-right .feature:nth-child(1) img {
+  transform: scale(1.1); /* Уменьшаем третье изображение */
+}
+
+.feature-column-right .feature:nth-child(2) img {
+  transform: scale(0.9); /* Уменьшаем четвертое изображение */
+}
+
 .feature-info {
   flex: 1;
   text-align: left;
@@ -597,13 +596,17 @@ img,
 
 .vehicle-gallery {
   text-align: center;
-  background: radial-gradient(circle, rgba(25, 25, 25, 0.001) 0.001%, #141414 60%);
+  background: radial-gradient(
+    circle,
+    rgba(25, 25, 25, 0.001) 0.001%,
+    #141414 60%
+  );
   color: #fff;
   padding: 20px;
   position: relative;
 }
 
-.vehicle-gallery h2{
+.vehicle-gallery h2 {
   font-size: 54px;
 }
 
@@ -616,7 +619,6 @@ img,
   text-align: center;
 }
 
-  
 .gallery-container {
   display: flex;
   overflow: hidden;
@@ -624,7 +626,6 @@ img,
   position: relative;
   z-index: 2;
 }
-
 
 .gallery-slider {
   display: flex;
@@ -639,7 +640,7 @@ img,
   display: flex;
   flex-direction: column;
   justify-content: center; /* Centers content vertically */
-  background-color: #FFFFFF; /* White background for better readability */
+  background-color: #ffffff; /* White background for better readability */
 }
 
 .more-info-link {
@@ -688,7 +689,6 @@ img,
   justify-content: center; /* Centers content vertically */
 }
 
-
 .gallery-controls button {
   background: none;
   border: none;
@@ -712,23 +712,30 @@ img,
   top: 0;
   width: 100%; /* Ширина всего экрана */
   height: 100%; /* Высота всего экрана */
-  overflow: auto; /* При необходимости показывает полосы прокрутки */
-  background-color: rgba(0, 0, 0, 0.8); /* Темный фон с некоторой прозрачностью */
+  overflow: hidden; /* Убираем возможность прокрутки */
   z-index: 1000; /* Убедитесь, что модальное окно находится над остальными элементами */
 }
 
 .modal-content {
-  position: relative; /* Для абсолютного позиционирования крестика */
-  width: 80%; /* Или другая ширина по вашему усмотрению */
-  margin: 5% auto; /* Центрирует содержимое по вертикали и горизонтали */
+  position: absolute; /* Позиционируем относительно модального окна */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрируем контент */
+  width: 100%; /* Используем всю ширину */
+  height: 100%; /* Используем всю высоту */
   padding: 20px; /* Отступы внутри контента */
-  background: white; /* Фон содержимого, может быть любым цветом */
+  background: #000000 !important;
+  box-sizing: border-box; /* Учитываем паддинги в ширине и высоте */
+  display: flex; /* Flexbox для внутренней структуры */
+  flex-direction: column; /* Элементы в колонку */
+  color: white;
 }
 
 .modal-body {
   display: flex;
   width: 80%;
   height: 80%;
+  color: white;
 }
 
 .gallery {
@@ -761,11 +768,12 @@ img,
   transform: scale(1.1);
 }
 
-.gallery-prev, .gallery-next {
+.gallery-prev,
+.gallery-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   cursor: pointer;
@@ -791,16 +799,15 @@ img,
   position: absolute; /* Абсолютное позиционирование внутри .modal-content */
   top: 10px; /* Отступ сверху */
   right: 10px; /* Отступ справа */
-  color: #aaa; /* Цвет крестика, можно изменить */
+  color: #ff5a00; /* Белый цвет крестика для видимости на тёмном фоне */
   font-size: 28px; /* Размер шрифта крестика */
   font-weight: bold; /* Жирность шрифта */
   cursor: pointer; /* Курсор в виде руки при наведении */
 }
 
 .close:hover {
-  color: black; /* Цвет крестика при наведении */
+  color: #aaa; /* Светлый цвет крестика при наведении для контраста */
 }
-
 
 .contact-btn {
   margin-top: 10px;
@@ -812,13 +819,14 @@ img,
 }
 
 .contact-btn.telegram {
-  background-color: #0088cc;
+  background-color: #ff5a00;
 }
 
 .contact-btn.whatsapp {
-  background-color: #25d366;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 2px solid #ff5a00;
+  border-radius: 4px;
 }
-
 
 /* Modal */
 
@@ -903,7 +911,8 @@ img,
 }
 
 .quiz-container {
-  background: url("../assets/images/bg-elements.png") no-repeat center center / cover;
+  background: url("../assets/images/bg-elements.png") no-repeat center center /
+    cover;
   background-size: 50%;
   display: flex;
   justify-content: center; /* Центрирование по горизонтали */
@@ -911,7 +920,6 @@ img,
   min-height: 50vh;
   max-height: 600px;
   overflow: hidden;
-
 }
 
 .quiz-intro {
@@ -1117,16 +1125,15 @@ img,
   border: none;
 }
 .accordion-button:after {
-  content: '+'; /* Default content for the closed state */
+  content: "+"; /* Default content for the closed state */
   position: absolute;
   right: 20px;
   font-size: 1.2rem;
   color: #fff; /* White color for the icon */
 }
 
-
 .accordion-button:not(.collapsed):after {
-  content: '-'; /* Content for the open state */
+  content: "-"; /* Content for the open state */
 }
 
 .accordion-body {
@@ -1149,7 +1156,7 @@ img,
 .video-carousel-header h2 {
   font-size: 60px;
   font-weight: bold;
-  color: #B3B3B3;
+  color: #b3b3b3;
 }
 
 .indent-text {
@@ -1238,7 +1245,6 @@ img,
   height: auto;
   display: block;
 }
-
 
 /* Inst */
 
@@ -1369,7 +1375,11 @@ img,
   align-items: center;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.5); /* Transparent border */
-  background: linear-gradient(to right, rgba(20, 20, 20, 1), rgba(20, 20, 20, 0));
+  background: linear-gradient(
+    to right,
+    rgba(20, 20, 20, 1),
+    rgba(20, 20, 20, 0)
+  );
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -1389,7 +1399,4 @@ img,
   text-decoration: underline;
 }
 
-
-
 /* Footer */
-
