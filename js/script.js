@@ -201,7 +201,7 @@ const cars = [
     power: "416 HP",
     fuelRating: "12/6/2.4",
     description: "Spacious, advanced, luxurious and timeless, the G550 is an icon of capability and pure design. Crafted by hand, with an exceptional variety of ways to personalize it, you can take your G virtually anywhere you want.",
-    images: ["Landing/assets/images/venicle-galery/1/1-mercedes-g550.png", "Landing/assets/images/venicle-galery/1/2-mercedes-g550.png"],
+    images: ["Landing/assets/images/venicle-galery/1/1-mercedes-g550.png", "Landing/assets/images/venicle-galery/1/2-mercedes-g550.jpg", "Landing/assets/images/venicle-galery/1/3-mercedes-g550.png", "Landing/assets/images/venicle-galery/1/4-mercedes-g550.png", "Landing/assets/images/venicle-galery/1/5-mercedes-g550.png", "Landing/assets/images/venicle-galery/1/6-mercedes-g550.png"],
   }
   // other cars...
 ];
@@ -209,42 +209,57 @@ const cars = [
 function createModal(car) {
   const modalHTML = `
     <div id="modal${car.id}" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal(${car.id})">&times;</span>
-    <div class="modal-body">
-      <div class="gallery">
-        <button class="gallery-prev" onclick="changeImage(${car.id}, -1)">&#10094;</button>
-        <img src="${car.images[0]}" alt="${car.name} image" class="main-image">
-        <button class="gallery-next" onclick="changeImage(${car.id}, 1)">&#10095;</button>
-        <div class="thumbnails">
-          ${car.images.map((img, index) => `<img src="${img}" alt="Thumbnail ${index + 1}" class="thumbnail" onclick="setImage(${car.id}, '${img}')">`).join("")}
-        </div>
-      </div>
-      <div class="info">
-        <h1>2024 MERCEDES BENZ</h1>
-        <h2>G550</h2>
-        <ul class="specs">
-          <li><span>Manufacture date:</span> 11/2023</li>
-          <li><span>Package:</span> Night</li>
-          <li><span>Color:</span> Polar White</li>
-          <li><span>Engine:</span> 4L</li>
-          <li><span>Power:</span> 416 HP</li>
-          <li><span>Fuel Rating:</span> 12/6/2.4</li>
-        </ul>
-        <p>Spacious, advanced, luxurious and timeless, the G550 is an icon of capability and pure design. Crafted by hand, with an exceptional variety of ways to personalize it, you can take your G virtually anywhere you want.</p>
-        <div class="contact-info">
-          <p>Contact our manager for more info</p>
-          <button class="contact-btn telegram">TELEGRAM</button>
-          <button class="contact-btn whatsapp">WHATSAPP</button>
+      <div class="modal-content">
+        <span class="close" onclick="closeModal(${car.id})">&times;</span>
+        <div class="modal-body">
+          <div class="gallery">
+            <div class="main-image-container">
+              <img src="${car.images[0]}" alt="${car.name} main image" class="main-image" style="object-fit: cover; object-position: center;" loading="lazy">
+              <button class="gallery-prev" onclick="changeImage(${car.id}, -1)">&#10094;</button>
+              <button class="gallery-next" onclick="changeImage(${car.id}, 1)">&#10095;</button>
+            </div>
+            <div class="thumbnails-container">
+              <div class="thumbnail-row">
+                ${car.images.slice(0, 3).map(img => `
+                  <div class="thumbnail" onclick="setImage(${car.id}, '${img}')">
+                    <img src="${img}" alt="Thumbnail" loading="lazy">
+                  </div>
+                `).join('')}
+              </div>
+              <div class="thumbnail-row">
+                ${car.images.slice(3, 6).map(img => `
+                  <div class="thumbnail" onclick="setImage(${car.id}, '${img}')">
+                    <img src="${img}" alt="Thumbnail" loading="lazy">
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+          <div class="info">
+            <h1>2024 MERCEDES BENZ</h1>
+            <h2>G550</h2>
+            <ul class="specs">
+              <li><span>Manufacture date:</span> 11/2023</li>
+              <li><span>Package:</span> Night</li>
+              <li><span>Color:</span> Polar White</li>
+              <li><span>Engine:</span> 4L</li>
+              <li><span>Power:</span> 416 HP</li>
+              <li><span>Fuel Rating:</span> 12/6/2.4</li>
+            </ul>
+            <p>Spacious, advanced, luxurious and timeless, the G550 is an icon of capability and pure design. Crafted by hand, with an exceptional variety of ways to personalize it, you can take your G virtually anywhere you want.</p>
+            <div class="contact-info">
+              <p>Contact our manager for more info</p>
+              <button class="contact-btn telegram">TELEGRAM</button>
+              <button class="contact-btn whatsapp">WHATSAPP</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
   `;
   document.body.insertAdjacentHTML("beforeend", modalHTML);
 }
+
 
 
 function openModal(carId) {
@@ -265,18 +280,14 @@ function closeModal(id) {
   }
 }
 
-function setImage(carId, src) {
-  const mainImage = document.querySelector(`#modal${carId} .main-image`);
-  mainImage.src = src;
-}
-
 function changeImage(carId, direction) {
   const modal = document.getElementById(`modal${carId}`);
-  const images = Array.from(modal.querySelectorAll('.thumbnail')).map(img => img.src);
-  const mainImage = document.querySelector(`#modal${carId} .main-image`);
+  const mainImage = modal.querySelector('.main-image');
+  const thumbnails = Array.from(modal.querySelectorAll('.thumbnail img'));
+  const images = thumbnails.map(img => img.src);
   let currentIndex = images.indexOf(mainImage.src);
-  currentIndex += direction;
 
+  currentIndex += direction;
   if (currentIndex >= images.length) {
     currentIndex = 0;
   } else if (currentIndex < 0) {
@@ -286,7 +297,12 @@ function changeImage(carId, direction) {
   mainImage.src = images[currentIndex];
 }
 
-// Создание модальных окон после загрузки DOM
+function setImage(carId, imgSrc) {
+  const modal = document.getElementById(`modal${carId}`);
+  const mainImage = modal.querySelector('.main-image');
+  mainImage.src = imgSrc;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  cars.forEach((car) => createModal(car));
+  cars.forEach(car => createModal(car));
 });
