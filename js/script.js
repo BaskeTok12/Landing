@@ -306,3 +306,11 @@ function setImage(carId, imgSrc) {
 document.addEventListener("DOMContentLoaded", () => {
   cars.forEach(car => createModal(car));
 });
+
+function showText(id) {
+  document.getElementById(id).style.opacity = '1';
+}
+
+function hideText(id) {
+  document.getElementById(id).style.opacity = '0';
+}
