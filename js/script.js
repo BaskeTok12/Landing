@@ -307,6 +307,8 @@ document.addEventListener("DOMContentLoaded", () => {
   cars.forEach(car => createModal(car));
 });
 
+// interactive block 
+
 function showText(id) {
   document.getElementById(id).style.opacity = '1';
 }

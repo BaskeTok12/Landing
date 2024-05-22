@@ -628,6 +628,11 @@ img,
   position: relative;
 }
 
+.b2b-deals-highlight, .b2b-pricing-highlight {
+  color: #D9D9D9; /* Устанавливаем цвет текста для выделения */
+  cursor: pointer;
+}
+
 .test-drive-btn {
   padding: 10px 20px;
   background-color: orange;
@@ -641,7 +646,6 @@ img,
 .test-drive-btn:hover {
   background-color: darkorange;
 }
-
 
 
 /* Interactive Block */
