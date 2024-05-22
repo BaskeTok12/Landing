@@ -593,14 +593,17 @@ img,
 }
 
 /* Interactive Block */
+
 .interactive-block {
   position: relative;
   margin: 40px;
   padding: 40px;
-  background-color: #f1f1f1;
   border-radius: 4px;
   width: 100%;
-  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .interactive-block p {
@@ -629,24 +632,85 @@ img,
 }
 
 .b2b-deals-highlight, .b2b-pricing-highlight {
-  color: #D9D9D9; /* Устанавливаем цвет текста для выделения */
+  color: #D9D9D9;
   cursor: pointer;
+  transition: color 0.5s ease-in-out;
 }
 
-.test-drive-btn {
-  padding: 10px 20px;
-  background-color: orange;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.b2b-deals-highlight:hover, .b2b-pricing-highlight:hover {
+  color: #FF5A00;
+}
+
+.b2b-deals-highlight:hover ~ .b2b-deals-text,
+.b2b-pricing-highlight:hover ~ .b2b-pricing-text {
+  opacity: 1;
+}
+
+.test-drive-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   margin-top: 20px;
+  width: 100%;
 }
 
-.test-drive-btn:hover {
-  background-color: darkorange;
+.test-drive-text {
+  font-size: 16px;
+  margin-right: 10px;
 }
 
+.arrow-icon {
+  margin-top: 55px;
+  width: 123px;
+  height: 100px;
+  margin-left: 10px;
+}
+
+.btn-test-drive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 146px;
+  height: 146px;
+  color: white;
+  background-color: #000;
+  border: 2px solid #ff5a00;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  overflow: hidden;
+}
+
+.btn-test-drive::before,
+.btn-test-drive::after {
+  content: "";
+  position: absolute;
+  width: 156px;
+  height: 156px;
+  border: 2px solid #ff5a00;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.btn-test-drive::before {
+  top: -5px;
+  left: -5px;
+}
+
+.btn-test-drive::after {
+  top: 0;
+  left: 0;
+  background: inherit;
+  backdrop-filter: blur(10px);
+}
+
+.btn-test-drive:hover {
+  background-color: rgba(255, 90, 0, 0.5);
+  color: white;
+}
 
 /* Interactive Block */
 
