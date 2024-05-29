@@ -316,3 +316,85 @@ function showText(id) {
 function hideText(id) {
   document.getElementById(id).style.opacity = '0';
 }
+
+// Instagram
+document.addEventListener('DOMContentLoaded', (event) => {
+  const instagramPostsContainer = document.querySelector('.instagram-posts');
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  let requestId;
+  let autoScrollTimeout;
+
+  const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
+
+  const smoothScroll = (start, end, duration) => {
+    let startTime;
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      instagramPostsContainer.scrollLeft = lerp(start, end, progress);
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+    requestAnimationFrame(step);
+  };
+
+  instagramPostsContainer.addEventListener('mousedown', (e) => {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+    }
+    isDown = true;
+    startX = e.pageX - instagramPostsContainer.offsetLeft;
+    scrollLeft = instagramPostsContainer.scrollLeft;
+    cancelAnimationFrame(requestId); // Остановить автоматическую прокрутку
+    clearTimeout(autoScrollTimeout); // Очистить таймаут автопрокрутки
+  });
+
+  instagramPostsContainer.addEventListener('mouseleave', () => {
+    isDown = false;
+  });
+
+  instagramPostsContainer.addEventListener('mouseup', () => {
+    isDown = false;
+    startAutoScrollWithDelay(); // Начать автопрокрутку с задержкой
+  });
+
+  instagramPostsContainer.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - instagramPostsContainer.offsetLeft;
+    const walk = (x - startX) * 2; // Увеличиваем скорость скроллинга
+    instagramPostsContainer.scrollLeft = scrollLeft - walk;
+  });
+
+  let scrollAmount = 1; // Шаг автопрокрутки
+  const autoScroll = () => {
+    instagramPostsContainer.scrollLeft = lerp(instagramPostsContainer.scrollLeft, instagramPostsContainer.scrollLeft + scrollAmount, 0.1);
+    if (instagramPostsContainer.scrollLeft >= (instagramPostsContainer.scrollWidth - instagramPostsContainer.clientWidth)) {
+      instagramPostsContainer.scrollLeft = 0;
+    }
+    requestId = requestAnimationFrame(autoScroll);
+  };
+
+  const startAutoScroll = () => {
+    requestId = requestAnimationFrame(autoScroll);
+  };
+
+  const stopAutoScroll = () => {
+    cancelAnimationFrame(requestId);
+  };
+
+  const startAutoScrollWithDelay = () => {
+    autoScrollTimeout = setTimeout(startAutoScroll, 3000); // Задержка 3 секунды
+  };
+
+  instagramPostsContainer.addEventListener('mouseenter', stopAutoScroll);
+  instagramPostsContainer.addEventListener('mouseleave', startAutoScrollWithDelay);
+
+  // Start auto-scroll with delay when the page loads
+  startAutoScrollWithDelay();
+});

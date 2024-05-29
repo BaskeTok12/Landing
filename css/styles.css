@@ -12,6 +12,16 @@ html {
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -98,6 +108,11 @@ img,
   align-items: center; /* Align items vertically */
 }
 
+#buy-form,
+#consult-form {
+  min-height: 500px; /* Ensures each form has the same minimum height */
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -106,10 +121,10 @@ img,
   border-radius: 5px;
   color: white;
   width: 100%; /* Ensure the form uses the full width of the column */
-  min-height: 500px; /* Minimum height to maintain form size */
+  min-height: 500px; /* Set a minimum height to ensure consistency */
+  height: auto; /* Ensure it can grow beyond the minimum height if needed */
   overflow: hidden; /* Hide overflow content */
 }
-
 .grid-form {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -174,42 +189,46 @@ img,
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 146px;
-  height: 146px;
+  width: 10em; /* Установите фиксированную ширину */
+  aspect-ratio: 1 / 1; /* Соотношение сторон 1:1 для создания круга */
   color: white;
   border: 2px solid #ff5a00;
-  font-size: 14px;
+  font-size: 1em; /* Размер шрифта */
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: 50%; /* Скруглённые углы */
   text-transform: uppercase;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
   margin-top: 20px;
   overflow: hidden;
+  z-index: 1;
 }
 
-.btn-check-inventory::before,
-.btn-check-inventory::after {
+.btn-check-inventory::before {
   content: "";
   position: absolute;
-  width: 156px;
-  height: 156px;
+  top: -0.5em;
+  left: -0.5em;
+  width: calc(100% + 1em); /* Немного больше, чем основной размер кнопки */
+  height: calc(100% + 1em); /* Немного больше, чем основной размер кнопки */
   border: 2px solid #ff5a00;
   border-radius: 50%;
   z-index: -1;
 }
 
-.btn-check-inventory::before {
-  top: -5px;
-  left: -5px;
-}
-
 .btn-check-inventory::after {
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   background: inherit;
   backdrop-filter: blur(10px);
+  border-radius: 50%;
+  z-index: -1;
 }
+
 
 .btn-check-inventory:hover {
   background-color: rgba(255, 90, 0, 0.5);
@@ -1395,31 +1414,27 @@ img,
 
 .instagram-section {
   background-color: #fff;
-  padding: 20px 0; /* Adjust padding as needed */
+  padding: 20px 0;
   text-align: left;
 }
 
 .instagram-section .container {
-  margin: 0 auto !important; /* Center the container */
-  padding: 0 15px !important; /* Adjust padding as needed */
-  max-width: 100% !important; /* Ensure it takes full width if needed */
-}
-
-.section-title {
-  font-size: 60px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 100%;
 }
 
 .instagram-posts {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px; /* Reduced gap between posts */
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 0;
+  scroll-behavior: smooth; /* Добавляем плавность прокрутки */
 }
 
 .instagram-post {
-  width: 280px; /* Adjust the width as needed */
+  flex: 0 0 auto;
+  width: 280px;
   border-radius: 8px;
   overflow: hidden;
   background-color: #f8f9fa;
@@ -1430,7 +1445,20 @@ img,
   width: 100%;
   height: auto;
   display: block;
+  user-drag: none; /* Prevent dragging */
+  user-select: none; /* Prevent text selection */
 }
+
+/* Убираем полосу прокрутки для разных браузеров */
+.instagram-posts {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.instagram-posts::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
 
 /* Inst */
 
@@ -1465,7 +1493,6 @@ img,
   color: #fff;
   padding: 40px 0;
   font-size: 14px;
-  height: 500px; /* Set height to approximately 500px */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1567,9 +1594,6 @@ img,
     rgba(20, 20, 20, 0)
   );
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
 
 .footer-bottom p {
@@ -1584,5 +1608,4 @@ img,
 .footer-bottom a:hover {
   text-decoration: underline;
 }
-
 /* Footer */
