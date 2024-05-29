@@ -1464,24 +1464,24 @@ img,
 
 /* Map */
 .map-container {
-  width: 100% !important;
-  height: 40vh !important; /* Set the height to 40% of the viewport height */
-  margin: 20px 0 !important; /* Adjust the margins as needed */
-  position: relative !important;
+  flex: 1; /* Позволяет контейнеру карты расти */
+  width: 100%; /* Занимает всю ширину */
+  display: flex;
+  justify-content: center; /* Центрирование содержимого по горизонтали */
+  align-items: center; /* Центрирование содержимого по вертикали */
+  margin: 20px 0; /* Отступ сверху и снизу */
 }
 
 .map-responsive {
-  overflow: hidden !important;
-  height: 100% !important; /* Ensure it takes up the full height of the container */
-  position: relative !important;
+  width: 100%; /* Занимает всю ширину контейнера */
+  height: 50vh; /* Ограничивает высоту до трети высоты экрана */
+  position: relative;
 }
 
 .map-responsive iframe {
-  left: 0 !important;
-  top: 0 !important;
-  height: 100% !important;
-  width: 100% !important;
-  position: absolute !important;
+  width: 100%;
+  height: 100%;
+  border: 0; /* Убирает рамку */
 }
 
 /* Map */
@@ -1556,8 +1556,10 @@ img,
   display: flex;
   flex-direction: row; /* Align input and button in a row */
   width: 100%;
+  max-width: 500px; /* Limit the maximum width */
   padding-left: 15px;
 }
+
 
 .newsletter-form input {
   padding: 10px;
