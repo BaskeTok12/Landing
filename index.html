@@ -67,76 +67,105 @@
 
     <div class="hero">
       <div class="container-fluid h-100">
-        <div class="row h-100">
-          <div class="col-lg-8 d-flex flex-column justify-content-center">
-            <h1>CANADIAN CARS GLOBAL AUTO EXPORTER</h1>
-            <div class="hero-content">
-              <p>Explore over 500 exquisite cars, supercars, SSSH vehicles and certified used cars directly from Canadian manufacturers in one click</p>
-              <a href="inventory.html" class="btn-check-inventory">Check Inventory</a>
-            </div>
-          </div>
-          <div class="col-lg-4 text-white d-flex align-items-center p-0">
-            <div class="contact-form w-100">
-              <div class="form-header text-center">
-                <h2>Get more info about actual inventory</h2>
-                <p>Fill simple form, our manager contact you shortly</p>
+          <div class="row h-100">
+              <div class="col-lg-8 d-flex flex-column justify-content-center">
+                  <h1>CANADIAN CARS GLOBAL AUTO EXPORTER</h1>
+                  <div class="hero-content">
+                      <p>Explore over 500 exquisite cars, supercars, SSSH vehicles and certified used cars directly from Canadian manufacturers in one click</p>
+                      <a href="inventory.html" class="btn-check-inventory">Check Inventory</a>
+                  </div>
               </div>
-              <div class="form-tabs d-flex justify-content-center position-relative">
-                <button class="tab-btn active" onclick="showForm('buy')">Buy a Car</button>
-                <button class="tab-btn" onclick="showForm('consult')">Get a Consultation</button>
-                <div class="tab-indicator"></div>
+              <div class="col-lg-4 text-white d-flex align-items-center p-0">
+                  <div class="contact-form w-100">
+                      <div class="form-header text-center">
+                          <h2>Get more info about actual inventory</h2>
+                          <p>Fill simple form, our manager will contact you shortly</p>
+                      </div>
+                      <div class="form-tabs d-flex justify-content-center position-relative">
+                          <button class="tab-btn active" onclick="showForm('buy')">Buy a Car</button>
+                          <button class="tab-btn" onclick="showForm('consult')">Get a Consultation</button>
+                          <div class="tab-indicator"></div>
+                      </div>
+                      <form id="buy-form" class="form-content show grid-form">
+                          <div class="form-row">
+                              <input type="text" name="name" placeholder="Name*" required />
+                              <select class="lang-select" name="language" required>
+                                  <option value="" disabled selected>Language</option>
+                                  <option value="en">English</option>
+                                  <option value="fr">French</option>
+                                  <option value="es">Spanish</option>
+                              </select>
+                              <input type="tel" name="phone" placeholder="+9 000 000 0000" required />
+                          </div>
+                          <div class="form-row">
+                              <select name="mcore="messenger" required>
+                                  <option value="" disabled selected>Messenger</option>
+                                  <option value="whatsapp">WhatsApp</option>
+                                  <option value="telegram">Telegram</option>
+                              </select>
+                              <input type="text" name="nickname" placeholder="@nickname*" required />
+                          </div>
+                          <div class="form-row">
+                              <select name="model" required>
+                                  <option value="" disabled selected>Model*</option>
+                                  <option value="sedan">Sedan</option>
+                                  <option value="suv">SUV</option>
+                                  <option value="convertible">Convertible</option>
+                              </select>
+                              <select name="make" required>
+                                  <option value="" disabled selected>Make*</option>
+                                  <option value="toyota">Toyota</option>
+                                  <option value="ford">Ford</option>
+                                  <option value="bmw">BMW</option>
+                              </select>
+                          </div>
+                          <div class="form-row">
+                              <select name="color">
+                                  <option value="" disabled selected>Color</option>
+                                  <option value="black">Black</option>
+                                  <option value="white">White</option>
+                                  <option value="red">Red</option>
+                              </select>
+                              <select name="year">
+                                  <option value="" disabled selected>Year</option>
+                                  <option value="2021">2021</option>
+                                  <option value="2022">2022</option>
+                                  <option value="2023">2023</option>
+                              </select>
+                          </div>
+                          <div class="form-row">
+                              <select name="country" required class="full-width">
+                                  <option value="" disabled selected>Country of delivery*</option>
+                                  <option value="usa">United States</option>
+                                  <option value="canada">Canada</option>
+                                  <option value="uk">United Kingdom</option>
+                              </select>
+                          </div>
+                          <textarea placeholder="Type your comment here..." class="full-width"></textarea>
+                          <div class="form-row">
+                              <input type="checkbox" name="consent" required />
+                              <label>I consent to the processing of personal data</label>
+                          </div>
+                          <button type="submit" class="submit-btn full-width" disabled>Contact Me</button>
+                      </form>
+                      <form id="consult-form" class="form-content grid-form" style="display: none">
+                          <div class="form-row">
+                              <input type="text" name="name" placeholder="Name*" required />
+                              <input type="tel" name="phone" placeholder="+1 000 000 0000" required />
+                          </div>
+                          <textarea placeholder="Type your query here..." class="full-width"></textarea>
+                          <div class="form-row">
+                              <input type="checkbox" name="consent" required />
+                              <label>I consent to the processing of personal data</label>
+                          </div>
+                          <button type="submit" class="submit-btn full-width">Contact Me</button>
+                      </form>
+                  </div>
               </div>
-              <form id="buy-form" class="form-content show grid-form">
-                <div class="form-row">
-                    <input type="text" name="name" placeholder="Name*" required />
-                    <input type="tel" name="phone" placeholder="+1 000 000 0000" required />
-                </div>
-                <div class="form-row">
-                    <select name="messenger">
-                        <option value="whatsapp">WhatsApp</option>
-                        <option value="telegram">Telegram</option>
-                    </select>
-                    <input type="text" name="nickname" placeholder="@nickname*" required />
-                </div>
-                <div class="form-row">
-                    <select name="model"></select>
-                    <select name="make"></select>
-                </div>
-                <div class="form-row">
-                    <select name="color"></select>
-                    <select name="year"></select>
-                </div>
-                <div class="form-row">
-                    <select name="country" required class="full-width">
-                        <option value="usa">United States</option>
-                        <option value="canada">Canada</option>
-                    </select>
-                </div>
-                <textarea placeholder="Type your comment here..." class="full-width"></textarea>
-                <div class="form-row">
-                    <input type="checkbox" name="consent" required />
-                    <label>I consent to the processing of personal data</label>
-                </div>
-                <button type="submit" class="submit-btn full-width">Contact Me</button>
-            </form>
-            <form id="consult-form" class="form-content grid-form" style="display: none">
-                <div class="form-row">
-                    <input type="text" name="name" placeholder="Name*" required />
-                    <input type="tel" name="phone" placeholder="+1 000 000 0000" required />
-                </div>
-                <textarea placeholder="Type your query here..." class="full-width"></textarea>
-                <div class="form-row">
-                    <input type="checkbox" name="consent" required />
-                    <label>I consent to the processing of personal data</label>
-                </div>
-                <button type="submit" class="submit-btn full-width">Contact Me</button>
-            </form>
-            </div>
           </div>
-        </div>
       </div>
-    </div>
-    
+  </div>
+  
 
     <div class="premium-section">
       <h2><span class="highlight">CHOOSE US</span> FOR</br>PREMIUM BRANDS AT<br>LOWER MARKET PRICES</h2>
@@ -442,6 +471,10 @@
               <h2>3. WHICH LANGUAGE DO YOU PREFER?</h2>
             </div>
             <div class="quiz-answers">
+              <select class="form-select" required>
+                <option value="" disabled selected>Select an option</option>
+                <!-- Other options here -->
+            </select>
               <select class="form-select" aria-label="Default select example">
                 <option selected>Open this select menu</option>
                 <option value="1">One</option>
@@ -725,59 +758,67 @@
     </div>
 
   
-    
   <footer class="footer">
-    <div class="container-fluid">
-        <div class="row justify-content-between">
-            <div class="col-md-3 footer-logo-column">
-                <img src="assets/images/logo-white.png" alt="Canadian Cars" class="footer-logo">
-            </div>
-            <div class="col-md-9 footer-columns">
-                <div class="row justify-content-end">
-                    <div class="col-md-2 footer-column">
-                        <h5>Company</h5>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Why Choose us</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Visit website</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2 footer-column">
-                        <h5>Resources</h5>
-                        <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms and Condition</a></li>
-                            <li><a href="#">Video</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2 footer-column">
-                        <h5>Product</h5>
-                        <ul>
-                            <li><a href="#">Get an offer</a></li>
-                            <li><a href="#">Inventory</a></li>
-                            <li><a href="#">Our instagram</a></li>
-                            <li><a href="#">Export</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+  <div class="container-fluid">
+    <div class="row justify-content-between">
+      <div class="col-md-3 footer-logo-column">
+        <img src="assets/images/logo-white.png" alt="Canadian Cars" class="footer-logo">
+      </div>
+      <div class="col-md-9 footer-columns">
+        <div class="row justify-content-end">
+          <div class="col-md-2 footer-column">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Why Choose us</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Visit website</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 footer-column">
+            <h5>Resources</h5>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms and Condition</a></li>
+              <li><a href="#">Video</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-md-2 footer-column">
+            <h5>Product</h5>
+            <ul>
+              <li><a href="#">Get an offer</a></li>
+              <li><a href="#">Inventory</a></li>
+              <li><a href="#">Our instagram</a></li>
+              <li><a href="#">Export</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="row align-items-end justify-content-between footer-bottom">
-            <div class="col-md-3">
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Enter your Email" required>
-                    <button type="submit">SUBSCRIBE</button>
-                </form>
-            </div>
-            <div class="col-md-9 text-end">
-                <p>&copy; 2024 Canadian cars. All rights reserved</p>
-                <p><a href="#">Cookies</a> | <a href="#">Terms of use</a></p>
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="row align-items-center justify-content-between footer-subscription">
+      <div class="col-md-3">
+        <form class="newsletter-form">
+          <label for="newsletter-email" class="newsletter-label">Subscribe to our Newsletter</label>
+          <div class="form-group">
+            <input type="email" id="newsletter-email" placeholder="Enter your Email" required>
+            <button type="submit">SUBSCRIBE</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer-stripe"></div>
+    <div class="row align-items-center justify-content-between footer-bottom">
+      <div class="col-md-3 text-left">
+        <p>&copy; 2024 Canadian cars. All rights reserved</p>
+      </div>
+      <div class="col-md-9 text-end">
+        <p><a href="#">Cookies</a> | <a href="#">Terms of use</a></p>
+      </div>
+    </div>
+  </div>
 </footer>
+
 
 
     <script src="js/script.js"></script>

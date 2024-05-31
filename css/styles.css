@@ -9,13 +9,13 @@ body,
 html {
   font-family: "Arial", sans-serif;
   height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 body {
   display: flex;
   flex-direction: column;
   margin: 0;
+
 }
 
 main {
@@ -125,9 +125,10 @@ img,
   height: auto; /* Ensure it can grow beyond the minimum height if needed */
   overflow: hidden; /* Hide overflow content */
 }
+
 .grid-form {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for 1st row */
   gap: 10px;
 }
 
@@ -229,7 +230,6 @@ img,
   z-index: -1;
 }
 
-
 .btn-check-inventory:hover {
   background-color: rgba(255, 90, 0, 0.5);
   color: white;
@@ -282,6 +282,7 @@ img,
     margin-top: 20px; /* Вертикальный отступ между колонками */
   }
 }
+
 .form-content {
   display: grid;
   gap: 10px;
@@ -294,8 +295,8 @@ img,
 
 .form-row input,
 .form-row select {
-  flex: 1;
   padding: 10px;
+  padding-left: 10px;
   border-radius: 5px;
   border: none;
 }
@@ -309,9 +310,9 @@ img,
   margin-top: 10px;
   border-radius: 5px;
   border: none;
-  background: #333; /* Темный фон для полей ввода */
-  color: white; /* Белый текст */
-  border: 1px solid #444; /* Немного контраста */
+  background: none; /* Темный фон для полей ввода */
+  color: gray; /* Белый текст */
+  border: 1px solid #6CFFFD66; /* Немного контраста */
   box-shadow: none; /* Убрать тени */
 }
 
@@ -326,22 +327,42 @@ img,
   margin-top: 10px;
 }
 
-/* Стили для социальных ссылок */
+
+.form-content .submit-btn:disabled {
+  background-color: #ccc; /* Gray color */
+  color: #666;
+  cursor: not-allowed;
+}
+
+
+/* Styles for the form rows */
+.form-row .lang-select {
+  flex: 0 0 60px; /* Set a fixed width for the language select */
+}
+
+/* Optional styling for the flag icons in the select dropdown */
+.form-row .lang-select option {
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  padding-left: 25px; /* Add padding to the left to avoid text overlapping the flag */
+}
+
+/* Styles for the social links */
 .social-links img {
-  width: 30px; /* Унифицированный размер иконок */
-  margin-right: 10px; /* Отступ справа для иконок */
+  width: 30px; /* Unified icon size */
+  margin-right: 10px; /* Right margin for icons */
 }
 
 .social-links svg {
-  fill: white; /* Установите цвет заливки иконок */
-  transition: fill 0.3s; /* Плавный переход цвета при наведении */
+  fill: white; /* Set fill color for icons */
+  transition: fill 0.3s; /* Smooth color transition on hover */
 }
 
 .social-links a:hover svg {
-  fill: orange; /* Цвет при наведении */
+  fill: orange; /* Hover color */
 }
 
-/* Стили для вкладок формы */
+/* Styles for the form tabs */
 .tab-btn {
   flex-grow: 1;
   padding: 10px;
@@ -349,8 +370,8 @@ img,
   background-color: transparent;
   border: none;
   color: white;
-  height: 50px; /* Установите фиксированную высоту */
-  line-height: 30px; /* Выравнивание текста по центру */
+  height: 50px; /* Fixed height */
+  line-height: 30px; /* Align text vertically */
   width: 100px;
 }
 
@@ -360,7 +381,7 @@ img,
     rgba(255, 255, 255, 0.15) 0%,
     rgba(5, 6, 6, 0.15) 100%
   );
-  color: #fff; /* Текст активной вкладки */
+  color: #fff; /* Active tab text color */
 }
 
 .tab-indicator {
@@ -381,7 +402,6 @@ img,
   left: 50%; /* Move the indicator to under the second tab */
 }
 
-/* Кнопка с размытым фоном */
 .btn-check-inventory {
   position: relative;
   display: flex;
@@ -431,6 +451,9 @@ img,
   background-color: rgba(255, 90, 0, 0.5);
   color: white;
 }
+
+
+/* Hero Banner END */ 
 
 /* Дополнительные стили, если необходимо */
 .container-fluid {
@@ -1285,10 +1308,17 @@ img,
   background-color: #e65a00;
 }
 
+.hero .form-select {
+  color: gray; /* Set initial color to gray */
+}
+
+.hero .form-select:valid {
+  color: white; /* Set color to white once an option is selected */
+}
+
 .form-select {
   background-color: rgba(255, 255, 255, 0.1) !important; /* Прозрачный фон */
   border: 2px solid #6cfffd !important; /* Голубая обводка */
-  color: #fff !important; /* Голубой текст */
 }
 
 .form-select:focus {
@@ -1554,19 +1584,29 @@ img,
 
 .newsletter-form {
   display: flex;
-  flex-direction: row; /* Align input and button in a row */
+  flex-direction: column; /* Align elements in a column */
   width: 100%;
   max-width: 500px; /* Limit the maximum width */
   padding-left: 15px;
 }
 
+.newsletter-form label {
+  margin-bottom: 10px; /* Add margin below the label */
+  font-size: 16px; /* Adjust the font size */
+}
+
+.newsletter-form .form-group {
+  display: flex;
+  align-items: center;
+}
 
 .newsletter-form input {
   padding: 10px;
   border: none;
   border-radius: 5px 0 0 5px; /* Rounded corners on the left */
   font-size: 14px;
-  width: 70%; /* Adjust width */
+  flex: 1; /* Allow the input to take available space */
+  margin-bottom: 0; /* Remove margin below the input */
 }
 
 .newsletter-form button {
@@ -1577,25 +1617,26 @@ img,
   border-radius: 0 5px 5px 0; /* Rounded corners on the right */
   cursor: pointer;
   font-size: 14px;
-  width: 30%; /* Adjust width */
+  margin-bottom: 0; /* Remove margin below the button */
 }
 
 .newsletter-form button:hover {
   background-color: #e64a00;
 }
 
+.footer-stripe {
+  height: 2px;
+  background: linear-gradient(to right, transparent, #fff, transparent);
+  margin: 20px 0;
+}
+
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.5); /* Transparent border */
-  background: linear-gradient(
-    to right,
-    rgba(20, 20, 20, 1),
-    rgba(20, 20, 20, 0)
-  );
-  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px; /* Add padding below the content */
+  margin-top: 10px; /* Add margin top for the bottom text */
 }
 
 .footer-bottom p {
@@ -1610,4 +1651,10 @@ img,
 .footer-bottom a:hover {
   text-decoration: underline;
 }
+
+.footer-subscription {
+  margin-bottom: 20px; /* Add margin bottom for the subscription row */
+}
+
+
 /* Footer */

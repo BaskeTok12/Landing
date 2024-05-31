@@ -63,6 +63,11 @@ function updateIndexDisplay(current, total) {
   document.getElementById("gallery-index").textContent = `${current}/${total}`;
 }
 
+// Hero
+
+
+// Hero
+
 // Initial setup
 document.addEventListener("DOMContentLoaded", function () {
   const items = document.querySelectorAll(".gallery-item");
@@ -395,6 +400,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
   instagramPostsContainer.addEventListener('mouseenter', stopAutoScroll);
   instagramPostsContainer.addEventListener('mouseleave', startAutoScrollWithDelay);
 
-  // Start auto-scroll with delay when the page loads
-  startAutoScrollWithDelay();
 });
