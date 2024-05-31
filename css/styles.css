@@ -7,7 +7,7 @@
 /* Основные стили */
 body,
 html {
-  font-family: "Arial", sans-serif;
+  font-family: "Work Sans", sans-serif !important;
   height: 100%;
 }
 
@@ -74,8 +74,8 @@ img,
   position: absolute;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(to right, transparent, #fff, transparent);
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
   z-index: 1;
 }
 
@@ -301,9 +301,20 @@ img,
   border: none;
 }
 
+.form-content select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  background: none; /* Темный фон для полей ввода */
+  color: gray; /* Изначально серый текст */
+  border: 1px solid #6CFFFD66; /* Немного контраста */
+  box-shadow: none; /* Убрать тени */
+}
+
 .form-content input[type="text"],
 .form-content input[type="tel"],
-.form-content select,
 .form-content textarea {
   width: 100%;
   padding: 10px;
@@ -311,11 +322,15 @@ img,
   border-radius: 5px;
   border: none;
   background: none; /* Темный фон для полей ввода */
-  color: gray; /* Белый текст */
+  color: white; /* Белый текст */
   border: 1px solid #6CFFFD66; /* Немного контраста */
   box-shadow: none; /* Убрать тени */
 }
 
+
+.form-content select:valid {
+  color: white; /* Белый цвет текста, когда значение выбрано */
+}
 .form-content .submit-btn {
   width: 100%;
   background-color: orange;
@@ -327,6 +342,8 @@ img,
   margin-top: 10px;
 }
 
+/* Стиль для необязательных полей, когда они выбраны */
+
 
 .form-content .submit-btn:disabled {
   background-color: #ccc; /* Gray color */
@@ -334,10 +351,19 @@ img,
   cursor: not-allowed;
 }
 
-
 /* Styles for the form rows */
 .form-row .lang-select {
   flex: 0 0 60px; /* Set a fixed width for the language select */
+}
+
+.form-content select.optional:placeholder-shown {
+  color: gray !important; /* Приоритет для серого цвета текста */
+}
+
+
+/* Стили для необязательных полей, когда они выбраны */
+.form-content select.optional:not(:placeholder) {
+  color: white !important; /* Приоритет для белого цвета текста */
 }
 
 /* Optional styling for the flag icons in the select dropdown */
@@ -1308,8 +1334,13 @@ img,
   background-color: #e65a00;
 }
 
+.hero h1 {
+  font-size: 86px; /* Устанавливаем размер шрифта */
+  color: #B3B3B3; /* Устанавливаем цвет текста */
+}
+
 .hero .form-select {
-  color: gray; /* Set initial color to gray */
+  color: gray !important; /* Set initial color to gray */
 }
 
 .hero .form-select:valid {
@@ -1491,6 +1522,182 @@ img,
 
 
 /* Inst */
+
+/* Form2 */
+.split-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Full width */
+  background-image: url('../assets/images/contact-section-back.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200px 200px; /* Set the size of the background image */
+}
+
+.contact-section,
+.form-section {
+  flex: 1; /* Equal width for both sections */
+  padding: 20px;
+  display: flex;
+  align-items: flex-start; /* Align content to the start (left) */
+}
+
+.contact-section {
+  background-color: #F8F9FA;
+  display: flex;
+  justify-content: flex-start; /* Align the contact-wrapper to the left */
+  align-items: center; /* Center the contact-wrapper vertically */
+}
+
+.contact-wrapper {
+  width: 75%; /* Reduced width for the contact wrapper */
+  padding: 40px; /* Increased padding */
+  text-align: left; /* Align text to the left */
+  margin-left: 0; /* Ensure the wrapper starts from the left */
+}
+
+.form-section {
+  background-color: #FFFFFF;
+  padding: 20px; /* General padding */
+  display: flex;
+  justify-content: center; /* Center the form-wrapper */
+  align-items: center; /* Center the form-wrapper */
+}
+
+.form-wrapper {
+  width: 75%; /* Reduced width for the form wrapper */
+  padding: 40px; /* Increased padding */
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2, p {
+  text-align: center; /* Center text */
+}
+
+.contact-section h2 {
+  font-size: 54px;
+}
+
+.contact-section h2, p {
+  width: 100%; /* Full width for headers */
+  text-align: left;
+}
+
+button {
+  margin: 10px 0;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px; /* Smaller font size for buttons */
+}
+
+.telegram-button,
+.whatsapp-button {
+  width: 200px; /* Fixed width for buttons */
+  margin: 10px 0; /* Add vertical margin for spacing */
+  padding: 10px 20px;
+  font-size: 14px; /* Adjust font size */
+  display: block; /* Ensure buttons are block elements to stack them */
+}
+
+.telegram-button {
+  background-color: #0088cc;
+  color: white;
+}
+
+.whatsapp-button {
+  background-color: #25D366;
+  color: white;
+}
+
+form {
+  width: 100%; /* Full width for the form */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center form elements */
+}
+
+input[type="text"], input[type="tel"], select {
+  width: 100%; /* Full width for input fields */
+  padding: 10px; /* Uniform padding */
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Rounded corners */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+button[type="submit"] {
+  width: 100%; /* Full width for the submit button */
+  background-color: #FF5A00;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+}
+
+/* Add the following CSS for the grid-form layout */
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 10px;
+}
+
+.grid-form .full-width {
+  grid-column: 1 / -1; /* Span across all columns */
+}
+
+.form-row {
+  display: contents; /* Use contents to keep the grid layout */
+  gap: 10px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  grid-column: 1 / -1; /* Span across all columns */
+  gap: 10px;
+}
+
+.form-row input,
+.form-row select {
+  padding: 10px !important;
+  border-radius: 5px !important;
+  border: 1px solid #ccc; /* Consistent border style */
+  background: none; /* Clear background */
+  color: black; /* Black text */
+  width: 100% !important; /* Full width of the grid item */
+  box-sizing: border-box !important; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.form-content select:valid {
+  color: black; /* Black text when an option is selected */
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: orange;
+  color: black;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.submit-btn:disabled {
+  background-color: #ccc; /* Gray color */
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Form2 */
 
 /* Map */
 .map-container {

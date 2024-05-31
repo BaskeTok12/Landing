@@ -26,6 +26,25 @@ function showForm(formType) {
   }
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+  const selects = document.querySelectorAll('select');
+
+  // Проверка начального значения каждого select
+  selects.forEach(select => {
+    updateSelectColor(select);
+    select.addEventListener('change', function() {
+      updateSelectColor(this);
+    });
+  });
+
+  function updateSelectColor(selectElement) {
+    if (selectElement.value) {
+      selectElement.classList.add('color-selected');
+    } else {
+      selectElement.classList.remove('color-selected');
+    }
+  }
+});
 // Инициализация первоначальной формы при загрузке страницы
 document.addEventListener("DOMContentLoaded", function () {
   showForm("buy"); // По умолчанию показываем форму 'Buy a Car'
@@ -69,17 +88,6 @@ function updateIndexDisplay(current, total) {
 // Hero
 
 // Initial setup
-document.addEventListener("DOMContentLoaded", function () {
-  const items = document.querySelectorAll(".gallery-item");
-  if (items.length > 0) {
-    items[0].scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "start",
-    });
-    updateIndexDisplay(1, items.length);
-  }
-});
 
 function updateGalleryPosition() {
   const slider = document.querySelector(".gallery-slider");

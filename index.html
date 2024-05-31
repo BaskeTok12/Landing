@@ -8,6 +8,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
   </head>
@@ -68,13 +69,14 @@
     <div class="hero">
       <div class="container-fluid h-100">
           <div class="row h-100">
-              <div class="col-lg-8 d-flex flex-column justify-content-center">
-                  <h1>CANADIAN CARS GLOBAL AUTO EXPORTER</h1>
-                  <div class="hero-content">
-                      <p>Explore over 500 exquisite cars, supercars, SSSH vehicles and certified used cars directly from Canadian manufacturers in one click</p>
-                      <a href="inventory.html" class="btn-check-inventory">Check Inventory</a>
-                  </div>
+            <div class="col-lg-8 d-flex flex-column justify-content-center">
+              <h1>CANADIAN CARS</h1>
+              <h2>GLOBAL AUTO EXPORTER</h2>
+              <div class="hero-content">
+                  <p>Explore over 500 exquisite cars, supercars, SSSH vehicles and certified used cars directly from Canadian manufacturers in one click</p>
+                  <a href="inventory.html" class="btn-check-inventory">Check Inventory</a>
               </div>
+          </div>
               <div class="col-lg-4 text-white d-flex align-items-center p-0">
                   <div class="contact-form w-100">
                       <div class="form-header text-center">
@@ -90,7 +92,7 @@
                           <div class="form-row">
                               <input type="text" name="name" placeholder="Name*" required />
                               <select class="lang-select" name="language" required>
-                                  <option value="" disabled selected>Language</option>
+                                  <option value="" disabled selected hidden>Language</option>
                                   <option value="en">English</option>
                                   <option value="fr">French</option>
                                   <option value="es">Spanish</option>
@@ -98,8 +100,8 @@
                               <input type="tel" name="phone" placeholder="+9 000 000 0000" required />
                           </div>
                           <div class="form-row">
-                              <select name="mcore="messenger" required>
-                                  <option value="" disabled selected>Messenger</option>
+                              <select name="messenger" required>
+                                  <option value="" disabled selected hidden>Messenger</option>
                                   <option value="whatsapp">WhatsApp</option>
                                   <option value="telegram">Telegram</option>
                               </select>
@@ -107,31 +109,32 @@
                           </div>
                           <div class="form-row">
                               <select name="model" required>
-                                  <option value="" disabled selected>Model*</option>
+                                  <option value="" disabled selected hidden>Model*</option>
                                   <option value="sedan">Sedan</option>
                                   <option value="suv">SUV</option>
                                   <option value="convertible">Convertible</option>
                               </select>
                               <select name="make" required>
-                                  <option value="" disabled selected>Make*</option>
+                                  <option value="" disabled selected hidden>Make*</option>
                                   <option value="toyota">Toyota</option>
                                   <option value="ford">Ford</option>
                                   <option value="bmw">BMW</option>
                               </select>
                           </div>
                           <div class="form-row">
-                              <select name="color">
-                                  <option value="" disabled selected>Color</option>
-                                  <option value="black">Black</option>
-                                  <option value="white">White</option>
-                                  <option value="red">Red</option>
-                              </select>
-                              <select name="year">
-                                  <option value="" disabled selected>Year</option>
-                                  <option value="2021">2021</option>
-                                  <option value="2022">2022</option>
-                                  <option value="2023">2023</option>
-                              </select>
+                            <select name="color" class="optional">
+                              <option value="" disabled selected hidden>Color</option>
+                              <option value="black">Black</option>
+                              <option value="white">White</option>
+                              <option value="red">Red</option>
+                            </select>
+                            
+                            <select name="year" class="optional">
+                              <option value="" disabled selected hidden>Year</option>
+                              <option value="2021">2021</option>
+                              <option value="2022">2022</option>
+                              <option value="2023">2023</option>
+                            </select>
                           </div>
                           <div class="form-row">
                               <select name="country" required class="full-width">
@@ -146,30 +149,40 @@
                               <input type="checkbox" name="consent" required />
                               <label>I consent to the processing of personal data</label>
                           </div>
-                          <button type="submit" class="submit-btn full-width" disabled>Contact Me</button>
+                          <button type="submit" class="submit-btn full-width">Contact Me</button>
                       </form>
                       <form id="consult-form" class="form-content grid-form" style="display: none">
+                        <div class="form-row">
+                          <input type="text" name="name" placeholder="Name" required />
+             
+                          <select class="lang-select" name="language" required>
+                              <option value="" disabled selected hidden>Language</option>
+                              <option value="en">English</option>
+                              <option value="fr">French</option>
+                              <option value="es">Spanish</option>
+                          </select>
+                          <input type="tel" name="phone" placeholder="+9 000 000 0000" required />
+                      </div>
                           <div class="form-row">
-                              <input type="text" name="name" placeholder="Name*" required />
-                              <input type="tel" name="phone" placeholder="+1 000 000 0000" required />
-                          </div>
-                          <textarea placeholder="Type your query here..." class="full-width"></textarea>
-                          <div class="form-row">
-                              <input type="checkbox" name="consent" required />
-                              <label>I consent to the processing of personal data</label>
-                          </div>
+                            <select name="messenger" required>
+                                <option value="" disabled selected hidden>Messenger</option>
+                                <option value="whatsapp">WhatsApp</option>
+                                <option value="telegram">Telegram</option>
+                            </select>
+                            <input type="text" name="nickname" placeholder="@nickname*" required />
+                        </div>
                           <button type="submit" class="submit-btn full-width">Contact Me</button>
                       </form>
                   </div>
               </div>
           </div>
-      </div>
-  </div>
-  
-
-    <div class="premium-section">
-      <h2><span class="highlight">CHOOSE US</span> FOR</br>PREMIUM BRANDS AT<br>LOWER MARKET PRICES</h2>
-      <div class="features">
+      </div> 
+  </div> 
+   
+ 
+    <div class="premium-section"> 
+      <h2><span class="highlight">CHOOSE US</span> FOR</br>PREMIUM BRANDS  AT<br>LOWER MARKET PRICES</h2>
+      <div class="features"> 
         <div class="feature-column-left">
           <div class="feature">
             <img src="assets/images/premium-img-1.png" alt="Feature 3" />
@@ -745,6 +758,61 @@
         </div>
       </div>
     </div>
+
+    <div class="split-container">
+      <div class="contact-section">
+        <div class="contact-wrapper">
+          <h2>Contact us</h2>
+          <p>If you require assistance or support, our team is ready to help.</p>
+          <h4>Call center working hours</h4>
+          <p>MON-SUN: 24/7</p>
+          <p>
+            <img src="assets/icons/phone-icon.svg" alt="Phone" style="height: 24px; margin-right: 10px;">
+            +1 514 294 7198
+          </p>
+          <p>
+            <img src="assets/icons/phone-icon.svg" alt="Phone" style="height: 24px; margin-right: 10px;">
+            +1 267 282 6010
+          </p>
+          <h4>Contact our customer support at</h4>
+          <button class="telegram-button"><i class="fab fa-telegram-plane"></i> Telegram</button>
+          <button class="whatsapp-button"><i class="fab fa-whatsapp"></i> Whatsapp</button>
+        </div>
+      </div>
+      <div class="form-section">
+        <div class="form-wrapper">
+          <h2>Get more info about actual inventory, delivery etc.</h2>
+          <p>Fill simple form, our manager will contact you shortly</p>
+          <form id="consultation-form" class="grid-form">
+            <div class="form-row">
+              <input type="text" name="name" placeholder="Name*" required />
+              <select class="lang-select" name="language" required>
+                <option value="" disabled selected hidden>Language</option>
+                <option value="en">English</option>
+                <option value="fr">French</option>
+                <option value="es">Spanish</option>
+              </select>
+              <input type="tel" name="phone" placeholder="+9 000 000 0000" required />
+            </div>
+            <div class="form-row">
+              <select name="messenger" required>
+                <option value="" disabled selected hidden>Messenger</option>
+                <option value="whatsapp">WhatsApp</option>
+                <option value="telegram">Telegram</option>
+              </select>
+              <input type="text" name="nickname" placeholder="@nickname*" required />
+            </div>
+            <div class="form-row checkbox-row">
+              <input type="checkbox" name="consent" required />
+              <label>I consent to the processing of personal data</label>
+            </div>
+            <button type="submit" class="submit-btn full-width">Get A Consultation</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    
     
     <div class="map-container">
       <div class="map-responsive">
@@ -757,7 +825,6 @@
       </div>
     </div>
 
-  
   <footer class="footer">
   <div class="container-fluid">
     <div class="row justify-content-between">
@@ -818,8 +885,6 @@
     </div>
   </div>
 </footer>
-
-
 
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
