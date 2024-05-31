@@ -1364,6 +1364,14 @@ img,
   margin-bottom: 10px;
 }
 
+.faq-header h2 {
+  font-size: 54px;
+}
+
+faq-header h2 {
+  font-size: 16px;
+}
+
 .faq-container {
   width: 100%;
   background-color: #f8f9fa;
@@ -1386,20 +1394,56 @@ img,
 .accordion-button {
   font-size: 1rem;
   font-weight: bold;
-  color: #fff !important; /* Ensure the color is black */
-  background-color: #141414 !important; /* Ensure the background color is black */
+  color: #fff !important; /* Изначально белый текст */
+  background-color: #141414 !important; /* Изначально темный фон */
   border: none;
-}
-.accordion-button:after {
-  content: "+"; /* Default content for the closed state */
-  position: absolute;
-  right: 20px;
-  font-size: 1.2rem;
-  color: #fff; /* White color for the icon */
+  transition: background-color 0.3s, color 0.3s;
+  position: relative;
 }
 
-.accordion-button:not(.collapsed):after {
-  content: "-"; /* Content for the open state */
+.accordion-button.collapsed {
+  background-color: #141414 !important; /* Темный фон для свернутых кнопок */
+  color: #fff !important; /* Белый текст для свернутых кнопок */
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #141414 !important; /* Темный фон для открытых кнопок */
+  color: #fff !important; /* Белый текст для открытых кнопок */
+}
+
+.accordion-button:not(.collapsed)::after {
+transform: none !important;
+}
+
+.accordion-button::after {
+  content: "+" !important; /* Плюс по умолчанию */
+  background-image: none !important;
+  right: 20px;
+  top: 50%; /* Центрирование по вертикали */
+  font-size: 1.5rem;
+  color: #fff !important; /* Белый цвет для иконки */
+  transition: transform 0.3s ease;
+  flex-shrink: 0 !important;
+  height: auto !important;
+  margin-left: auto !important;
+  background-size: 0 !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+  content: "-" !important; /* Минус, когда секция раскрыта */
+  color: #fff !important; /* Белый цвет для иконки при открытом состоянии */
+}
+
+/* Убираем выделение вокруг кнопки аккордеона при фокусе */
+.accordion-button:focus {
+  z-index: 3;
+  border-color: transparent !important; /* Убираем обводку */
+  outline: 0 !important;
+  box-shadow: none !important; /* Убираем тень */
+}
+
+.accordion-item {
+  margin-bottom: 10px;
 }
 
 .accordion-body {
@@ -1407,9 +1451,14 @@ img,
   line-height: 1.6;
 }
 
-.accordion-item {
-  margin-bottom: 10px;
+.accordion-button:focus {
+  z-index: 3;
+  border-color: transparent !important; /* Убираем обводку */
+  outline: 0 !important;
+  box-shadow: none !important; /* Убираем тень */
 }
+
+
 /* Faq */
 
 /* carousel */
@@ -1528,10 +1577,14 @@ img,
   display: flex;
   justify-content: space-between;
   width: 100%; /* Full width */
+}
+
+.split-container {
   background-image: url('../assets/images/contact-section-back.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 200px 200px; /* Set the size of the background image */
+
 }
 
 .contact-section,
@@ -1549,12 +1602,15 @@ img,
   align-items: center; /* Center the contact-wrapper vertically */
 }
 
+
 .contact-wrapper {
   width: 75%; /* Reduced width for the contact wrapper */
   padding: 40px; /* Increased padding */
   text-align: left; /* Align text to the left */
   margin-left: 0; /* Ensure the wrapper starts from the left */
 }
+
+
 
 .form-section {
   background-color: #FFFFFF;
@@ -1576,10 +1632,10 @@ img,
   text-align: center; /* Center text */
 }
 
+
 .contact-section h2 {
   font-size: 54px;
 }
-
 .contact-section h2, p {
   width: 100%; /* Full width for headers */
   text-align: left;
@@ -1621,11 +1677,9 @@ form {
 
 input[type="text"], input[type="tel"], select {
   width: 100%; /* Full width for input fields */
-  padding: 10px; /* Uniform padding */
+  padding: 8px; /* Reduced padding */
   margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px; /* Rounded corners */
-  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
 
 input[type="checkbox"] {
@@ -1636,66 +1690,8 @@ button[type="submit"] {
   width: 100%; /* Full width for the submit button */
   background-color: #FF5A00;
   color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer;
 }
 
-/* Add the following CSS for the grid-form layout */
-.grid-form {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 10px;
-}
-
-.grid-form .full-width {
-  grid-column: 1 / -1; /* Span across all columns */
-}
-
-.form-row {
-  display: contents; /* Use contents to keep the grid layout */
-  gap: 10px;
-}
-
-.checkbox-row {
-  display: flex;
-  align-items: center;
-  grid-column: 1 / -1; /* Span across all columns */
-  gap: 10px;
-}
-
-.form-row input,
-.form-row select {
-  padding: 10px !important;
-  border-radius: 5px !important;
-  border: 1px solid #ccc; /* Consistent border style */
-  background: none; /* Clear background */
-  color: black; /* Black text */
-  width: 100% !important; /* Full width of the grid item */
-  box-sizing: border-box !important; /* Ensure padding and border are included in the element's total width and height */
-}
-
-.form-content select:valid {
-  color: black; /* Black text when an option is selected */
-}
-
-.submit-btn {
-  width: 100%;
-  background-color: orange;
-  color: black;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-.submit-btn:disabled {
-  background-color: #ccc; /* Gray color */
-  color: #666;
-  cursor: not-allowed;
-}
 
 /* Form2 */
 
