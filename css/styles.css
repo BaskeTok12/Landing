@@ -1085,10 +1085,18 @@ img,
 /* Modal */
 
 .consultation-block {
-  background-color: #fff; /* Фоновый оранжевый цвет */
+  position: relative; /* Относительное позиционирование для позиционирования фона */
+  background-color: #fff; /* Фоновый цвет */
   color: white; /* Цвет текста */
-  padding: 40px 20px; /* Отступы вокруг содержимого */ /* Центрирование текста */
-  position: relative; /* Относительное позиционирование для позиционирования кнопки */
+  padding: 40px 20px; /* Отступы вокруг содержимого */
+  text-align: left; /* Выравнивание текста по левому краю */
+  justify-content: center; /* Центрирование по горизонтали */
+}
+
+.consultation-content {
+  max-width: 80%; /* Максимальная ширина контента */
+  margin: 0 auto; /* Центрирование контента */
+  
 }
 
 .consultation-block p {
@@ -1097,26 +1105,31 @@ img,
 
 .consultation-text {
   color: #000;
-  text-align: center;
+  text-align: left;
   font-size: 54px;
+  font-weight: bold; /* Жирный текст */
+}
+
+.consultation-text span {
+  color: #ff5a00;
 }
 
 .centered-text {
   color: #000;
-  padding-left: 50%;
   font-size: 54px;
-  /* Смещает начало текста с середины элемента */
+  font-weight: bold;
+  margin-left: 20%; /* Отступ слева для начала с середины */
 }
 
 .consultation-description {
   margin-top: 10px;
   color: #000;
-  padding-left: 50%;
   font-size: 16px;
+  margin-left: 20%; /* Отступ слева для начала с середины */
 }
 
 .consultation-block button {
-  margin-left: 50%;
+  margin-left: 20%; /* Смещает кнопку к середине элемента */
   margin-top: 20px;
   font-size: 16px; /* Размер шрифта текста кнопки */
   background-color: #ff5a00; /* Оранжевый фон кнопки */
@@ -1132,17 +1145,14 @@ img,
 }
 
 .consultation-background-image {
-  color: #000;
-  width: 1389px;
-  height: 690px;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
   background-size: cover;
   background-position: center;
-  transform: rotate(55deg); /* Поворот на -55 градусов */
+  transform: rotate(55deg); /* Поворот на 55 градусов */
   transform-origin: center; /* Центр вращения */
   z-index: -1;
 }
@@ -1460,8 +1470,31 @@ transform: none !important;
 
 
 /* Faq */
+/* carousel */
 
 /* carousel */
+.carousel-item {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.carousel-item iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.carousel-item .ytp-cued-thumbnail-overlay-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover; /* Ensures the image covers the whole area */
+}
+
 .video-carousel-container {
   background-color: #141414;
   color: white;
@@ -1471,16 +1504,30 @@ transform: none !important;
 .video-carousel-header h2 {
   font-size: 60px;
   font-weight: bold;
-  color: #b3b3b3;
+  margin: 0;
 }
 
-.indent-text {
-  margin-left: 50px; /* Adjust the value as needed to start the text from the middle */
+.video-carousel-header .highlight {
+  color: #D3D3D3;
+}
+
+.video-carousel-header .trusted, 
+.video-carousel-header .car-buying, 
+.video-carousel-header .partner {
+  color: #FFFFFF;
 }
 
 .video-carousel-header .description {
   color: orange;
-  margin-left: 50px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.carousel-inner-wrapper {
+  border: 2px solid;
+  border-image: linear-gradient(to right, #D3D3D3, #141414) 1;
+  border-radius: 10px; /* Добавьте это для скругления углов */
+  overflow: hidden; /* Добавьте это, чтобы обрезать содержимое внутри скругленных углов */
 }
 
 .carousel-inner {
@@ -1517,8 +1564,11 @@ transform: none !important;
   color: white;
   margin: 0 10px;
 }
+/* carousel */
+
 
 /* carousel */
+
 
 /* Inst */
 
