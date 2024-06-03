@@ -1089,25 +1089,25 @@ img,
   background-color: #fff; /* Фоновый цвет */
   color: white; /* Цвет текста */
   padding: 40px 20px; /* Отступы вокруг содержимого */
-  text-align: left; /* Выравнивание текста по левому краю */
-  justify-content: center; /* Центрирование по горизонтали */
+
 }
 
 .consultation-content {
-  max-width: 80%; /* Максимальная ширина контента */
+  max-width:60%; /* Максимальная ширина контента */
   margin: 0 auto; /* Центрирование контента */
   
 }
 
-.consultation-block p {
+.consultation-block h2 {
   margin: 0;
+
 }
 
 .consultation-text {
   color: #000;
-  text-align: left;
   font-size: 54px;
   font-weight: bold; /* Жирный текст */
+  text-align: center;
 }
 
 .consultation-text span {
@@ -1118,18 +1118,18 @@ img,
   color: #000;
   font-size: 54px;
   font-weight: bold;
-  margin-left: 20%; /* Отступ слева для начала с середины */
+  margin-left: 50%; /* Отступ слева для начала с середины */
 }
 
 .consultation-description {
   margin-top: 10px;
   color: #000;
   font-size: 16px;
-  margin-left: 20%; /* Отступ слева для начала с середины */
+  margin-left: 50%; /* Отступ слева для начала с середины */
 }
 
 .consultation-block button {
-  margin-left: 20%; /* Смещает кнопку к середине элемента */
+  margin-left: 50%; /* Смещает кнопку к середине элемента */
   margin-top: 20px;
   font-size: 16px; /* Размер шрифта текста кнопки */
   background-color: #ff5a00; /* Оранжевый фон кнопки */
@@ -1177,7 +1177,7 @@ img,
 .quiz-container {
   background: url("../assets/images/bg-elements.png") no-repeat center center /
     cover;
-  background-size: 50%;
+  background-size: 60%;
   display: flex;
   justify-content: center; /* Центрирование по горизонтали */
   align-items: center; /* Центрирование по вертикали */
@@ -1220,24 +1220,25 @@ img,
 
 .speedometer-container {
   display: flex;
-  position: relative;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   max-width: 600px;
-  height: 500px; /* Установите размеры подходящие под ваше изображение */
-  justify-content: center;
-  text-align: center;
+  height: auto;
   padding: 50px;
+  box-sizing: border-box;
 }
 
 .speedometer {
   width: 100%;
   height: auto; /* Сохраняем пропорции */
+  max-width: 100%; /* Ограничиваем максимальную ширину */
 }
 
 .needle {
   position: absolute;
-  bottom: 40%; /* Slightly lower, adjust this value based on your speedometer's design */
-  left: 50%; /* Centers the needle horizontally */
+  bottom: 40%; /* Adjust this value based on your speedometer's design */
+  left: 50%;
   width: 4px; /* Width of the needle */
   height: 40%; /* Height can remain the same unless you need other adjustments */
   background-color: #fff; /* Color of the needle */
@@ -1246,18 +1247,20 @@ img,
   transition: transform 1s ease-in-out; /* Smooth transition for rotation */
 }
 
+
+
+
 .quiz-content-container {
-  position: relative; /* Добавление относительного позиционирования */
-  flex: 1;
+  position: relative; /* For relative positioning */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   justify-content: space-between;
-  width: 100%;
-  margin-right: 100px; /* Проверьте, нужен ли этот отступ */
+  width: 100%; /* Full width */
+  max-width: 600px; /* Maximum width */
+  margin: 0 auto; /* Center the container */
 }
-
 .quiz-content {
   display: flex;
   flex-direction: column;
@@ -1660,6 +1663,10 @@ transform: none !important;
   margin-left: 0; /* Ensure the wrapper starts from the left */
 }
 
+.contact-section p {
+  text-align: left !important;
+}
+
 
 
 .form-section {
@@ -1678,17 +1685,13 @@ transform: none !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-section h2, p {
-  text-align: center; /* Center text */
-}
-
 
 .contact-section h2 {
   font-size: 54px;
 }
+
 .contact-section h2, p {
   width: 100%; /* Full width for headers */
-  text-align: left;
 }
 
 button {
