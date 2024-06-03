@@ -96,16 +96,51 @@ img,
 .hero {
   background: url("../assets/images/background.png") no-repeat center center /
     cover;
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    color: white; /* Цвет текста по умолчанию */
+  }
+
+  .hero-title {
+    width: 100%;
+    text-align: left; /* Выровнять заголовок по левому краю */
+    font-size: 86px; /* Размер шрифта */
+    color: #B3B3B3; /* Цвет текста */
+    font-weight: bold;
+  }
+
+  .hero-text {
+    flex: 1;
+  }
+  .hero p {
+    max-width: 600px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  .hero span.highlight
+  {
+    color: #FF5A00;
+  }
+  .hero h2{
+    max-width: 600px;
+    font-size: 60px;
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+
+.hero-content p {
+  max-width: 600px; /* Устанавливаем максимальную ширину для текста */
+  margin-bottom: 20px; /* Добавляем отступ снизу */
+  color: #fff; /* Цвет текста */
 }
 
 .hero-content {
   display: flex;
-  justify-content: space-between; /* This spreads the text and button apart */
-  align-items: center; /* Align items vertically */
+  align-items: center;
+  gap: 20px;
 }
 
 #buy-form,
@@ -186,21 +221,19 @@ img,
 }
 
 .btn-check-inventory {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10em; /* Установите фиксированную ширину */
-  aspect-ratio: 1 / 1; /* Соотношение сторон 1:1 для создания круга */
+  width: 146px;
+  height: 146px;
   color: white;
   border: 2px solid #ff5a00;
-  font-size: 1em; /* Размер шрифта */
+  font-size: 14px;
   cursor: pointer;
-  border-radius: 50%; /* Скруглённые углы */
+  border-radius: 50%;
   text-transform: uppercase;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
-  margin-top: 20px;
   overflow: hidden;
   z-index: 1;
 }
@@ -208,10 +241,10 @@ img,
 .btn-check-inventory::before {
   content: "";
   position: absolute;
-  top: -0.5em;
-  left: -0.5em;
-  width: calc(100% + 1em); /* Немного больше, чем основной размер кнопки */
-  height: calc(100% + 1em); /* Немного больше, чем основной размер кнопки */
+  top: -5px;
+  left: -5px;
+  width: 156px;
+  height: 156px;
   border: 2px solid #ff5a00;
   border-radius: 50%;
   z-index: -1;
@@ -242,13 +275,15 @@ img,
 }
 
 /* Стили для планшетов */
-@media (max-width: 768px) {
-  .navbar {
+
+@media (max-width: 992px) {
+  .hero {
     flex-direction: column;
-    padding: 10px;
+    justify-content: flex-start;
+    text-align: center;
   }
-  .navbar ul {
-    flex-direction: column;
+  .btn-check-inventory {
+    margin-top: 20px;
   }
 }
 
@@ -336,7 +371,7 @@ img,
 }
 .form-content .submit-btn {
   width: 100%;
-  background-color: orange;
+  background-color: #FF5A00;
   color: black;
   border: none;
   padding: 10px;
@@ -364,23 +399,27 @@ img,
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 100%;
-  height: 40px; /* Adjust height as needed */
+  height: 40px;
   background: transparent;
-  border: 1px solid #6CFFFD66; /* Border styling */
-  padding-left: 10px; /* Add padding if needed */
-  color: transparent; /* Hide text */
-  background-image: none; /* Remove default arrow */
+  border: 1px solid #6CFFFD66;
+  padding-left: 40px; /* Оставляем место для иконки */
+  color: transparent; /* Hide the text in the select */
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  background-position: 10px center; /* Position the icon */
+  background-size: 20px 20px;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
+.lang-select color-selected{
+  color: transparent!important;
+}
 
 .lang-select option {
+  color: white;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left 10px center;
   background-size: 20px 20px; /* Adjust size as needed */
-  text-indent: -9999px; /* Hide text */
+  text-indent: 30px; /* Hide text and ensure it doesn't overlap icon */
 }
 
 .lang-select:focus {
@@ -543,17 +582,19 @@ img,
   padding: 20px;
   font-size: 54px;
   margin-bottom: 20px;
+  font-weight: bo;
 }
+
 
 .features {
   display: flex;
-  justify-content: space-around;
-  align-items: start; /* Адаптация выравнивания для различных начал столбцов */
+  justify-content: space-between; /* Distributes space between columns */
+  align-items: flex-start; /* Адаптация выравнивания для различных начал столбцов */
 }
 
 .feature-column-left,
 .feature-column-right {
-  display: flex;
+  flex: 1; /* Each column takes equal space */
   flex-direction: column;
 }
 
@@ -578,19 +619,19 @@ img,
 }
 
 .feature-column-left .feature:nth-child(1) img {
-  transform: scale(1); /* Увеличиваем первое изображение */
+  transform: scale(1.2); /* Увеличиваем первое изображение */
 }
 
 .feature-column-left .feature:nth-child(2) img {
-  transform: scale(0.8); /* Уменьшаем второе изображение */
+  transform: scale(1); /* Уменьшаем второе изображение */
 }
 
 .feature-column-right .feature:nth-child(1) img {
-  transform: scale(1.1); /* Уменьшаем третье изображение */
+  transform: scale(1.3); /* Уменьшаем третье изображение */
 }
 
 .feature-column-right .feature:nth-child(2) img {
-  transform: scale(0.9); /* Уменьшаем четвертое изображение */
+  transform: scale(1.1); /* Уменьшаем четвертое изображение */
 }
 
 .feature-info {
@@ -601,7 +642,9 @@ img,
 
 .feature-info h3 {
   font-size: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .feature-info p {

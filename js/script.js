@@ -27,35 +27,35 @@ function showForm(formType) {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const select = document.querySelector('.lang-select');
-  const options = select.querySelectorAll('option');
+ document.addEventListener('DOMContentLoaded', () => {
+      const select = document.querySelector('.lang-select');
+      const options = select.querySelectorAll('option');
 
-  // Set initial icon based on the selected option or default
-  const initialIcon = options[select.selectedIndex].getAttribute('data-icon');
-  select.style.backgroundImage = `url(${initialIcon})`;
-  select.style.backgroundRepeat = 'no-repeat';
-  select.style.backgroundPosition = 'center';
-  select.style.backgroundSize = 'contain';
+      // Set initial icon based on the selected option or default
+      const initialIcon = options[select.selectedIndex].getAttribute('data-icon');
+      select.style.backgroundImage = `url(${initialIcon})`;
+      select.style.backgroundRepeat = 'no-repeat';
+      select.style.backgroundPosition = 'center';
+      select.style.backgroundSize = 'contain';
 
-  options.forEach(option => {
-    const icon = option.getAttribute('data-icon');
-    if (icon) {
-      const img = new Image();
-      img.src = icon;
-      img.style.width = '20px';
-      img.style.height = '20px';
-      img.style.objectFit = 'cover';
-      option.appendChild(img);
-    }
-  });
+      options.forEach(option => {
+        const icon = option.getAttribute('data-icon');
+        if (icon) {
+          const img = new Image();
+          img.src = icon;
+          img.style.width = '20px';
+          img.style.height = '20px';
+          img.style.objectFit = 'cover';
+          option.appendChild(img);
+        }
+      });
 
-  select.addEventListener('change', (e) => {
-    const selectedOption = options[select.selectedIndex];
-    const icon = selectedOption.getAttribute('data-icon');
-    select.style.backgroundImage = `url(${icon})`;
-  });
-});
+      select.addEventListener('change', (e) => {
+        const selectedOption = options[select.selectedIndex];
+        const icon = selectedOption.getAttribute('data-icon');
+        select.style.backgroundImage = `url(${icon})`;
+      });
+    });
 document.addEventListener('DOMContentLoaded', function() {
   const selects = document.querySelectorAll('select');
 
