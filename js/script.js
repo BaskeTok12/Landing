@@ -85,7 +85,8 @@ function updateIndexDisplay(current, total) {
 // Hero
 function endQuiz() {
   // Implement any actions to take place when the quiz ends, such as hiding the quiz container or showing a message
-  alert("Quiz completed!");
+  const faqSection = document.querySelector('.container-fluid.mt-5');
+  faqSection.scrollIntoView({ behavior: 'smooth' });
 }
 
 
@@ -183,12 +184,40 @@ function nextStage() {
   currentStage++;
   if (currentStage <= totalStages) {
     showStage(currentStage);
+    updateProgress(currentStage / totalStages * 100);
   } else {
     console.log("Quiz completed");
     // Here you might finalize the quiz, show results, etc.
+    
   }
+  
 }
 
+function toggleDropdown(element) {
+  element.querySelector(".select-items").classList.toggle("select-hide");
+}
+
+function selectItem(element, value) {
+  var selected = element.closest(".custom-select").querySelector(".select-selected");
+  selected.innerHTML = element.innerHTML; // Update the displayed value
+  toggleDropdown(element.closest(".custom-select"));
+
+  var hiddenInput = document.getElementById('language-input');
+  hiddenInput.value = value; // Update the hidden input value
+
+  // Optionally trigger other actions when language changes
+  updateQuizLanguage(value); // Example function to handle language-specific logic
+}
+
+function updateQuizLanguage(language) {
+  console.log("Language selected: " + language);
+  // Implement any additional logic needed for language change
+}
+
+function updateProgress(percent) {
+  const progressBarFill = document.querySelector('.progress-fill');
+  progressBarFill.style.width = percent + '%';
+}
 document.querySelectorAll(".quiz-answers .answer-button").forEach((button) => {
   button.addEventListener("click", function () {
     const parent = this.parentNode;

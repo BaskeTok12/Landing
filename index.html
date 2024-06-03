@@ -310,7 +310,7 @@
         </div>
       </div>
       <div class="test-drive-container">
-        <span class="test-drive-text">Click here to schedule a test drive and get started on your B2B fleet upgrade today!</span>
+        <span class="test-drive-text">Click here to get a personalized offer from our expert and get started on your B2B fleet upgrade today!</span>
         <img src="assets/icons/test-drive-arrow.svg" alt="Arrow" class="arrow-icon">
         <a href="inventory.html" class="btn-test-drive">Test Drive</a>
       </div>
@@ -407,15 +407,11 @@
         </div>
         <div class="quiz-content-container">
           <div class="quiz-intro">
-            <h1>
-              DISCOVER YOUR <br />
-              PERFECT CAR IN <br />
-              4 SIMPLE STEPS
-            </h1>
-            <p>
-              Answer these simple questions to receive <br />
-              personalised offer from our expert.
-            </p>
+            <h1>DISCOVER YOUR <br /> PERFECT CAR IN <br /> 4 SIMPLE STEPS</h1>
+            <p>Answer these simple questions to receive <br /> personalised offer from our expert.</p>
+            <div class="start-arrow">
+              <img src="assets/icons/test-drive-arrow.svg" alt="Arrow pointing to Start button">
+            </div>
             <button class="start-button" onclick="startQuiz()">START</button>
           </div>
           <div class="quiz-content" id="quiz-stage-1" style="display: none">
@@ -469,16 +465,19 @@
               <h2>3. WHICH LANGUAGE DO YOU PREFER?</h2>
             </div>
             <div class="quiz-answers">
-              <select class="form-select" required>
-                <option value="" disabled selected>Select an option</option>
-                <!-- Other options here -->
-            </select>
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
+              <div class="custom-select-wrapper">
+                <input type="hidden" id="language-input" value="en"> <!-- Hidden input for form submission -->
+                <div class="custom-select form-select" onclick="toggleDropdown(this)">
+                  <div class="select-selected"><img src="assets/images/flag-georgia.png" alt="English">| English</div>
+                  <div class="select-items select-hide">
+                    <div onclick="selectItem(this, 'en')"><img src="assets/images/flag-georgia.png" alt="English">| English</div>
+                    <div onclick="selectItem(this, 'fr')"><img src="assets/images/flag-georgia.png" alt="French">| Français</div>
+                    <div onclick="selectItem(this, 'es')"><img src="assets/images/flag-georgia.png" alt="Spanish">| Español</div>
+                  </div>
+                </div>
+              </div>
+              
+              
             </div>
             <button class="next-button" onclick="nextStage()">NEXT →</button>
           </div>
@@ -616,7 +615,13 @@
             <div class="carousel-inner-wrapper">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <iframe src="https://www.youtube.com/embed/fEsK7lPNuds" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+                  <iframe src="https://www.youtube.com/embed/id" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+                </div>
+                <div class="carousel-item active">
+                  <iframe src="https://www.youtube.com/embed/id" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+                </div>
+                <div class="carousel-item active">
+                  <iframe src="https://www.youtube.com/embed/id" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
                 </div>
                 <!-- Add more video items as needed -->
               </div>
