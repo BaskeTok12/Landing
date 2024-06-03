@@ -1733,10 +1733,21 @@ transform: none !important;
   padding: 20px;
 }
 
+.video-carousel-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Выравнивание по левому краю */
+}
+
 .video-carousel-header h2 {
   font-size: 60px;
   font-weight: bold;
   margin: 0;
+}
+
+.indented-text {
+  margin-left: 100px; /* Отступ слева для абзацев */
+  color: #fff; /* Цвет текста */
 }
 
 .video-carousel-header .highlight {
@@ -1814,6 +1825,11 @@ transform: none !important;
   margin: 0 auto;
   padding: 0 15px;
   max-width: 100%;
+}
+
+.section-title{
+  font-weight: bold;
+  font-size: 54px;
 }
 
 .instagram-posts {
