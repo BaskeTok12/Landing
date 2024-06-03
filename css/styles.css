@@ -299,6 +299,8 @@ img,
   padding-left: 10px;
   border-radius: 5px;
   border: none;
+  height: 50px; /* Задайте фиксированную высоту */
+  box-sizing: border-box;
 }
 
 .form-content select {
@@ -311,6 +313,7 @@ img,
   color: gray; /* Изначально серый текст */
   border: 1px solid #6CFFFD66; /* Немного контраста */
   box-shadow: none; /* Убрать тени */
+  box-sizing: border-box;
 }
 
 .form-content input[type="text"],
@@ -351,6 +354,42 @@ img,
   cursor: not-allowed;
 }
 
+.lang-select-wrapper {
+  position: relative;
+  width: 20%;
+}
+
+.lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  height: 40px; /* Adjust height as needed */
+  background: transparent;
+  border: 1px solid #6CFFFD66; /* Border styling */
+  padding-left: 10px; /* Add padding if needed */
+  color: transparent; /* Hide text */
+  background-image: none; /* Remove default arrow */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+
+.lang-select option {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px; /* Adjust size as needed */
+  text-indent: -9999px; /* Hide text */
+}
+
+.lang-select:focus {
+  background-color: #141414 !important;
+  outline: none; /* Remove default focus outline */
+  border-color: #6CFFFD !important; /* Border color on focus */
+  border: 1px solid #6CFFFD66 !important; /* Border styling */
+
+}
 /* Styles for the form rows */
 .form-row .lang-select {
   flex: 0 0 60px; /* Set a fixed width for the language select */

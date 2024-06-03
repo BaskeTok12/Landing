@@ -91,12 +91,14 @@
                       <form id="buy-form" class="form-content show grid-form">
                           <div class="form-row">
                               <input type="text" name="name" placeholder="Name*" required />
-                              <select class="lang-select" name="language" required>
-                                  <option value="" disabled selected hidden>Language</option>
-                                  <option value="en">English</option>
-                                  <option value="fr">French</option>
-                                  <option value="es">Spanish</option>
-                              </select>
+                              <div class="lang-select-wrapper">
+                                <select class="lang-select" name="language" required>
+                                    <option value="en" data-icon="assets/images/flag-georgia.png" disabled selected hidden data-icon="assets/icons/default.png"></option>
+                                    <option value="en" data-icon="assets/images/flag-georgia.png"></option>
+                                    <option value="fr" data-icon="assets/images/flag-georgia.png"></option>
+                                    <option value="es" data-icon="assets/images/flag-georgia.png"></option>
+                                </select>
+                            </div>
                               <input type="tel" name="phone" placeholder="+9 000 000 0000" required />
                           </div>
                           <div class="form-row">
