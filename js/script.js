@@ -83,6 +83,10 @@ function updateIndexDisplay(current, total) {
 }
 
 // Hero
+function endQuiz() {
+  // Implement any actions to take place when the quiz ends, such as hiding the quiz container or showing a message
+  alert("Quiz completed!");
+}
 
 
 // Hero
