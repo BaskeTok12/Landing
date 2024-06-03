@@ -1177,7 +1177,6 @@ img,
 .quiz-container {
   background: url("../assets/images/bg-elements.png") no-repeat center center /
     cover;
-  background-size: 60%;
   display: flex;
   justify-content: center; /* Центрирование по горизонтали */
   align-items: center; /* Центрирование по вертикали */
@@ -1220,25 +1219,24 @@ img,
 
 .speedometer-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   width: 100%;
   max-width: 600px;
-  height: auto;
+  height: 500px; /* Установите размеры подходящие под ваше изображение */
+  justify-content: center;
+  text-align: center;
   padding: 50px;
-  box-sizing: border-box;
 }
 
 .speedometer {
   width: 100%;
   height: auto; /* Сохраняем пропорции */
-  max-width: 100%; /* Ограничиваем максимальную ширину */
 }
 
 .needle {
   position: absolute;
-  bottom: 40%; /* Adjust this value based on your speedometer's design */
-  left: 50%;
+  bottom: 40%; /* Slightly lower, adjust this value based on your speedometer's design */
+  left: 50%; /* Centers the needle horizontally */
   width: 4px; /* Width of the needle */
   height: 40%; /* Height can remain the same unless you need other adjustments */
   background-color: #fff; /* Color of the needle */
@@ -1259,14 +1257,16 @@ img,
   justify-content: space-between;
   width: 100%; /* Full width */
   max-width: 600px; /* Maximum width */
-  margin: 0 auto; /* Center the container */
+  margin: 0;
 }
+
 .quiz-content {
   display: flex;
   flex-direction: column;
-  width: 100%; /* Занимает всю доступную ширину */
+  width: 100%; /* Full width */
   padding: 20px;
-  padding-bottom: 80px;
+  position: relative;
+  min-height: 300px; /* Ensure there's enough height for positioning */
 }
 
 .quiz-progress {
@@ -1333,15 +1333,17 @@ img,
 }
 
 .next-button {
-  position: absolute; /* Абсолютное позиционирование */
-  right: 20px; /* Отступ справа */
-  bottom: 20px; /* Отступ снизу */
+  position: absolute;
+  right: -100px; /* Position it to the right */
+  bottom: 25px; /* Position it to the bottom */
   padding: 10px 20px;
   background-color: orange;
   color: white;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
+
 
 .next-button:hover {
   background-color: #e65a00;
