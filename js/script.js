@@ -95,26 +95,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function next() {
   const items = document.querySelectorAll(".gallery-item");
+  const container = document.querySelector(".gallery-container");
+  
   if (currentItemIndex < items.length - 1) {
     currentItemIndex++;
-    items[currentItemIndex].scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "start",
+    const item = items[currentItemIndex];
+    container.scroll({
+      left: item.offsetLeft - container.offsetLeft,
+      behavior: 'smooth'
     });
     updateIndexDisplay(currentItemIndex + 1, items.length);
   }
 }
 
-// Function to scroll to the previous item
 function previous() {
+  const items = document.querySelectorAll(".gallery-item");
+  const container = document.querySelector(".gallery-container");
+
   if (currentItemIndex > 0) {
     currentItemIndex--;
-    const items = document.querySelectorAll(".gallery-item");
-    items[currentItemIndex].scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "start",
+    const item = items[currentItemIndex];
+    container.scroll({
+      left: item.offsetLeft - container.offsetLeft,
+      behavior: 'smooth'
     });
     updateIndexDisplay(currentItemIndex + 1, items.length);
   }

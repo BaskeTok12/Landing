@@ -421,7 +421,7 @@ img,
     display: block !important; /* Переопределяем display для этого конкретного случая */
   }
   
-  .hero-content .d-flex {
+  .hero-content {
     display: block!important;
   }
   .hero-content {
@@ -498,6 +498,9 @@ img,
   }
   .btn-check-inventory {
     margin-top: 20px;
+  }
+  .carousel {
+    display: block!important;
   }
 }
 
@@ -1292,7 +1295,6 @@ opacity: 1!important;
   color: #fff;
   padding: 20px;
   position: relative;
-  
 }
 
 .vehicle-gallery h2 {
@@ -1310,18 +1312,20 @@ opacity: 1!important;
 
 .gallery-container {
   display: flex;
-  overflow: hidden;
-  justify-content: center;
+  overflow-x: auto;
+  justify-content: flex-start;
   position: relative;
   z-index: 2;
+  scroll-snap-type: x mandatory; /* Enables snapping behavior */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
 }
 
 .gallery-slider {
   display: flex;
   transition: transform 0.5s ease;
+  scroll-snap-align: start;
 }
-
-.gallery-item .info-panel {
+ .info-panel {
   position: relative; /* Ensure relative positioning for absolute positioning of children */
   padding: 10px;
   border-radius: 0 0 10px 10px;
@@ -1348,24 +1352,27 @@ opacity: 1!important;
   text-decoration: none; /* Optional: Remove underline on hover */
   color: #5a6268; /* A slightly darker gray for hover */
 }
-
 .gallery-item {
-  width: 430px; /* Width corrected to 430px */
-  height: 360px; /* Height remains 360px */
+  min-width: 320px; /* Set a minimum width for each item */
+  max-width: 430px; /* Adjust maximum width if needed */
+  /* Height remains 360px */
   margin: 10px;
   display: flex;
   flex-direction: column;
   overflow: hidden; /* Ensures no overflow outside the boundaries */
+  scroll-snap-align: start; /* Ensure each item snaps to start */
 }
 
+
 .gallery-item img {
+  min-height: 200px!important;
+  max-height: 201px;
   width: 100%;
-  height: 260px; /* Adjusted to fit the new height constraint while keeping the info panel height */
+  /* Adjusted to fit the new height constraint while keeping the info panel height */
   object-fit: cover;
   display: block;
   border-radius: 10px 10px 0 0; /* Rounds only the top corners */
 }
-
 .info-panel {
   background-color: white;
   color: black;
@@ -1377,6 +1384,7 @@ opacity: 1!important;
   flex-direction: column;
   justify-content: space-between; /* Centers content vertically */
 }
+
 
 .info-panel h3 {
   flex-grow: 1; /* Позволяет заголовку занимать всё доступное пространство */
@@ -1858,7 +1866,11 @@ color: #000;
     bottom: -60px;
     right: 90px;
   }
+  .indented-text{
+    margin-left: 90px;
+  }
 }
+
 
 @media (max-width: 992px) {
   .start-button {
