@@ -26,6 +26,18 @@ function showForm(formType) {
   }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleButton = document.querySelector('.form-toggle-button');
+  const formContainer = document.querySelector('.form-container');
+
+  toggleButton.addEventListener('click', function () {
+    if (formContainer.style.display === 'none' || formContainer.style.display === '') {
+      formContainer.style.display = 'block';
+    } else {
+      formContainer.style.display = 'none';
+    }
+  });
+});
 
  document.addEventListener('DOMContentLoaded', () => {
       const select = document.querySelector('.lang-select');

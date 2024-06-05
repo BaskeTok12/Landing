@@ -17,7 +17,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
   </head>
-  
+
   <body>
     <header class="text-white">
       <div class="container">
@@ -61,6 +61,11 @@
               </li>
               <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
             </ul>
+            <div class="navbar-bottom-content">
+              <span>24/7</span>
+              <p>Multilingual customer support</p>
+              <span>+1 267 282 6010</span>
+            </div>
           </div>
           <span class="navbar-text">
             <i class="bi bi-telephone-fill"></i>
@@ -81,7 +86,7 @@
         <div class="row h-100">
           <div class="col-lg-8 d-flex flex-column justify-content-center">
             <h1 class="hero-title">CANADIAN CARS</h1>
-            <div class="d-flex justify-content-between">
+            <div class="f-flex justify-content-between custom-display">
               <div class="hero-text">
                 <h2>GLOBAL AUTO EXPORTER</h2>
                 <p>
@@ -97,148 +102,168 @@
           </div>
           <div class="col-lg-4 text-white d-flex align-items-center p-0">
             <div class="contact-form w-100">
+              <button class="form-toggle-button">&times;</button>
               <div class="form-header text-center">
                 <h2>Get more info about actual inventory</h2>
                 <p>Fill simple form, our manager will contact you shortly</p>
               </div>
-              <div
-                class="form-tabs d-flex justify-content-center position-relative"
-              >
-                <button class="tab-btn active" onclick="showForm('buy')">
-                  Buy a Car
-                </button>
-                <button class="tab-btn" onclick="showForm('consult')">
-                  Get a Consultation
-                </button>
-                <div class="tab-indicator"></div>
-              </div>
-              <form id="buy-form" class="form-content show grid-form">
-                <div class="form-row">
-                  <input type="text" name="name" placeholder="Name*" required />
-                  <div class="lang-select-wrapper">
-                    <select class="lang-select" name="language" required>
-                      <option value="en" data-icon="/assets/images/flag.png">
-                        English
+              <div class="form-container">
+                <div
+                  class="form-tabs d-flex justify-content-center position-relative"
+                >
+                  <button class="tab-btn active" onclick="showForm('buy')">
+                    Buy a Car
+                  </button>
+                  <button class="tab-btn" onclick="showForm('consult')">
+                    Get a Consultation
+                  </button>
+                  <div class="tab-indicator"></div>
+                </div>
+                <form id="buy-form" class="form-content show grid-form">
+                  <div class="form-row">
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Name*"
+                      required
+                    />
+                    <div class="lang-select-wrapper">
+                      <select class="lang-select" name="language" required>
+                        <option value="en" data-icon="/assets/images/flag.png">
+                          English
+                        </option>
+                        <option value="fr" data-icon="/assets/images/flag.png">
+                          French
+                        </option>
+                        <option value="es" data-icon="/assets/images/flag.png">
+                          Spanish
+                        </option>
+                      </select>
+                    </div>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="+9 000 000 0000"
+                      required
+                    />
+                  </div>
+                  <div class="form-row">
+                    <select name="messenger" required>
+                      <option value="" disabled selected hidden>
+                        Messenger
                       </option>
-                      <option value="fr" data-icon="/assets/images/flag.png">
-                        French
-                      </option>
-                      <option value="es" data-icon="/assets/images/flag.png">
-                        Spanish
-                      </option>
+                      <option value="whatsapp">WhatsApp</option>
+                      <option value="telegram">Telegram</option>
+                    </select>
+                    <input
+                      type="text"
+                      name="nickname"
+                      placeholder="@nickname*"
+                      required
+                    />
+                  </div>
+                  <div class="form-row">
+                    <select name="model" required>
+                      <option value="" disabled selected hidden>Model*</option>
+                      <option value="sedan">Sedan</option>
+                      <option value="suv">SUV</option>
+                      <option value="convertible">Convertible</option>
+                    </select>
+                    <select name="make" required>
+                      <option value="" disabled selected hidden>Make*</option>
+                      <option value="toyota">Toyota</option>
+                      <option value="ford">Ford</option>
+                      <option value="bmw">BMW</option>
                     </select>
                   </div>
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="+9 000 000 0000"
-                    required
-                  />
-                </div>
-                <div class="form-row">
-                  <select name="messenger" required>
-                    <option value="" disabled selected hidden>Messenger</option>
-                    <option value="whatsapp">WhatsApp</option>
-                    <option value="telegram">Telegram</option>
-                  </select>
-                  <input
-                    type="text"
-                    name="nickname"
-                    placeholder="@nickname*"
-                    required
-                  />
-                </div>
-                <div class="form-row">
-                  <select name="model" required>
-                    <option value="" disabled selected hidden>Model*</option>
-                    <option value="sedan">Sedan</option>
-                    <option value="suv">SUV</option>
-                    <option value="convertible">Convertible</option>
-                  </select>
-                  <select name="make" required>
-                    <option value="" disabled selected hidden>Make*</option>
-                    <option value="toyota">Toyota</option>
-                    <option value="ford">Ford</option>
-                    <option value="bmw">BMW</option>
-                  </select>
-                </div>
-                <div class="form-row">
-                  <select name="color" class="optional">
-                    <option value="" disabled selected hidden>Color</option>
-                    <option value="black">Black</option>
-                    <option value="white">White</option>
-                    <option value="red">Red</option>
-                  </select>
-                  <select name="year" class="optional">
-                    <option value="" disabled selected hidden>Year</option>
-                    <option value="2021">2021</option>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                  </select>
-                </div>
-                <div class="form-row">
-                  <select name="country" required class="full-width">
-                    <option value="" disabled selected>
-                      Country of delivery*
-                    </option>
-                    <option value="usa">United States</option>
-                    <option value="canada">Canada</option>
-                    <option value="uk">United Kingdom</option>
-                  </select>
-                </div>
-                <textarea
-                  placeholder="Type your comment here..."
-                  class="full-width"
-                ></textarea>
-                <div class="form-row">
-                  <input type="checkbox" name="consent" required />
-                  <label>I consent to the processing of personal data</label>
-                </div>
-                <button type="submit" class="submit-btn full-width">
-                  Contact Me
-                </button>
-              </form>
-              <form
-                id="consult-form"
-                class="form-content grid-form"
-                style="display: none"
-              >
-                <div class="form-row">
-                  <input type="text" name="name" placeholder="Name" required />
-                  <select class="lang-select" name="language" required>
-                    <option value="" disabled selected hidden>Language</option>
-                    <option value="en">English</option>
-                    <option value="fr">French</option>
-                    <option value="es">Spanish</option>
-                  </select>
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="+9 000 000 0000"
-                    required
-                  />
-                </div>
-                <div class="form-row">
-                  <select name="messenger" required>
-                    <option value="" disabled selected hidden>Messenger</option>
-                    <option value="whatsapp">WhatsApp</option>
-                    <option value="telegram">Telegram</option>
-                  </select>
-                  <input
-                    type="text"
-                    name="nickname"
-                    placeholder="@nickname*"
-                    required
-                  />
-                </div>
-                <div class="form-row">
-                  <input type="checkbox" name="consent" required />
-                  <label>I consent to the processing of personal data</label>
-                </div>
-                <button type="submit" class="submit-btn full-width">
-                  Contact Me
-                </button>
-              </form>
+                  <div class="form-row">
+                    <select name="color" class="optional">
+                      <option value="" disabled selected hidden>Color</option>
+                      <option value="black">Black</option>
+                      <option value="white">White</option>
+                      <option value="red">Red</option>
+                    </select>
+                    <select name="year" class="optional">
+                      <option value="" disabled selected hidden>Year</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                      <option value="2023">2023</option>
+                    </select>
+                  </div>
+                  <div class="form-row">
+                    <select name="country" required class="full-width">
+                      <option value="" disabled selected>
+                        Country of delivery*
+                      </option>
+                      <option value="usa">United States</option>
+                      <option value="canada">Canada</option>
+                      <option value="uk">United Kingdom</option>
+                    </select>
+                  </div>
+                  <textarea
+                    placeholder="Type your comment here..."
+                    class="full-width"
+                  ></textarea>
+                  <div class="form-row">
+                    <input type="checkbox" name="consent" required />
+                    <label>I consent to the processing of personal data</label>
+                  </div>
+                  <button type="submit" class="submit-btn full-width">
+                    Contact Me
+                  </button>
+                </form>
+
+                <form
+                  id="consult-form"
+                  class="form-content grid-form"
+                  style="display: none"
+                >
+                  <div class="form-row">
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Name"
+                      required
+                    />
+                    <select class="lang-select" name="language" required>
+                      <option value="" disabled selected hidden>
+                        Language
+                      </option>
+                      <option value="en">English</option>
+                      <option value="fr">French</option>
+                      <option value="es">Spanish</option>
+                    </select>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="+9 000 000 0000"
+                      required
+                    />
+                  </div>
+                  <div class="form-row">
+                    <select name="messenger" required>
+                      <option value="" disabled selected hidden>
+                        Messenger
+                      </option>
+                      <option value="whatsapp">WhatsApp</option>
+                      <option value="telegram">Telegram</option>
+                    </select>
+                    <input
+                      type="text"
+                      name="nickname"
+                      placeholder="@nickname*"
+                      required
+                    />
+                  </div>
+                  <div class="form-row">
+                    <input type="checkbox" name="consent" required />
+                    <label>I consent to the processing of personal data</label>
+                  </div>
+                  <button type="submit" class="submit-btn full-width">
+                    Contact Me
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -405,38 +430,46 @@
       <div class="b2b-deals-section">
         <div class="deal-highlight-wrapper">
           <span class="b2b-deals-text" id="deals-text"
-            >Whether you're in need of reliable trucks for your construction
-            company or sleek sedans for your sales team, we have a wide
-            selection of high-quality vehicles to choose from.</span
+            >We make comprehensive offers for wholesale buyers, including
+            reduced prices, more favourable payment terms and other rates for
+            the first deposit.</span
           >
           <p>
-            WE OFFER EXCLUSIVE
+            AT OUR DEALERSHIP, WE OFFER
             <span
               class="b2b-deals-highlight"
               onmouseover="showText('deals-text')"
               onmouseout="hideText('deals-text')"
-              >B2B DEALS</span
+              >EXCLUSIVE B2B OFFERS</span
             >
-            FOR BUSINESSES LOOKING TO UPGRADE THEIR FLEET OF VEHICLES.
+            FOR COMPANIES LOOKING TO RENEW THEIR FLEET.
           </p>
+
+          <span class="b2b-deals-text-2" id="deals-text"
+          >We make comprehensive offers for wholesale buyers, including
+          reduced prices, more favourable payment terms and other rates for
+          the first deposit.</span
+        >
         </div>
       </div>
       <div class="b2b-pricing-section">
         <div class="pricing-highlight-wrapper">
           <span class="b2b-pricing-text" id="pricing-text"
-            >Click here to schedule a test drive and get started on your B2B
-            fleet upgrade today!</span
+            >Contact us today!</span
           >
           <p>
-            TAKE ADVANTAGE OF OUR SPECIAL
+            TAKE ADVANTAGE OF OUR
             <span
               class="b2b-pricing-highlight"
               onmouseover="showText('pricing-text')"
               onmouseout="hideText('pricing-text')"
-              >B2B PRICING</span
+              >SPECIAL B2B PRICING</span
             >
             AND SAVE BIG ON BULK VEHICLE PURCHASES.
           </p>
+          <span class="b2b-pricing-text-2" id="pricing-text"
+            >Contact us today!</span
+          >
         </div>
       </div>
       <div class="test-drive-container">
@@ -450,7 +483,14 @@
           class="arrow-icon"
         />
         <a href="inventory.html" class="btn-test-drive">Test Drive</a>
+
+        
       </div>
+      <img
+          src="assets/icons/test-drive-arrow.svg"
+          alt="Arrow"
+          class="arrow-icon-2"
+        />
       <div class="vector-divider-inverted"></div>
     </div>
 
