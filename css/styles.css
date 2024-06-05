@@ -9,13 +9,21 @@ body,
 html {
   font-family: "Work Sans", sans-serif !important;
   height: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 480px) {
+ body,
+  html {
+    font-size: 14px; /* Уменьшение основного размера шрифта */
+    padding: 10px; /* Уменьшение отступов */
+  }
 }
 
 body {
   display: flex;
   flex-direction: column;
   margin: 0;
-
 }
 
 main {
@@ -42,10 +50,118 @@ img,
   --bs-primary: white; /* Переопределение основного цвета Bootstrap */
 }
 
+.vector-divider {
+  position: absolute;
+  width: 50%;
+  height: 0;
+  border-left: 50px solid transparent; /* Adjust this value for the width of the top side */
+  border-right: 50px solid transparent; /* Adjust this value for the width of the top side */
+  border-bottom: 10px solid #ffffff; /* Adjust the height and color as needed */
+  left: 50%;
+  top: -10px; /* Adjust to position the trapezoid correctly */
+  transform: translateX(-50%);
+  z-index: 10; /* Adjust as necessary to ensure proper layering */
+}
+
+.interactive-block .vector-divider-inverted {
+  bottom: -50px;
+}
+
+.vector-divider-inverted {
+  position: absolute;
+  width: 50%;
+  height: 0;
+  border-left: 50px solid transparent; /* Adjust this value for the width of the top side */
+  border-right: 50px solid transparent; /* Adjust this value for the width of the top side */
+  border-top: 10px solid #ffffff; /* Adjust the height and color as needed */
+  left: 50%;
+  bottom: -57px; /* Adjust to position the trapezoid correctly */
+  transform: translateX(-50%);
+  z-index: 10; /* Adjust as necessary to ensure proper layering */
+}
+
 .navbar {
   position: relative;
   padding: 10px 0; /* Уменьшенные вертикальные отступы для полос */
   background: #141414;
+}
+
+@media (max-width: 768px)
+{
+  .navbar {
+    padding: 5px;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-toggler {
+    display: block;
+    
+    margin-left: auto; /* Переместить кнопку вправо */
+    margin-right: 10px;
+    background-size: contain;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .container{
+    margin: 0!important;
+    max-width:none!important;
+  }
+
+  .navbar-toggler-icon{
+    background: url('/assets/images/navbar-toggler.png') no-repeat center center!important;
+    align-self: center;
+  }
+
+  .navbar-toggler:focus{
+    box-shadow: none!important;
+  }
+
+  .navbar-text {
+    display: none; /* Скрыть номер телефона */
+  }
+
+  .navbar-toggler{
+    border: none!important;
+  }
+
+  .navbar-collapse {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #141414; /* Цвет фона для меню */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px; /* Чтобы не перекрывать кнопку */
+  }
+
+  .navbar-collapse.show {
+    display: flex;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Растянуть навбар на всю ширину */
+  }
+
+  .nav-item {
+    width: 100%; /* Растянуть элементы навигации на всю ширину */
+    text-align: center; /* Центрировать текст */
+    margin: 10px 0; /* Отступ между пунктами меню */
+  }
 }
 
 .navbar-brand img {
@@ -75,7 +191,12 @@ img,
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
   z-index: 1;
 }
 
@@ -96,40 +217,39 @@ img,
 .hero {
   background: url("../assets/images/background.png") no-repeat center center /
     cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   
-    color: white; /* Цвет текста по умолчанию */
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  .hero-title {
-    width: 100%;
-    text-align: left; /* Выровнять заголовок по левому краю */
-    font-size: 86px; /* Размер шрифта */
-    color: #B3B3B3; /* Цвет текста */
-    font-weight: bold;
-  }
+  color: white; /* Цвет текста по умолчанию */
+}
 
-  .hero-text {
-    flex: 1;
-  }
-  .hero p {
-    max-width: 600px;
-    margin-bottom: 20px;
-    font-size: 16px;
-  }
+.hero-title {
+  width: 100%;
+  text-align: left; /* Выровнять заголовок по левому краю */
+  font-size: 86px; /* Размер шрифта */
+  color: #b3b3b3; /* Цвет текста */
+  font-weight: bold;
+}
 
-  .hero span.highlight
-  {
-    color: #FF5A00;
-  }
-  .hero h2{
-    max-width: 600px;
-    font-size: 60px;
-    color: #FFFFFF;
-    font-weight: bold;
-  }
+.hero-text {
+  flex: 1;
+}
+.hero p {
+  max-width: 600px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.hero span.highlight {
+  color: #ff5a00;
+}
+.hero h2 {
+  max-width: 600px;
+  font-size: 60px;
+  color: #ffffff;
+  font-weight: bold;
+}
 
 .hero-content p {
   max-width: 600px; /* Устанавливаем максимальную ширину для текста */
@@ -203,13 +323,35 @@ img,
   display: flex; /* Show the active form */
 }
 
+.form-wrapper .form-content {
+  min-height: auto !important;
+}
+
+.form-wrapper input[type="text"] {
+  border: 1px solid #0000001a !important;
+  color: #000 !important;
+}
+.form-wrapper input[type="tel"] {
+  border: 1px solid #0000001a !important;
+  color: #000 !important;
+}
+
+.form-wrapper .lang-select {
+  border: 1px solid #0000001a !important;
+  color: #000 !important;
+}
+
+.form-wrapper select {
+  border: 1px solid #0000001a !important;
+  color: #000 !important;
+}
+
 .content-left {
   flex: 2; /* Flex-grow to take necessary space */
 }
 
 .container-fluid {
-  padding-right: 0;
-  padding-left: 0;
+  padding-left: 40px!important;
   margin-right: auto;
   margin-left: auto;
   color: white;
@@ -328,6 +470,11 @@ img,
   gap: 10px;
 }
 
+.form-row label {
+  display: flex;
+  align-items: center;
+}
+
 .form-row input,
 .form-row select {
   padding: 10px;
@@ -346,7 +493,7 @@ img,
   border: none;
   background: none; /* Темный фон для полей ввода */
   color: gray; /* Изначально серый текст */
-  border: 1px solid #6CFFFD66; /* Немного контраста */
+  border: 1px solid #6cfffd66; /* Немного контраста */
   box-shadow: none; /* Убрать тени */
   box-sizing: border-box;
 }
@@ -361,17 +508,24 @@ img,
   border: none;
   background: none; /* Темный фон для полей ввода */
   color: white; /* Белый текст */
-  border: 1px solid #6CFFFD66; /* Немного контраста */
+  border: 1px solid #6cfffd66; /* Немного контраста */
   box-shadow: none; /* Убрать тени */
 }
 
+.form-row label {
+  margin-top: 10px;
+}
+
+.form-row input[type="checkbox"] {
+  margin-top: 10px;
+}
 
 .form-content select:valid {
   color: white; /* Белый цвет текста, когда значение выбрано */
 }
 .form-content .submit-btn {
   width: 100%;
-  background-color: #FF5A00;
+  background-color: #ff5a00;
   color: black;
   border: none;
   padding: 10px;
@@ -380,8 +534,36 @@ img,
   margin-top: 10px;
 }
 
-/* Стиль для необязательных полей, когда они выбраны */
+.form-row input[type="checkbox"] {
+  width: 20px; /* Увеличение ширины чекбокса */
+  height: 20px; /* Увеличение высоты чекбокса */
+  border: 1px solid #6cfffd66; /* Уменьшение толщины бордера */
+  border-radius: 3px; /* Скругление углов */
+  -webkit-appearance: none; /* Убираем дефолтный стиль WebKit (для Chrome, Safari и Opera) */
+  appearance: none; /* Убираем дефолтный стиль */
+  background-color: black; /* Белый фон */
+  outline: none; /* Убираем обводку */
+  cursor: pointer; /* Курсор указатель */
+  position: relative;
+}
 
+.form-row input[type="checkbox"]:checked {
+  background-color: #ff5a00; /* Цвет фона для выбранного состояния */
+}
+
+.form-row input[type="checkbox"]:checked::before {
+  /*content: '\2713'; */ /* Unicode символ для галочки */
+  display: block;
+  text-align: center;
+  color: white; /* Цвет галочки */
+  font-size: 16px; /* Размер галочки */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Стиль для необязательных полей, когда они выбраны */
 
 .form-content .submit-btn:disabled {
   background-color: #ccc; /* Gray color */
@@ -401,7 +583,7 @@ img,
   width: 100%;
   height: 40px;
   background: transparent;
-  border: 1px solid #6CFFFD66;
+  border: 1px solid #6cfffd66;
   padding-left: 40px; /* Оставляем место для иконки */
   color: transparent; /* Hide the text in the select */
   background-repeat: no-repeat;
@@ -410,8 +592,8 @@ img,
   transition: background-color 0.3s, border-color 0.3s;
 }
 
-.lang-select color-selected{
-  color: transparent!important;
+.lang-select color-selected {
+  color: transparent !important;
 }
 
 .lang-select option {
@@ -425,9 +607,8 @@ img,
 .lang-select:focus {
   background-color: #141414 !important;
   outline: none; /* Remove default focus outline */
-  border-color: #6CFFFD !important; /* Border color on focus */
-  border: 1px solid #6CFFFD66 !important; /* Border styling */
-
+  border-color: #6cfffd !important; /* Border color on focus */
+  border: 1px solid #6cfffd66 !important; /* Border styling */
 }
 /* Styles for the form rows */
 .form-row .lang-select {
@@ -437,7 +618,6 @@ img,
 .form-content select.optional:placeholder-shown {
   color: gray !important; /* Приоритет для серого цвета текста */
 }
-
 
 /* Стили для необязательных полей, когда они выбраны */
 .form-content select.optional:not(:placeholder) {
@@ -556,8 +736,7 @@ img,
   color: white;
 }
 
-
-/* Hero Banner END */ 
+/* Hero Banner END */
 
 /* Дополнительные стили, если необходимо */
 .container-fluid {
@@ -571,6 +750,11 @@ img,
 .col-lg-8 {
   padding: 20px;
 }
+
+.premium-section-container {
+  position: relative; /* Ensures .vector-divider is positioned relative to this container */
+}
+
 .premium-section {
   background-color: #fff;
   color: #000;
@@ -584,7 +768,6 @@ img,
   margin-bottom: 20px;
   font-weight: bo;
 }
-
 
 .features {
   display: flex;
@@ -654,32 +837,42 @@ img,
 .advantages-section {
   display: flex;
   align-items: flex-start;
-  padding: 50px;
-  background-color: #f5f5f5;
+  padding: 40px;
 }
 
 .advantage-title {
   color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 54px;
 }
 
 .advantage-description {
   color: #000;
+  font-size: 16px;
 }
 
 .advantage-list {
   list-style-type: none; /* Убираем маркеры списка */
   padding-left: 0; /* Убираем отступ слева */
+  margin-bottom: 20px;
 }
 
 .advantage-list li {
   font-size: 18px; /* Установите желаемый размер шрифта для текста списка */
   color: #333; /* Цвет текста списка */
+
+  align-items: center; /* Выравниваем элементы по вертикали */
+  margin-bottom: 20px;
   /* ...другие стили... */
 }
 
 .advantage-number {
+  display: inline-block;
   font-weight: bold; /* Делает шрифт жирным */
   font-size: 22px; /* Устанавливает размер шрифта для чисел больше, чем у остального текста */
+  margin-right: 20px;
+  min-width: 40px; /* Устанавливаем минимальную ширину для чисел */
 }
 
 .left-block {
@@ -701,10 +894,11 @@ img,
   padding: 20px;
   margin: 10px;
   flex-grow: 1;
+  min-height: 300px;
 }
 
 .tile-title {
-  font-size: 18px; /* Меньший размер для заголовка */
+  font-size: 36px; /* Меньший размер для заголовка */
   margin: 0;
   padding-top: 10px; /* Добавляем небольшой отступ сверху */
   color: #ffff;
@@ -759,10 +953,11 @@ img,
   font-size: 54px;
   font-weight: bold;
   margin: 20px 0;
-  position: relative; 
+  position: relative;
 }
 
-.b2b-deals-text, .b2b-pricing-text {
+.b2b-deals-text,
+.b2b-pricing-text {
   position: relative;
   width: 50%;
   left: 50%;
@@ -776,18 +971,21 @@ img,
   display: block;
 }
 
-.deal-highlight-wrapper, .pricing-highlight-wrapper {
+.deal-highlight-wrapper,
+.pricing-highlight-wrapper {
   position: relative;
 }
 
-.b2b-deals-highlight, .b2b-pricing-highlight {
-  color: #D9D9D9;
+.b2b-deals-highlight,
+.b2b-pricing-highlight {
+  color: #d9d9d9;
   cursor: pointer;
   transition: color 0.5s ease-in-out;
 }
 
-.b2b-deals-highlight:hover, .b2b-pricing-highlight:hover {
-  color: #FF5A00;
+.b2b-deals-highlight:hover,
+.b2b-pricing-highlight:hover {
+  color: #ff5a00;
 }
 
 .b2b-deals-highlight:hover ~ .b2b-deals-text,
@@ -885,8 +1083,8 @@ img,
   line-height: 1.6;
   margin: 5px auto;
   padding: 0;
-  width: 500px;
-  text-align: center;
+  color: #b3b3b3;
+  text-align: end;
 }
 
 .gallery-container {
@@ -956,7 +1154,16 @@ img,
   height: 100px; /* Maintain fixed height for uniformity */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers content vertically */
+  justify-content: space-between; /* Centers content vertically */
+}
+
+.info-panel h3 {
+  flex-grow: 1; /* Позволяет заголовку занимать всё доступное пространство */
+  font-size: 24px;
+}
+
+.info-panel p {
+  white-space: nowrap; /* Запрещает перенос текста на новую строку */
 }
 
 .gallery-controls button {
@@ -1027,7 +1234,8 @@ img,
   object-fit: cover !important;
 }
 
-.main-image-container, .thumbnails-container {
+.main-image-container,
+.thumbnails-container {
   width: 100%;
   height: 50%; /* Задаем равную высоту для контейнеров */
 }
@@ -1035,12 +1243,12 @@ img,
 .main-image {
   height: 100%;
   object-fit: cover;
-  object-position: center; 
+  object-position: center;
 }
 
 .thumbnails {
   display: flex;
-  overflow-x: auto;
+  overflow-x: hidden;
   padding: 10px 0;
 }
 
@@ -1084,14 +1292,13 @@ img,
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   outline: none;
 }
 .gallery-prev:hover,
 .gallery-next:hover {
   color: white; /* Цвет стрелки при наведении */
 }
-
 
 .gallery-prev {
   left: 10px;
@@ -1112,7 +1319,6 @@ img,
   text-align: center; /* Центрирование заголовка */
   margin-bottom: 20px; /* Отступ снизу для заголовка */
 }
-
 
 .specs {
   list-style: none; /* Убираем стандартные маркеры списка */
@@ -1168,21 +1374,20 @@ img,
 
 .consultation-block {
   position: relative; /* Относительное позиционирование для позиционирования фона */
-  background-color: #fff; /* Фоновый цвет */
+
   color: white; /* Цвет текста */
   padding: 40px 20px; /* Отступы вокруг содержимого */
-
 }
 
 .consultation-content {
-  max-width:60%; /* Максимальная ширина контента */
+  max-width: 60%; /* Максимальная ширина контента */
   margin: 0 auto; /* Центрирование контента */
-  
+  position: relative;
+  z-index: 1;
 }
 
 .consultation-block h2 {
   margin: 0;
-
 }
 
 .consultation-text {
@@ -1201,6 +1406,7 @@ img,
   font-size: 54px;
   font-weight: bold;
   margin-left: 50%; /* Отступ слева для начала с середины */
+  width: 100%;
 }
 
 .consultation-description {
@@ -1211,8 +1417,8 @@ img,
 }
 
 .consultation-block button {
-  margin-left: 50%; /* Смещает кнопку к середине элемента */
-  margin-top: 20px;
+  display: block; /* Устанавливаем блочный элемент */
+  margin-left: 50%;
   font-size: 16px; /* Размер шрифта текста кнопки */
   background-color: #ff5a00; /* Оранжевый фон кнопки */
   color: white; /* Белый текст на кнопке */
@@ -1232,13 +1438,16 @@ img,
   position: absolute;
   top: 0;
   left: 0;
-  background-size: cover;
+  background-image: url("../assets/images/consultation-background.png"); /* Укажите путь к вашему изображению */
+  background-size: contain;
   background-position: center;
-  transform: rotate(55deg); /* Поворот на 55 градусов */
-  transform-origin: center; /* Центр вращения */
+  transform: rotate(55deg); /* Убираем поворот */
   z-index: -1;
+  opacity: 20%;
+  clip-path: inset(0); /* Обрезаем изображение по границам блока */
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
-
 .quiz-section {
   border-radius: 20px; /* Закругление углов блока */
   margin: 20px; /* Добавляем некоторый внешний отступ */
@@ -1439,9 +1648,6 @@ img,
   transition: transform 1s ease-in-out; /* Smooth transition for rotation */
 }
 
-
-
-
 .quiz-content-container {
   position: relative; /* For relative positioning */
   display: flex;
@@ -1475,7 +1681,7 @@ img,
 .progress-bar {
   width: 100%;
   height: 3px;
-  background-color:#868686 !important;
+  background-color: #868686 !important;
   border-radius: 5px; /* Скругление краев */
   margin-top: 5px;
 }
@@ -1497,7 +1703,7 @@ img,
 .answer-button {
   background-color: transparent; /* Прозрачный фон */
   color: #fff; /* Голубой цвет текста */
-  border: 1px solid #6CFFFD; /* Голубая обводка */
+  border: 1px solid #6cfffd; /* Голубая обводка */
   padding: 20px 20px; /* Увеличенный вертикальный паддинг и уменьшенный горизонтальный */
   margin: 5px;
   height: 60px; /* Увеличение высоты */
@@ -1507,7 +1713,7 @@ img,
 }
 
 .answer-button.active {
-  background-color: #6CFFFD; /* Change the background to a different color */
+  background-color: #6cfffd; /* Change the background to a different color */
   color: white; /* Change text color for better visibility */
 }
 
@@ -1573,7 +1779,7 @@ img,
 
 .ok-button {
   padding: 5px 30px;
-  background-color: #FF5A00;
+  background-color: #ff5a00;
   color: white;
   border: none;
   cursor: pointer;
@@ -1584,15 +1790,13 @@ img,
   background-color: #e65a00;
 }
 
-
-
 .next-button:hover {
   background-color: #e65a00;
 }
 
 .hero h1 {
   font-size: 86px; /* Устанавливаем размер шрифта */
-  color: #B3B3B3; /* Устанавливаем цвет текста */
+  color: #b3b3b3; /* Устанавливаем цвет текста */
 }
 
 .hero .form-select {
@@ -1608,10 +1812,10 @@ img,
   padding: 0.8em 1em; /* Паддинг для внутренних элементов */
   font-size: 1rem; /* Размер шрифта */
   line-height: 1.25; /* Высота строки */
-  color: white!important; /* Цвет текста */
+  color: white !important; /* Цвет текста */
   background-color: transparent !important; /* Прозрачный фон */
   background-clip: padding-box; /* Фон ограничивается рамкой */
-  border: 1px solid #6CFFFD !important; /* Серая рамка */
+  border: 1px solid #6cfffd !important; /* Серая рамка */
   border-radius: 0.25rem; /* Скругление углов */
   appearance: none; /* Отключение стандартного вида */
 }
@@ -1642,10 +1846,10 @@ img,
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  
 }
 
-.select-items div, .select-selected {
+.select-items div,
+.select-selected {
   padding: 8px 16pd;
   display: flex;
   align-items: center;
@@ -1658,7 +1862,7 @@ img,
   background-color: white;
   top: 100%;
   left: 0;
-  border: 1px solid #6CFFFD;
+  border: 1px solid #6cfffd;
   border-top: none;
   z-index: 100;
   max-height: 200px;
@@ -1669,19 +1873,21 @@ img,
   display: none;
 }
 
-.select-items{
-  background-color: transparent!important; /* Прозрачный фон */
+.select-items {
+  background-color: transparent !important; /* Прозрачный фон */
   border-color: #80bdff; /* Голубая рамка при фокусе */
   outline: 0;
-
 }
 .select-items img {
   width: 20px;
   height: auto;
 }
 
-
 /* Faq */
+.faq-header-container {
+  position: relative;
+}
+
 .faq-header {
   padding-right: 20px; /* Add some padding to the right of the header */
   color: #000;
@@ -1736,7 +1942,7 @@ faq-header h2 {
 }
 
 .accordion-button:not(.collapsed)::after {
-transform: none !important;
+  transform: none !important;
 }
 
 .accordion-button::after {
@@ -1781,7 +1987,6 @@ transform: none !important;
   outline: 0 !important;
   box-shadow: none !important; /* Убираем тень */
 }
-
 
 /* Faq */
 /* carousel */
@@ -1828,29 +2033,30 @@ transform: none !important;
 }
 
 .indented-text {
-  margin-left: 100px; /* Отступ слева для абзацев */
+  margin-left: 180px; /* Отступ слева для абзацев */
   color: #fff; /* Цвет текста */
 }
 
 .video-carousel-header .highlight {
-  color: #D3D3D3;
+  color: #d3d3d3;
 }
 
-.video-carousel-header .trusted, 
-.video-carousel-header .car-buying, 
+.video-carousel-header .trusted,
+.video-carousel-header .car-buying,
 .video-carousel-header .partner {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .video-carousel-header .description {
-  color: orange;
+  color: #ff5a00;
   margin-top: 20px;
   font-size: 18px;
+  text-transform: uppercase;
 }
 
 .carousel-inner-wrapper {
   border: 2px solid;
-  border-image: linear-gradient(to right, #D3D3D3, #141414) 1;
+  border-image: linear-gradient(to right, #d3d3d3, #141414) 1;
   border-radius: 10px; /* Добавьте это для скругления углов */
   overflow: hidden; /* Добавьте это, чтобы обрезать содержимое внутри скругленных углов */
 }
@@ -1891,15 +2097,17 @@ transform: none !important;
 }
 /* carousel */
 
-
 /* carousel */
-
 
 /* Inst */
 
+.instagram-section-container {
+  position: relative;
+}
+
 .instagram-section {
   background-color: #fff;
-  padding: 20px 0;
+  padding: 40px;
   text-align: left;
 }
 
@@ -1909,14 +2117,14 @@ transform: none !important;
   max-width: 100%;
 }
 
-.section-title{
+.section-title {
   font-weight: bold;
   font-size: 54px;
 }
 
 .instagram-posts {
   display: flex;
-  overflow-x: auto;
+  overflow-x: hidden;
   gap: 10px;
   padding: 10px 0;
   scroll-behavior: smooth; /* Добавляем плавность прокрутки */
@@ -1935,20 +2143,18 @@ transform: none !important;
   width: 100%;
   height: auto;
   display: block;
-  user-drag: none; /* Prevent dragging */
   user-select: none; /* Prevent text selection */
 }
 
 /* Убираем полосу прокрутки для разных браузеров */
 .instagram-posts {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }
 
 .instagram-posts::-webkit-scrollbar {
-  display: none;  /* Safari and Chrome */
+  display: none; /* Safari and Chrome */
 }
-
 
 /* Inst */
 
@@ -1960,11 +2166,10 @@ transform: none !important;
 }
 
 .split-container {
-  background-image: url('../assets/images/contact-section-back.png');
+  background-image: url("../assets/images/contact-section-back.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 200px 200px; /* Set the size of the background image */
-
 }
 
 .contact-section,
@@ -1976,12 +2181,10 @@ transform: none !important;
 }
 
 .contact-section {
-  background-color: #F8F9FA;
   display: flex;
   justify-content: flex-start; /* Align the contact-wrapper to the left */
   align-items: center; /* Center the contact-wrapper vertically */
 }
-
 
 .contact-wrapper {
   width: 75%; /* Reduced width for the contact wrapper */
@@ -1994,10 +2197,7 @@ transform: none !important;
   text-align: left !important;
 }
 
-
-
 .form-section {
-  background-color: #FFFFFF;
   padding: 20px; /* General padding */
   display: flex;
   justify-content: center; /* Center the form-wrapper */
@@ -2007,18 +2207,36 @@ transform: none !important;
 .form-wrapper {
   width: 75%; /* Reduced width for the form wrapper */
   padding: 40px; /* Increased padding */
-  background-color: #FFFFFF;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
+.form-wrapper h2 {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.form-wrapper p {
+  font-size: 16px;
+}
+
+.form-wrapper input[type="checkbox"] {
+  background-color: #fff; /* Белый фон */
+  border: 1px solid #ccc; /* Уменьшение толщины бордера */
+}
 
 .contact-section h2 {
+  font-weight: bold;
   font-size: 54px;
 }
 
-.contact-section h2, p {
+.contact-section h2,
+p {
   width: 100%; /* Full width for headers */
+}
+
+.contact-section h4 {
+font-weight: bold;
 }
 
 button {
@@ -2044,7 +2262,7 @@ button {
 }
 
 .whatsapp-button {
-  background-color: #25D366;
+  background-color: #25d366;
   color: white;
 }
 
@@ -2052,27 +2270,25 @@ form {
   width: 100%; /* Full width for the form */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center form elements */
 }
 
-input[type="text"], input[type="tel"], select {
+input[type="text"],
+input[type="tel"],
+select {
   width: 100%; /* Full width for input fields */
   padding: 8px; /* Reduced padding */
-  margin-bottom: 10px;
   border: 1px solid #ccc;
 }
 
 input[type="checkbox"] {
-  margin-right: 10px;
   background-color: #000;
 }
 
 button[type="submit"] {
   width: 100%; /* Full width for the submit button */
-  background-color: #FF5A00;
+  background-color: #ff5a00;
   color: white;
 }
-
 
 /* Form2 */
 
@@ -2083,7 +2299,6 @@ button[type="submit"] {
   display: flex;
   justify-content: center; /* Центрирование содержимого по горизонтали */
   align-items: center; /* Центрирование содержимого по вертикали */
-  margin: 20px 0; /* Отступ сверху и снизу */
 }
 
 .map-responsive {
@@ -2160,6 +2375,7 @@ button[type="submit"] {
 .footer ul li a {
   color: #fff;
   text-decoration: none;
+  font-weight: lighter;
 }
 
 .footer ul li a:hover {
@@ -2239,6 +2455,5 @@ button[type="submit"] {
 .footer-subscription {
   margin-bottom: 20px; /* Add margin bottom for the subscription row */
 }
-
 
 /* Footer */

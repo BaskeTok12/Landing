@@ -8,10 +8,16 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
+  
   <body>
     <header class="text-white">
       <div class="container">
@@ -58,7 +64,11 @@
           </div>
           <span class="navbar-text">
             <i class="bi bi-telephone-fill"></i>
-            <img src="assets/icons/phone-icon.svg" alt="Phone" style="height: 24px; margin-right: 10px;">
+            <img
+              src="assets/icons/phone-icon.svg"
+              alt="Phone"
+              style="height: 24px; margin-right: 10px"
+            />
             +1 267 282 6010
           </span>
           <div class="header-stripes"></div>
@@ -71,12 +81,18 @@
         <div class="row h-100">
           <div class="col-lg-8 d-flex flex-column justify-content-center">
             <h1 class="hero-title">CANADIAN CARS</h1>
-            <div class="d-flex justify-content-between ">
+            <div class="d-flex justify-content-between">
               <div class="hero-text">
                 <h2>GLOBAL AUTO EXPORTER</h2>
-                <p>EXPLORE OVER <span class="highlight">5000</span> EXQUISITE CARS, SUPERCARS, SSSH VEHICLES AND CERTIFIED USED CARS DIRECTLY FROM CANADIAN MANUFACTURERS IN ONE CLICK</p>
+                <p>
+                  EXPLORE OVER <span class="highlight">5000</span> EXQUISITE
+                  CARS, SUPERCARS, SSSH VEHICLES AND CERTIFIED USED CARS
+                  DIRECTLY FROM CANADIAN MANUFACTURERS IN ONE CLICK
+                </p>
               </div>
-              <a href="inventory.html" class="btn-check-inventory">Check Inventory</a>
+              <a href="inventory.html" class="btn-check-inventory"
+                >Check Inventory</a
+              >
             </div>
           </div>
           <div class="col-lg-4 text-white d-flex align-items-center p-0">
@@ -85,9 +101,15 @@
                 <h2>Get more info about actual inventory</h2>
                 <p>Fill simple form, our manager will contact you shortly</p>
               </div>
-              <div class="form-tabs d-flex justify-content-center position-relative">
-                <button class="tab-btn active" onclick="showForm('buy')">Buy a Car</button>
-                <button class="tab-btn" onclick="showForm('consult')">Get a Consultation</button>
+              <div
+                class="form-tabs d-flex justify-content-center position-relative"
+              >
+                <button class="tab-btn active" onclick="showForm('buy')">
+                  Buy a Car
+                </button>
+                <button class="tab-btn" onclick="showForm('consult')">
+                  Get a Consultation
+                </button>
                 <div class="tab-indicator"></div>
               </div>
               <form id="buy-form" class="form-content show grid-form">
@@ -95,12 +117,23 @@
                   <input type="text" name="name" placeholder="Name*" required />
                   <div class="lang-select-wrapper">
                     <select class="lang-select" name="language" required>
-                      <option value="en" data-icon="/assets/images/flag.png">English</option>
-                      <option value="fr" data-icon="/assets/images/flag.png">French</option>
-                      <option value="es" data-icon="/assets/images/flag.png">Spanish</option>
+                      <option value="en" data-icon="/assets/images/flag.png">
+                        English
+                      </option>
+                      <option value="fr" data-icon="/assets/images/flag.png">
+                        French
+                      </option>
+                      <option value="es" data-icon="/assets/images/flag.png">
+                        Spanish
+                      </option>
                     </select>
                   </div>
-                  <input type="tel" name="phone" placeholder="+9 000 000 0000" required />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="+9 000 000 0000"
+                    required
+                  />
                 </div>
                 <div class="form-row">
                   <select name="messenger" required>
@@ -108,7 +141,12 @@
                     <option value="whatsapp">WhatsApp</option>
                     <option value="telegram">Telegram</option>
                   </select>
-                  <input type="text" name="nickname" placeholder="@nickname*" required />
+                  <input
+                    type="text"
+                    name="nickname"
+                    placeholder="@nickname*"
+                    required
+                  />
                 </div>
                 <div class="form-row">
                   <select name="model" required>
@@ -140,20 +178,31 @@
                 </div>
                 <div class="form-row">
                   <select name="country" required class="full-width">
-                    <option value="" disabled selected>Country of delivery*</option>
+                    <option value="" disabled selected>
+                      Country of delivery*
+                    </option>
                     <option value="usa">United States</option>
                     <option value="canada">Canada</option>
                     <option value="uk">United Kingdom</option>
                   </select>
                 </div>
-                <textarea placeholder="Type your comment here..." class="full-width"></textarea>
+                <textarea
+                  placeholder="Type your comment here..."
+                  class="full-width"
+                ></textarea>
                 <div class="form-row">
                   <input type="checkbox" name="consent" required />
                   <label>I consent to the processing of personal data</label>
                 </div>
-                <button type="submit" class="submit-btn full-width">Contact Me</button>
+                <button type="submit" class="submit-btn full-width">
+                  Contact Me
+                </button>
               </form>
-              <form id="consult-form" class="form-content grid-form" style="display: none">
+              <form
+                id="consult-form"
+                class="form-content grid-form"
+                style="display: none"
+              >
                 <div class="form-row">
                   <input type="text" name="name" placeholder="Name" required />
                   <select class="lang-select" name="language" required>
@@ -162,7 +211,12 @@
                     <option value="fr">French</option>
                     <option value="es">Spanish</option>
                   </select>
-                  <input type="tel" name="phone" placeholder="+9 000 000 0000" required />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="+9 000 000 0000"
+                    required
+                  />
                 </div>
                 <div class="form-row">
                   <select name="messenger" required>
@@ -170,60 +224,85 @@
                     <option value="whatsapp">WhatsApp</option>
                     <option value="telegram">Telegram</option>
                   </select>
-                  <input type="text" name="nickname" placeholder="@nickname*" required />
+                  <input
+                    type="text"
+                    name="nickname"
+                    placeholder="@nickname*"
+                    required
+                  />
                 </div>
-                <button type="submit" class="submit-btn full-width">Contact Me</button>
+                <div class="form-row">
+                  <input type="checkbox" name="consent" required />
+                  <label>I consent to the processing of personal data</label>
+                </div>
+                <button type="submit" class="submit-btn full-width">
+                  Contact Me
+                </button>
               </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
-   
- 
-    <div class="premium-section"> 
-      <h2><span class="highlight">CHOOSE US</span> FOR</br>PREMIUM BRANDS  AT<br>LOWER MARKET PRICES</h2>
-      <div class="features"> 
-        <div class="feature-column-left">
-          <div class="feature">
-            <img src="assets/images/premium-img-2.png" alt="Feature 3" />
-            <div class="feature-info">
-              <h3>Affordability</h3>
-              <p>
-                “Canadian Cars” offers premium new brands as well as certified pre-owned vehicles at lower prices compared to market rates, ensuring a wide range of options for customers.
-              </p>
+
+    <div class="premium-section-container">
+      <div class="vector-divider"></div>
+      <div class="premium-section">
+        <h2>
+          <span class="highlight">CHOOSE US</span> FOR<br />PREMIUM BRANDS AT<br />LOWER
+          MARKET PRICES
+        </h2>
+        <div class="features">
+          <div class="feature-column-left">
+            <div class="feature">
+              <img src="assets/images/premium-img-2.png" alt="Feature 3" />
+              <div class="feature-info">
+                <h3>Affordability</h3>
+                <p>
+                  “Canadian Cars” offers premium new brands as well as certified
+                  pre-owned vehicles at lower prices compared to market rates,
+                  ensuring a wide range of options for customers.
+                </p>
+              </div>
+            </div>
+            <div class="feature">
+              <img src="assets/images/premium-img-3.png" alt="Feature 4" />
+              <div class="feature-info">
+                <h3>Flexible Terms</h3>
+                <p>
+                  We offer flexible collaboration terms: an official contract
+                  with a prepayment of just 10%, with the remaining payment due
+                  only after the car arrives at the designated port
+                </p>
+              </div>
             </div>
           </div>
-          <div class="feature">
-            <img src="assets/images/premium-img-3.png" alt="Feature 4" />
-            <div class="feature-info">
-              <h3>Flexible Terms</h3>
-              <p>
-                We offer flexible collaboration terms: an official contract with a prepayment of just 10%, with the remaining payment due only after the car arrives at the designated port
-              </p>
+          <div class="feature-column-right">
+            <div class="feature">
+              <img src="assets/images/premium-img-1.png" alt="Feature 1" />
+              <div class="feature-info">
+                <h3>100% Legal Transparency</h3>
+                <p>
+                  We guarantee complete legal integrity in transactions and
+                  provide all necessary documents proving the car's clean
+                  history, including no liens (pledges), financial claims, and
+                  more.
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="feature-column-right">
-          <div class="feature">
-            <img src="assets/images/premium-img-1.png" alt="Feature 1" />
-            <div class="feature-info">
-              <h3>100% Legal Transparency</h3>
-              <p>
-                We guarantee complete legal integrity in transactions and
-                provide all necessary documents proving the car's clean history,
-                including no liens (pledges), financial claims, and more.
-              </p>
-            </div>
-          </div>
-          <div class="feature">
-            <img src="assets/images/premium-img-4.png" alt="Feature 2" />
-            <div class="feature-info">
-              <h3>Shipping Options Tailored To Your Needs</h3>
-              <p>
-                We will send the cars from our warehouse or have them delivered to the client's preferred pickup warehouse. We collaborate with leading logistics companies in Germany, Georgia, and the United Arab Emirates and ensure proper unloading and vehicle documentation processes at arrival ports.
-              </p>
+            <div class="feature">
+              <img src="assets/images/premium-img-4.png" alt="Feature 2" />
+              <div class="feature-info">
+                <h3>Shipping Options Tailored To Your Needs</h3>
+                <p>
+                  We will send the cars from our warehouse or have them
+                  delivered to the client's preferred pickup warehouse. We
+                  collaborate with leading logistics companies in Germany,
+                  Georgia, and the United Arab Emirates and ensure proper
+                  unloading and vehicle documentation processes at arrival
+                  ports.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -232,112 +311,183 @@
 
     <div class="advantages-section">
       <div class="left-block">
-        <h1 class="advantage-title"><span class="highlight">Reliable</span> Export Solutions</h1>
+        <h1 class="advantage-title">
+          <span class="highlight">Reliable</span> Export Solutions
+        </h1>
         <p class="advantage-description">
-          Trust our comprehensive service that connects you to over 5,000
-          premium automobiles and vehicles directly from esteemed Canadian
-          manufacturers.
+          Trust our comprehensive service that provides you with access to over
+          5,000 new and certified used automobiles directly from trusted auto
+          dealers.
         </p>
-        <p class="advantage-description">Experience the assurance of reliable export solutions
-          with our dedicated service. We prioritise efficiency, security, and
-          customer satisfaction to ensure a seamless global transportation
-          process for your valued cars.</p>
-        <p class="advantage-description">Trust our expertise to handle your
-          export needs with utmost professionalism and care.</p>
-
+        <p class="advantage-description">
+          At “Canadian Cars”, we go the extra mile to provide tailored solutions
+          for your vehicle shipping needs. We take care of all transportation
+          and delivery hassles, ensuring a seamless process from start to
+          finish. Moreover, we offer the flexibility for buyers to select a
+          trusted warehouse, with which they have already worked,  from which
+          their vehicle will be shipped. All to ensure that our collaboration
+          will be pleasant and hassle free.
+        </p>
+        <p class="advantage-description">
+          Partnering with leading forwarding companies in Germany, Georgia, and
+          the United Arab Emirates, we guarantee a smooth unloading process and
+          efficient documentation handling at arrival ports. 
+        </p>
+        <p class="advantage-description">
+          Trust our expertise to handle your export needs with  professionalism
+          and care.
+        </p>
         <ul class="advantage-list">
           <li>
-            <span class="advantage-number">25+</span> Representing over 25
-            Global Brands
+            <span class="advantage-number">5K+</span> Cars at your disposal
           </li>
           <li>
-            <span class="advantage-number">20+</span> Deliveries to over 20
-            Countries Worldwide
+            <span class="advantage-number">50+</span> Countries as global
+            shipping destinations
           </li>
           <li>
-            <span class="advantage-number">24/7</span> Multilingual customer
-            support
+            <span class="advantage-number">7+</span> Years of practical
+            experience in car export industry
           </li>
         </ul>
       </div>
       <div class="right-block">
-        <div class="tile tile-long" style="background-image: url('assets/images/logistics-block.png'); height: 250px;">
+        <div
+          class="tile tile-long"
+          style="
+            background-image: url('assets/images/logistics-block.png');
+            height: 250px;
+          "
+        >
           <h3 class="tile-title">LOGISTICS</h3>
           <p class="tile-text">
-            Efficient 2-6 week shipping tailored to your country for prompt and secure delivery.
+            Efficient 2-6 week shipping tailored to your country for prompt and
+            secure delivery.
           </p>
         </div>
-        <div class="tile tile-square" style="background-color: #FF5A00; height: 250px;">
+        <div
+          class="tile tile-square"
+          style="background-color: #ff5a00; height: 250px"
+        >
           <h3 class="tile-title">INSURANCE</h3>
           <p class="tile-text">
-            Comprehensive coverage included, ensuring peace of mind for your investment within your country.
+            Comprehensive coverage included, ensuring peace of mind for your
+            investment within your country.
           </p>
         </div>
-        <div class="tile tile-square" style="background-color: #222; height:200px;">
+        <div
+          class="tile tile-square"
+          style="background-color: #222; height: 200px"
+        >
           <h3 class="tile-title">CAR CHECK</h3>
           <p class="tile-text">
-            Thorough inspections assure quality, guaranteeing a reliable and top-notch vehicle in your country.
+            Thorough inspections assure quality, guaranteeing a reliable and
+            top-notch vehicle in your country.
           </p>
         </div>
-        <div class="tile tile-long" style="background-image: url('assets/images/official-agreement.png'); height: 200px;">
+        <div
+          class="tile tile-long"
+          style="
+            background-image: url('assets/images/official-agreement.png');
+            height: 200px;
+          "
+        >
           <h3 class="tile-title">OFFICIAL AGREEMENT</h3>
           <p class="tile-text">
-            Transparent transactions with official agreements, fostering trust and outlining terms for purchases in your country.
+            Transparent transactions with official agreements, fostering trust
+            and outlining terms for purchases in your country.
           </p>
         </div>
       </div>
-      
     </div>
+
     <div class="interactive-block">
       <div class="b2b-deals-section">
         <div class="deal-highlight-wrapper">
-          <span class="b2b-deals-text" id="deals-text">Whether you're in need of reliable trucks for your construction company or sleek sedans for your sales team, we have a wide selection of high-quality vehicles to choose from.</span>
+          <span class="b2b-deals-text" id="deals-text"
+            >Whether you're in need of reliable trucks for your construction
+            company or sleek sedans for your sales team, we have a wide
+            selection of high-quality vehicles to choose from.</span
+          >
           <p>
-            WE OFFER EXCLUSIVE <span class="b2b-deals-highlight" onmouseover="showText('deals-text')" onmouseout="hideText('deals-text')">B2B DEALS</span> FOR BUSINESSES LOOKING TO UPGRADE THEIR FLEET OF VEHICLES.
+            WE OFFER EXCLUSIVE
+            <span
+              class="b2b-deals-highlight"
+              onmouseover="showText('deals-text')"
+              onmouseout="hideText('deals-text')"
+              >B2B DEALS</span
+            >
+            FOR BUSINESSES LOOKING TO UPGRADE THEIR FLEET OF VEHICLES.
           </p>
         </div>
       </div>
       <div class="b2b-pricing-section">
         <div class="pricing-highlight-wrapper">
-          <span class="b2b-pricing-text" id="pricing-text">Click here to schedule a test drive and get started on your B2B fleet upgrade today!</span>
+          <span class="b2b-pricing-text" id="pricing-text"
+            >Click here to schedule a test drive and get started on your B2B
+            fleet upgrade today!</span
+          >
           <p>
-            TAKE ADVANTAGE OF OUR SPECIAL <span class="b2b-pricing-highlight" onmouseover="showText('pricing-text')" onmouseout="hideText('pricing-text')">B2B PRICING</span> AND SAVE BIG ON BULK VEHICLE PURCHASES.
+            TAKE ADVANTAGE OF OUR SPECIAL
+            <span
+              class="b2b-pricing-highlight"
+              onmouseover="showText('pricing-text')"
+              onmouseout="hideText('pricing-text')"
+              >B2B PRICING</span
+            >
+            AND SAVE BIG ON BULK VEHICLE PURCHASES.
           </p>
         </div>
       </div>
       <div class="test-drive-container">
-        <span class="test-drive-text">Click here to get a personalized offer from our expert and get started on your B2B fleet upgrade today!</span>
-        <img src="assets/icons/test-drive-arrow.svg" alt="Arrow" class="arrow-icon">
+        <span class="test-drive-text"
+          >Click here to get a personalized offer from our expert and get
+          started on your B2B fleet upgrade today!</span
+        >
+        <img
+          src="assets/icons/test-drive-arrow.svg"
+          alt="Arrow"
+          class="arrow-icon"
+        />
         <a href="inventory.html" class="btn-test-drive">Test Drive</a>
       </div>
+      <div class="vector-divider-inverted"></div>
     </div>
-    
-    
-    
-    
-    
+
     <div class="vehicle-gallery">
       <h2>VEHICLE GALLERY</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur, feugiat eget eget adipiscing malesuada gravida.
+        Lorem ipsum dolor sit amet consectetur, feugiat eget eget adipiscing
+        malesuada gravida.
       </p>
       <div class="gallery-container">
         <div class="gallery-slider">
           <!-- Existing items -->
           <div class="gallery-item">
-            <img src="assets/images/Mercedes-Benz-G550.png" alt="Mercedes G550">
+            <img
+              src="assets/images/Mercedes-Benz-G550.png"
+              alt="Mercedes G550"
+            />
             <div class="info-panel">
               <h3>Mercedes Benz G550</h3>
               <p>Night</p>
-              <a href="#" onclick="openModal(1)" class="more-info-link">More Info</a>
+              <a href="#" onclick="openModal(1)" class="more-info-link"
+                >More Info</a
+              >
             </div>
           </div>
           <div class="gallery-item">
-            <img src="assets/images/mercedes-benz-gle-450.png" alt="Mercedes Benz GLE 450" />
+            <img
+              src="assets/images/mercedes-benz-gle-450.png"
+              alt="Mercedes Benz GLE 450"
+            />
             <div class="info-panel">
               <h3>Mercedes Benz GLE 450</h3>
               <p>Grey</p>
-              <a href="#" onclick="openModal(2)" class="more-info-link">More Info</a>
+
+              <a href="#" onclick="openModal(2)" class="more-info-link"
+                >More Info</a
+              >
             </div>
           </div>
           <div class="gallery-item">
@@ -345,7 +495,9 @@
             <div class="info-panel">
               <h3>Toyota 4Runner</h3>
               <p>TRD Pro</p>
-              <a href="#" onclick="openModal(3)" class="more-info-link">More Info</a>
+              <a href="#" onclick="openModal(3)" class="more-info-link"
+                >More Info</a
+              >
             </div>
           </div>
           <!-- New item -->
@@ -354,7 +506,9 @@
             <div class="info-panel">
               <h3>2024 Lexus RX350</h3>
               <p>Ultra luxury</p>
-              <a href="#" onclick="openModal(4)" class="more-info-link">More Info</a>
+              <a href="#" onclick="openModal(4)" class="more-info-link"
+                >More Info</a
+              >
             </div>
           </div>
         </div>
@@ -365,31 +519,30 @@
         <button onclick="next()">❯</button>
       </div>
     </div>
-    
+
     <div class="consultation-block">
+      <div class="vector-divider"></div>
       <div class="consultation-background-image"></div>
       <div class="consultation-content">
-          <div class="consultation-text">
-              <p>
-                  GET BENEFIT FROM
-                  <span>COMPLIMENTARY CONSULTATION</span>
-                  AND PERSONAL
-              </p>
-          </div>
-          <div class="centered-text">
-              <p>ASSISTANCE TAILORED <br />TO YOUR NEEDS</p>
-          </div>
-          <div class="consultation-description">
-              <p>
-                  OUR EXPERT WILL FIND THE PERFECT VEHICLE MATCHING <br />YOUR REQUIREMENTS.
-              </p>
-          </div>
-          <button>GET A CONSULTATION</button>
+        <div class="consultation-text">
+          <p>
+            GET BENEFIT FROM
+            <span>COMPLIMENTARY CONSULTATION</span>
+            AND PERSONAL
+          </p>
+        </div>
+        <div class="centered-text">
+          <p>ASSISTANCE TAILORED <br />TO YOUR NEEDS</p>
+        </div>
+        <div class="consultation-description">
+          <p>
+            OUR EXPERT WILL FIND THE PERFECT VEHICLE MATCHING <br />YOUR
+            REQUIREMENTS.
+          </p>
+        </div>
+        <button>GET A CONSULTATION</button>
       </div>
-  </div>
-    
-    
-    
+    </div>
 
     <div class="quiz-section">
       <div class="quiz-container">
@@ -403,10 +556,20 @@
         </div>
         <div class="quiz-content-container">
           <div class="quiz-intro">
-            <h1>DISCOVER YOUR <br /> PERFECT CAR IN <br /> 4 SIMPLE STEPS</h1>
-            <p>Answer these simple questions to receive <br /> personalised offer from our expert.</p>
+            <h1>
+              DISCOVER YOUR <br />
+              PERFECT CAR IN <br />
+              4 SIMPLE STEPS
+            </h1>
+            <p>
+              Answer these simple questions to receive <br />
+              personalised offer from our expert.
+            </p>
             <div class="start-arrow">
-              <img src="assets/icons/test-drive-arrow.svg" alt="Arrow pointing to Start button">
+              <img
+                src="assets/icons/test-drive-arrow.svg"
+                alt="Arrow pointing to Start button"
+              />
             </div>
             <button class="start-button" onclick="startQuiz()">START</button>
           </div>
@@ -421,14 +584,16 @@
               <h2>1. TELL US A LITTLE ABOUT YOURSELF.<br />I AM...</h2>
             </div>
             <div class="quiz-answers">
-              <button class="answer-button">Car dealership owner/platform</button>
+              <button class="answer-button">
+                Car dealership owner/platform
+              </button>
               <button class="answer-button">Car founder</button>
               <button class="answer-button">Showroom manager</button>
               <button class="answer-button">Private individual</button>
             </div>
             <button class="next-button" onclick="nextStage()">NEXT →</button>
           </div>
-          
+
           <div id="quiz-stage-2" class="quiz-content" style="display: none">
             <div class="quiz-progress">
               <span>Progress 2<span style="opacity: 0.4">/4</span></span>
@@ -449,7 +614,7 @@
             </div>
             <button class="next-button" onclick="nextStage()">NEXT →</button>
           </div>
-          
+
           <div id="quiz-stage-3" class="quiz-content" style="display: none">
             <div class="quiz-progress">
               <span>Progress 3<span style="opacity: 0.4">/4</span></span>
@@ -462,18 +627,36 @@
             </div>
             <div class="quiz-answers">
               <div class="custom-select-wrapper">
-                <input type="hidden" id="language-input" value="en"> <!-- Hidden input for form submission -->
-                <div class="custom-select form-select" onclick="toggleDropdown(this)">
-                  <div class="select-selected"><img src="assets/images/flag-georgia.png" alt="English">| English</div>
+                <input type="hidden" id="language-input" value="en" />
+                <!-- Hidden input for form submission -->
+                <div
+                  class="custom-select form-select"
+                  onclick="toggleDropdown(this)"
+                >
+                  <div class="select-selected">
+                    <img src="assets/images/flag-georgia.png" alt="English" />|
+                    English
+                  </div>
                   <div class="select-items select-hide">
-                    <div onclick="selectItem(this, 'en')"><img src="assets/images/flag-georgia.png" alt="English">| English</div>
-                    <div onclick="selectItem(this, 'fr')"><img src="assets/images/flag-georgia.png" alt="French">| Français</div>
-                    <div onclick="selectItem(this, 'es')"><img src="assets/images/flag-georgia.png" alt="Spanish">| Español</div>
+                    <div onclick="selectItem(this, 'en')">
+                      <img
+                        src="assets/images/flag-georgia.png"
+                        alt="English"
+                      />| English
+                    </div>
+                    <div onclick="selectItem(this, 'fr')">
+                      <img src="assets/images/flag-georgia.png" alt="French" />|
+                      Français
+                    </div>
+                    <div onclick="selectItem(this, 'es')">
+                      <img
+                        src="assets/images/flag-georgia.png"
+                        alt="Spanish"
+                      />| Español
+                    </div>
                   </div>
                 </div>
               </div>
-              
-              
             </div>
             <button class="next-button" onclick="nextStage()">NEXT →</button>
           </div>
@@ -486,102 +669,183 @@
             </div>
             <div class="quiz-final-message">
               <div class="final-icon">
-                <img src="assets/images/checkmark-icon.png" alt="Checkmark Icon" />
+                <img
+                  src="assets/images/checkmark-icon.png"
+                  alt="Checkmark Icon"
+                />
               </div>
               <div class="final-text">
                 <h2>ALL DONE!</h2>
-                <p>Thank you for your time, our managers are already processing your answers</p>
+                <p>
+                  Thank you for your time, our managers are already processing
+                  your answers
+                </p>
                 <button class="ok-button" onclick="endQuiz()">OK</button>
               </div>
             </div>
           </div>
-          
-          
         </div>
       </div>
     </div>
 
-    <div class="container-fluid mt-5">
-      <div class="row">
-        <div class="col-md-5">
-          <div class="faq-header">
-            <h2>FAQ</h2>
-            <p>Everything you need to know about exporting cars with us.</p>
+    <div class="faq-header-container">
+      <div class="container-fluid mt-5">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="faq-header">
+              <h2>FAQ</h2>
+              <p>Everything you need to know about exporting cars with us.</p>
+            </div>
           </div>
-        </div>
-        <div class="col-md-7">
-          <div class="faq-container">
-            <div class="faq-content">
-              <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      WHICH COUNTRIES DO WE DELIVER CARS?
-                    </button>
-                  </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                      Answer to which countries we deliver cars...
+          <div class="col-md-7">
+            <div class="faq-container">
+              <div class="faq-content">
+                <div class="accordion" id="faqAccordion">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        WHICH COUNTRIES DO WE DELIVER CARS?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingOne"
+                      data-bs-parent="#faqAccordion"
+                    >
+                      <div class="accordion-body">
+                        Answer to which countries we deliver cars...
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      HOW CAN I CONTACT YOU?
-                    </button>
-                  </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                      Answer to how can I contact you...
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        HOW CAN I CONTACT YOU?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingTwo"
+                      data-bs-parent="#faqAccordion"
+                    >
+                      <div class="accordion-body">
+                        Answer to how can I contact you...
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      ARE DIESEL CARS COMMON IN CANADA?
-                    </button>
-                  </h2>
-                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                      Answer to are diesel cars common in Canada...
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        ARE DIESEL CARS COMMON IN CANADA?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingThree"
+                      data-bs-parent="#faqAccordion"
+                    >
+                      <div class="accordion-body">
+                        Answer to are diesel cars common in Canada...
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingFour">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      DO WE WORK WITH RETAIL CUSTOMERS?
-                    </button>
-                  </h2>
-                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                      Answer to do we work with retail customers...
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour"
+                        aria-expanded="false"
+                        aria-controls="collapseFour"
+                      >
+                        DO WE WORK WITH RETAIL CUSTOMERS?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFour"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingFour"
+                      data-bs-parent="#faqAccordion"
+                    >
+                      <div class="accordion-body">
+                        Answer to do we work with retail customers...
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingFive">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                      WHAT PAYMENT METHODS DO WE ACCEPT?
-                    </button>
-                  </h2>
-                  <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                      Answer to what payment methods do we accept...
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFive"
+                        aria-expanded="false"
+                        aria-controls="collapseFive"
+                      >
+                        WHAT PAYMENT METHODS DO WE ACCEPT?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFive"
+                      class="accordion-collapse collapse"
+                      aria-labelledby="headingFive"
+                      data-bs-parent="#faqAccordion"
+                    >
+                      <div class="accordion-body">
+                        Answer to what payment methods do we accept...
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="headingSix">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                      FOUND THE CAR YOU WANT. WHAT'S THE NEXT STEP?
-                    </button>
-                  </h2>
-                  <div id="collapseSix" class="accordion-collapse collapse show" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
-                    <div class="accordion-body">
-                      We accept various payment methods, including Swift bank transfers, crypto payments, and cash payments at our offices. We strive to accommodate a suitable payment method for our clients.
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseSix"
+                        aria-expanded="true"
+                        aria-controls="collapseSix"
+                      >
+                        FOUND THE CAR YOU WANT. WHAT'S THE NEXT STEP?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseSix"
+                      class="accordion-collapse collapse show"
+                      aria-labelledby="headingSix"
+                      data-bs-parent="#faqAccordion"
+                    >
+                      <div class="accordion-body">
+                        We accept various payment methods, including Swift bank
+                        transfers, crypto payments, and cash payments at our
+                        offices. We strive to accommodate a suitable payment
+                        method for our clients.
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -590,28 +854,47 @@
           </div>
         </div>
       </div>
+      <div class="vector-divider-inverted"></div>
     </div>
-    
-  
+
     <div class="container-fluid mt-5 video-carousel-container">
       <div class="row">
         <div class="col-md-5 d-flex flex-column justify-content-center">
           <div class="video-carousel-header">
-            <h2 class="highlight">CANADIAN CARS</h2>
+            <h2>
+              <span class="highlight">CANADIAN</span><br /><span
+                class="highlight"
+                >CARS</span
+              >
+              IS YOUR
+            </h2>
+
             <div class="indented-text">
-              <h2 class="trusted">IS YOUR TRUSTED</h2>
+              <h2 class="trusted">TRUSTED</h2>
               <h2 class="car-buying">CAR-BUYING</h2>
               <h2 class="partner">PARTNER</h2>
-              <p class="description">Explore our exclusive selection of luxury vehicles, sourced directly from Canada's finest manufacturers.</p>
+              <p class="description">
+                Explore our exclusive selection of luxury vehicles, sourced
+                directly from Canada's finest manufacturers.
+              </p>
             </div>
           </div>
         </div>
         <div class="col-md-7">
-          <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div
+            id="videoCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
             <div class="carousel-inner-wrapper">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <iframe src="https://www.youtube.com/embed/id" frameborder="0" allowfullscreen class="d-block w-100"></iframe>
+                  <iframe
+                    src="https://www.youtube.com/embed/id"
+                    frameborder="0"
+                    allowfullscreen
+                    class="d-block w-100"
+                  ></iframe>
                 </div>
                 <!-- Add more video items as needed -->
               </div>
@@ -625,91 +908,132 @@
         </div>
       </div>
     </div>
-    
-    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', (event) => {
-        const videoCarousel = document.getElementById('videoCarousel');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const videoIndex = document.getElementById('video-index');
-        const totalItems = document.querySelectorAll('#videoCarousel .carousel-item').length;
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const videoCarousel = document.getElementById("videoCarousel");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const videoIndex = document.getElementById("video-index");
+        const totalItems = document.querySelectorAll(
+          "#videoCarousel .carousel-item"
+        ).length;
 
         const updateIndex = () => {
-          const currentIndex = document.querySelector('#videoCarousel .carousel-item.active').dataset.index;
+          const currentIndex = document.querySelector(
+            "#videoCarousel .carousel-item.active"
+          ).dataset.index;
           videoIndex.textContent = `${currentIndex}/${totalItems}`;
         };
 
-        videoCarousel.addEventListener('slid.bs.carousel', updateIndex);
+        videoCarousel.addEventListener("slid.bs.carousel", updateIndex);
 
-        prevBtn.addEventListener('click', () => {
+        prevBtn.addEventListener("click", () => {
           const carousel = new bootstrap.Carousel(videoCarousel);
           carousel.prev();
         });
 
-        nextBtn.addEventListener('click', () => {
+        nextBtn.addEventListener("click", () => {
           const carousel = new bootstrap.Carousel(videoCarousel);
           carousel.next();
         });
 
         // Set data-index attributes for carousel items
-        document.querySelectorAll('#videoCarousel .carousel-item').forEach((item, index) => {
-          item.dataset.index = index + 1;
-        });
+        document
+          .querySelectorAll("#videoCarousel .carousel-item")
+          .forEach((item, index) => {
+            item.dataset.index = index + 1;
+          });
 
         // Initial index update
         updateIndex();
       });
     </script>
-  </body>
-</html>
-    
-    <div class="instagram-section">
-      <div class="container">
-        <h2 class="section-title">
-          <span class="highlight">OUR</span> <br>INSTAGRAM
-        </h2>
-        <div class="instagram-posts">
-          <!-- Instagram post items -->
-          <div class="instagram-post">
-            <img src="assets/images/instagram-section/Frame-1.jpg" alt="Instagram Post 1">
+
+    <div class="instagram-section-container">
+      <div class="vector-divider"></div>
+      <div class="instagram-section">
+        <div class="container">
+          <h2 class="section-title">
+            <span class="highlight">OUR</span> <br />INSTAGRAM
+          </h2>
+          <div class="instagram-posts">
+            <!-- Instagram post items -->
+            <div class="instagram-post">
+              <img
+                src="assets/images/instagram-section/Frame-1.jpg"
+                alt="Instagram Post 1"
+              />
+            </div>
+            <div class="instagram-post">
+              <img
+                src="assets/images/instagram-section/Frame-2.jpg"
+                alt="Instagram Post 2"
+              />
+            </div>
+            <div class="instagram-post">
+              <img
+                src="assets/images/instagram-section/Frame-3.jpg"
+                alt="Instagram Post 3"
+              />
+            </div>
+            <div class="instagram-post">
+              <img
+                src="assets/images/instagram-section/Frame-4.jpg"
+                alt="Instagram Post 4"
+              />
+            </div>
+            <div class="instagram-post">
+              <img
+                src="assets/images/instagram-section/Frame-1.jpg"
+                alt="Instagram Post 1"
+              />
+            </div>
+            <div class="instagram-post">
+              <img
+                src="assets/images/instagram-section/Frame-2.jpg"
+                alt="Instagram Post 2"
+              />
+            </div>
+            <div class="instagram-post">
+              <img
+                src="assets/images/instagram-section/Frame-3.jpg"
+                alt="Instagram Post 3"
+              />
+            </div>
+            <div class="instagram-post">
+              <img
+                src="assets/images/instagram-section/Frame-4.jpg"
+                alt="Instagram Post 4"
+              />
+            </div>
+            <div class="instagram-post">
+              <img
+                src="assets/images/instagram-section/Frame-1.jpg"
+                alt="Instagram Post 1"
+              />
+            </div>
+            <div class="instagram-post">
+              <img
+                src="assets/images/instagram-section/Frame-2.jpg"
+                alt="Instagram Post 2"
+              />
+            </div>
+            <div class="instagram-post">
+              <img
+                src="assets/images/instagram-section/Frame-3.jpg"
+                alt="Instagram Post 3"
+              />
+            </div>
+            <div class="instagram-post">
+              <img
+                src="assets/images/instagram-section/Frame-4.jpg"
+                alt="Instagram Post 4"
+              />
+            </div>
+            <!-- Add more posts as needed -->
           </div>
-          <div class="instagram-post">
-            <img src="assets/images/instagram-section/Frame-2.jpg" alt="Instagram Post 2">
-          </div>
-          <div class="instagram-post">
-            <img src="assets/images/instagram-section/Frame-3.jpg" alt="Instagram Post 3">
-          </div>
-          <div class="instagram-post">
-            <img src="assets/images/instagram-section/Frame-4.jpg" alt="Instagram Post 4">
-          </div>
-          <div class="instagram-post">
-            <img src="assets/images/instagram-section/Frame-1.jpg" alt="Instagram Post 1">
-          </div>
-          <div class="instagram-post">
-            <img src="assets/images/instagram-section/Frame-2.jpg" alt="Instagram Post 2">
-          </div>
-          <div class="instagram-post">
-            <img src="assets/images/instagram-section/Frame-3.jpg" alt="Instagram Post 3">
-          </div>
-          <div class="instagram-post">
-            <img src="assets/images/instagram-section/Frame-4.jpg" alt="Instagram Post 4">
-          </div>
-          <div class="instagram-post">
-            <img src="assets/images/instagram-section/Frame-1.jpg" alt="Instagram Post 1">
-          </div>
-          <div class="instagram-post">
-            <img src="assets/images/instagram-section/Frame-2.jpg" alt="Instagram Post 2">
-          </div>
-          <div class="instagram-post">
-            <img src="assets/images/instagram-section/Frame-3.jpg" alt="Instagram Post 3">
-          </div>
-          <div class="instagram-post">
-            <img src="assets/images/instagram-section/Frame-4.jpg" alt="Instagram Post 4">
-          </div>
-          <!-- Add more posts as needed -->
         </div>
       </div>
     </div>
@@ -718,36 +1042,55 @@
       <div class="contact-section">
         <div class="contact-wrapper">
           <h2>Contact us</h2>
-          <p>If you require assistance or support, our team is ready to help.</p>
+          <p>
+            If you require assistance or support, our team is ready to help.
+          </p>
           <h4>Call center working hours</h4>
           <p>MON-SUN: 24/7</p>
           <p>
-            <img src="assets/icons/phone-icon.svg" alt="Phone" style="height: 24px; margin-right: 10px;">
+            <img
+              src="assets/icons/phone-icon.svg"
+              alt="Phone"
+              style="height: 24px; margin-right: 10px"
+            />
             +1 514 294 7198
           </p>
           <p>
-            <img src="assets/icons/phone-icon.svg" alt="Phone" style="height: 24px; margin-right: 10px;">
+            <img
+              src="assets/icons/phone-icon.svg"
+              alt="Phone"
+              style="height: 24px; margin-right: 10px"
+            />
             +1 267 282 6010
           </p>
           <h4>Contact our customer support at</h4>
-          <button class="telegram-button"><i class="fab fa-telegram-plane"></i> Telegram</button>
-          <button class="whatsapp-button"><i class="fab fa-whatsapp"></i> Whatsapp</button>
+          <button class="telegram-button">
+            <i class="fab fa-telegram-plane"></i> Telegram
+          </button>
+          <button class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i> Whatsapp
+          </button>
         </div>
       </div>
       <div class="form-section">
         <div class="form-wrapper">
           <h2>Get more info about actual inventory, delivery etc.</h2>
           <p>Fill simple form, our manager will contact you shortly</p>
-          <form id="consultation-form" class="grid-form">
+          <form id="consult-form" class="form-content" style="display: block">
             <div class="form-row">
-              <input type="text" name="name" placeholder="Name*" required />
+              <input type="text" name="name" placeholder="Name" required />
               <select class="lang-select" name="language" required>
                 <option value="" disabled selected hidden>Language</option>
                 <option value="en">English</option>
                 <option value="fr">French</option>
                 <option value="es">Spanish</option>
               </select>
-              <input type="tel" name="phone" placeholder="+9 000 000 0000" required />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="+9 000 000 0000"
+                required
+              />
             </div>
             <div class="form-row">
               <select name="messenger" required>
@@ -755,20 +1098,25 @@
                 <option value="whatsapp">WhatsApp</option>
                 <option value="telegram">Telegram</option>
               </select>
-              <input type="text" name="nickname" placeholder="@nickname*" required />
+              <input
+                type="text"
+                name="nickname"
+                placeholder="@nickname*"
+                required
+              />
             </div>
-            <div class="form-row checkbox-row">
+            <div class="form-row">
               <input type="checkbox" name="consent" required />
               <label>I consent to the processing of personal data</label>
             </div>
-            <button type="submit" class="submit-btn full-width">Get A Consultation</button>
+            <button type="submit" class="submit-btn full-width">
+              Contact Me
+            </button>
           </form>
         </div>
       </div>
     </div>
-    
-    
-    
+
     <div class="map-container">
       <div class="map-responsive">
         <iframe
@@ -780,69 +1128,83 @@
       </div>
     </div>
 
-  <footer class="footer">
-  <div class="container-fluid">
-    <div class="row justify-content-between">
-      <div class="col-md-3 footer-logo-column">
-        <img src="assets/images/logo-white.png" alt="Canadian Cars" class="footer-logo">
-      </div>
-      <div class="col-md-9 footer-columns">
-        <div class="row justify-content-end">
-          <div class="col-md-2 footer-column">
-            <h5>Company</h5>
-            <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Why Choose us</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Visit website</a></li>
-            </ul>
+    <footer class="footer">
+      <div class="container-fluid">
+        <div class="row justify-content-between">
+          <div class="col-md-3 footer-logo-column">
+            <img
+              src="assets/images/logo-white.png"
+              alt="Canadian Cars"
+              class="footer-logo"
+            />
           </div>
-          <div class="col-md-2 footer-column">
-            <h5>Resources</h5>
-            <ul>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms and Condition</a></li>
-              <li><a href="#">Video</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
+          <div class="col-md-9 footer-columns">
+            <div class="row justify-content-end">
+              <div class="col-md-2 footer-column">
+                <h5>Company</h5>
+                <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Why Choose us</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Visit website</a></li>
+                </ul>
+              </div>
+              <div class="col-md-2 footer-column">
+                <h5>Resources</h5>
+                <ul>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms and Condition</a></li>
+                  <li><a href="#">Video</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-2 footer-column">
+                <h5>Product</h5>
+                <ul>
+                  <li><a href="#">Get an offer</a></li>
+                  <li><a href="#">Inventory</a></li>
+                  <li><a href="#">Our instagram</a></li>
+                  <li><a href="#">Export</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="col-md-2 footer-column">
-            <h5>Product</h5>
-            <ul>
-              <li><a href="#">Get an offer</a></li>
-              <li><a href="#">Inventory</a></li>
-              <li><a href="#">Our instagram</a></li>
-              <li><a href="#">Export</a></li>
-            </ul>
+        </div>
+        <div
+          class="row align-items-center justify-content-between footer-subscription"
+        >
+          <div class="col-md-3">
+            <form class="newsletter-form">
+              <label for="newsletter-email" class="newsletter-label"
+                >Subscribe to our Newsletter</label
+              >
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="newsletter-email"
+                  placeholder="Enter your Email"
+                  required
+                />
+                <button type="submit">SUBSCRIBE</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="footer-stripe"></div>
+        <div
+          class="row align-items-center justify-content-between footer-bottom"
+        >
+          <div class="col-md-3 text-left">
+            <p>&copy; 2024 Canadian cars. All rights reserved</p>
+          </div>
+          <div class="col-md-9 text-end">
+            <p><a href="#">Cookies</a> | <a href="#">Terms of use</a></p>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row align-items-center justify-content-between footer-subscription">
-      <div class="col-md-3">
-        <form class="newsletter-form">
-          <label for="newsletter-email" class="newsletter-label">Subscribe to our Newsletter</label>
-          <div class="form-group">
-            <input type="email" id="newsletter-email" placeholder="Enter your Email" required>
-            <button type="submit">SUBSCRIBE</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="footer-stripe"></div>
-    <div class="row align-items-center justify-content-between footer-bottom">
-      <div class="col-md-3 text-left">
-        <p>&copy; 2024 Canadian cars. All rights reserved</p>
-      </div>
-      <div class="col-md-9 text-end">
-        <p><a href="#">Cookies</a> | <a href="#">Terms of use</a></p>
-      </div>
-    </div>
-  </div>
-</footer>
+    </footer>
 
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
   </body>
 </html>
