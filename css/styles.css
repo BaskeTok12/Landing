@@ -46,8 +46,8 @@ img,
 }
 
 /* Улучшенная стилизация элементов, используя переменные и классы Bootstrap */
-:root {
-  --bs-primary: white; /* Переопределение основного цвета Bootstrap */
+.root {
+  --bs-primary: white;
 }
 
 .vector-divider {
@@ -540,6 +540,10 @@ img,
   gap: 10px;
 }
 
+.form-highlight{
+  color: #FF5A00!important;
+}
+
 .form-row {
   display: flex;
   gap: 10px;
@@ -585,6 +589,10 @@ img,
   color: white; /* Белый текст */
   border: 1px solid #6cfffd66; /* Немного контраста */
   box-shadow: none; /* Убрать тени */
+}
+
+.form-content input[type="text"]::after{
+
 }
 
 .form-row label {
@@ -651,6 +659,8 @@ img,
     display: block;
   }
   .contact-form{
+    position: i;
+    z-index: 20000000;
     min-height: auto;
   }
 
@@ -1115,7 +1125,7 @@ img,
 .b2b-pricing-text {
   position: relative;
   width: 50%;
-  left: 70%;
+  left: 50%;
   font-size: 20px;
   padding: 5px;
   background-color: transparent;
