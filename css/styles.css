@@ -1599,7 +1599,7 @@ opacity: 1!important;
 }
 
 .consultation-content {
-  max-width: 60%; /* Максимальная ширина контента */
+  max-width: 80%; /* Максимальная ширина контента */
   margin: 0 auto; /* Центрирование контента */
   position: relative;
   z-index: 1;
@@ -1613,11 +1613,15 @@ opacity: 1!important;
   color: #000;
   font-size: 54px;
   font-weight: bold; /* Жирный текст */
-  text-align: center;
+width: 100%;
+
 }
 
 .consultation-text span {
   color: #ff5a00;
+}
+.consultation-text p{
+  padding-left: 25%;
 }
 
 .centered-text {
@@ -1667,6 +1671,64 @@ opacity: 1!important;
   background-repeat: no-repeat;
   overflow: hidden;
 }
+
+@media (max-width: 768px) {
+.consultation-text{
+  display: none;
+}
+
+.consultation-text-2{
+  font-weight: bold;
+color: #000;
+  display: block!important;
+  font-size: 24px;
+}
+
+.consultation-text-2 span {
+  color: #ff5a00;
+}
+
+.centered-text{
+  display: none;
+}
+
+.consultation-text-2 p{
+  margin: 0!important;
+}
+.consultation-content{
+  max-width: 100%;
+}
+
+.centered-text-2{
+  font-weight: bold;
+  color: #000;
+  display: block!important;
+  margin-left: 10px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.consultation-description{
+  margin: 0!important;
+}
+
+.consultation-block button{
+  margin: 0!important;
+  width: 100%;
+  border-radius: 5px;
+}
+
+}
+
+
+.centered-text-2{
+  display: none;
+}
+
+.consultation-text-2{
+  display: none;
+}
+
 .quiz-section {
   border-radius: 20px; /* Закругление углов блока */
   margin: 20px; /* Добавляем некоторый внешний отступ */
