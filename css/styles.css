@@ -1741,10 +1741,12 @@ color: #000;
 }
 
 .quiz-question h2 {
-  font-size: 30px;
+  font-size: 16px;
   text-align: left;
   color: #fff;
   left: calc(50% - 477px / 2 + 188.5px);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .quiz-container {
@@ -2187,7 +2189,7 @@ color: #000;
   outline: 0;
 }
 .select-items img {
-  width: 20px;
+  width: 40px;
   height: auto;
 }
 
