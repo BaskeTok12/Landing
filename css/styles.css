@@ -1191,7 +1191,7 @@ opacity: 1!important;
   }
 
   .test-drive-text{
-    width: 50%;
+    width: 40%;
     vertical-align:bottom!important;
   }
 
@@ -1211,7 +1211,7 @@ opacity: 1!important;
 .test-drive-container {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 20px;
   width: 100%;
 }
@@ -1219,6 +1219,7 @@ opacity: 1!important;
 .test-drive-text {
   font-size: 16px;
   margin-right: 10px;
+  width: 60%;
 }
 
 .arrow-icon {
@@ -1291,6 +1292,7 @@ opacity: 1!important;
   color: #fff;
   padding: 20px;
   position: relative;
+  
 }
 
 .vehicle-gallery h2 {
@@ -2371,9 +2373,6 @@ faq-header h2 {
   overflow: hidden; /* Добавьте это, чтобы обрезать содержимое внутри скругленных углов */
 }
 
-.carousel-inner {
-  height: 500px; /* Increase the height of the video block */
-}
 
 .carousel-inner iframe {
   height: 100%; /* Ensure the iframe takes up the full height */

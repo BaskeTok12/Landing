@@ -459,6 +459,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     instagramPostsContainer.scrollLeft = scrollLeft - walk;
   });
 
+  
+
   let scrollAmount = 1; // Шаг автопрокрутки
   const autoScroll = () => {
     instagramPostsContainer.scrollLeft = lerp(instagramPostsContainer.scrollLeft, instagramPostsContainer.scrollLeft + scrollAmount, 0.1);
