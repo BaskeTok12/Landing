@@ -1704,7 +1704,7 @@ color: #000;
   color: #000;
   display: block!important;
   margin-left: 10px;
-  text-align: center;
+  text-align: end!important;
   font-size: 24px;
 }
 
@@ -1717,6 +1717,7 @@ color: #000;
   width: 100%;
   border-radius: 5px;
 }
+
 
 }
 
@@ -1772,15 +1773,12 @@ color: #000;
 }
 
 .quiz-intro p {
-  color: white;
+  color: #FFFFFFCC;
   font-size: 16px;
   margin-bottom: 20px;
 }
 
 .start-button {
-  position: absolute;
-  bottom: -70px; /* Adjust as needed for spacing */
-  right: -80px; /* Adjust as needed for spacing */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1796,8 +1794,9 @@ color: #000;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
   overflow: hidden;
-  z-index: 1;
+  margin-left: 20px;
 }
+
 .start-button::before {
   content: "";
   position: absolute;
@@ -1828,13 +1827,17 @@ color: #000;
   color: white;
 }
 
+.start-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+
 .start-arrow {
-  position: absolute;
   width: 123px;
   height: 100px;
-  bottom: -70px; /* Adjust to position arrow correctly */
-  right: 100px; /* Adjust to position arrow correctly */
-  z-index: 0;
 }
 .start-arrow img {
   width: 100%;
@@ -1873,6 +1876,8 @@ color: #000;
     bottom: -40px;
     right: 70px;
   }
+
+  
 }
 
 @media (max-width: 576px) {
@@ -1937,7 +1942,7 @@ color: #000;
   padding: 20px;
   justify-content: space-between;
   width: 100%; /* Full width */
-  max-width: 600px; /* Maximum width */
+  max-width: 700px; /* Maximum width */
   margin: 0;
 }
 
@@ -1981,16 +1986,28 @@ color: #000;
   width: 100%; /* Ширина контейнера ответов */
 }
 
+.quiz-intro h1{
+  font-weight: bold;
+}
+
+.highlight-steps {
+  color: #B3B3B3;
+; /* Change the color to gray */
+}
+
 .answer-button {
   background-color: transparent; /* Прозрачный фон */
   color: #fff; /* Голубой цвет текста */
   border: 1px solid #6cfffd; /* Голубая обводка */
-  padding: 20px 20px; /* Увеличенный вертикальный паддинг и уменьшенный горизонтальный */
+  padding: 10px 20px; /* Увеличенный вертикальный паддинг и уменьшенный горизонтальный */
   margin: 5px;
-  height: 60px; /* Увеличение высоты */
+  height: 70px; /* Увеличение высоты */
   flex: 1 1 45%; /* Меньшая ширина для каждой кнопки */
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s; /* Плавное изменение цвета */
+  border-radius: 5px;
+ text-align: center;
+ box-sizing: border-box;
 }
 
 .answer-button.active {
@@ -2015,9 +2032,8 @@ color: #000;
 }
 
 .next-button {
-  position: absolute;
-  right: -100px; /* Position it to the right */
-  bottom: 25px; /* Position it to the bottom */
+  align-self: flex-end; /* Aligns the button to the end of the flex container */
+  margin-top: 20px; /* Adds some space above the button */
   padding: 10px 20px;
   background-color: orange;
   color: white;
@@ -2025,6 +2041,7 @@ color: #000;
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 
 .quiz-final-message {
   display: flex;
@@ -2073,6 +2090,16 @@ color: #000;
 
 .next-button:hover {
   background-color: #e65a00;
+}
+
+@media (max-width: 768px) {
+  .speedometer-container{
+    display: none;
+  }
+
+  .quiz-intro{
+    text-align: center ;
+  }
 }
 
 .hero h1 {
