@@ -508,3 +508,45 @@ document.addEventListener("DOMContentLoaded", (event) => {
     startAutoScrollWithDelay
   );
 });
+
+
+document.getElementById('consult-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Предотвратить стандартное поведение формы
+
+  // Сбор данных из формы
+  var formData = {
+    name: document.querySelector('#consult-form [name="name"]').value,
+    language: document.querySelector('#consult-form [name="language"]').value,
+    phone: document.querySelector('#consult-form [name="phone"]').value,
+    messenger: document.querySelector('#consult-form [name="messenger"]').value,
+    nickname: document.querySelector('#consult-form [name="nickname"]').value
+  };
+
+  // Отправка данных в Facebook Conversions API
+  fetch('https://graph.facebook.com/v11.0/1418306608861447/events', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      data: [
+        {
+          event_name: 'Lead',
+          event_time: Math.floor(Date.now() / 1000),
+          action_source: 'website',
+          user_data: {
+            ph: btoa(formData.phone), // Кодирование номера телефона в Base64
+            em: btoa(formData.nickname) // Кодирование никнейма в Base64
+          },
+          custom_data: {
+            content_name: 'Consultation Request',
+            content_category: 'Consultation'
+          }
+        }
+      ]
+    })
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+});
