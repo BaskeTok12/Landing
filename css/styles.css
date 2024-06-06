@@ -1566,16 +1566,16 @@ opacity: 1!important;
   display: flex;
   justify-content: space-between;
   align-items: flex-end; /* Выравнивание элементов по нижнему краю */
-  padding: 20px;
+
 }
-.contact-info h4 {
+.contact-info h3 {
   flex: 1; /* Занимает всё доступное пространство, отодвигая кнопки вправо */
   margin: 0; /* Убираем стандартные отступы */
   text-align: left; /* Центрирование заголовка */
-color: rgba(255, 255, 255, 0.8);
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
 }
+
 .contact-btns {
   display: flex;
   flex-direction: column; /* Располагаем кнопки вертикально */
@@ -1656,6 +1656,7 @@ color: rgba(255, 255, 255, 0.8);
 }
 
 .contact-btn {
+  min-width: 150px;
   margin-top: 10px;
   padding: 10px 20px;
   font-size: 16px;

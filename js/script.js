@@ -26,64 +26,67 @@ function showForm(formType) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const toggleButton = document.querySelector('.form-toggle-button');
-  const formContainer = document.querySelector('.form-container');
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleButton = document.querySelector(".form-toggle-button");
+  const formContainer = document.querySelector(".form-container");
 
-  toggleButton.addEventListener('click', function () {
-    if (formContainer.style.display === 'none' || formContainer.style.display === '') {
-      formContainer.style.display = 'block';
+  toggleButton.addEventListener("click", function () {
+    if (
+      formContainer.style.display === "none" ||
+      formContainer.style.display === ""
+    ) {
+      formContainer.style.display = "block";
     } else {
-      formContainer.style.display = 'none';
+      formContainer.style.display = "none";
     }
   });
 });
 
- document.addEventListener('DOMContentLoaded', () => {
-      const select = document.querySelector('.lang-select');
-      const options = select.querySelectorAll('option');
+document.addEventListener("DOMContentLoaded", () => {
+  const select = document.querySelector(".lang-select");
+  const options = select.querySelectorAll("option");
 
-      // Set initial icon based on the selected option or default
-      const initialIcon = options[select.selectedIndex].getAttribute('data-icon');
-      select.style.backgroundImage = `url(${initialIcon})`;
-      select.style.backgroundRepeat = 'no-repeat';
-      select.style.backgroundPosition = 'center';
-      select.style.backgroundSize = 'contain';
+  // Set initial icon based on the selected option or default
+  const initialIcon = options[select.selectedIndex].getAttribute("data-icon");
+  select.style.backgroundImage = `url(${initialIcon})`;
+  select.style.backgroundRepeat = "no-repeat";
+  select.style.backgroundPosition = "center";
+  select.style.backgroundSize = "contain";
 
-      options.forEach(option => {
-        const icon = option.getAttribute('data-icon');
-        if (icon) {
-          const img = new Image();
-          img.src = icon;
-          img.style.width = '20px';
-          img.style.height = '20px';
-          img.style.objectFit = 'cover';
-          option.appendChild(img);
-        }
-      });
+  options.forEach((option) => {
+    const icon = option.getAttribute("data-icon");
+    if (icon) {
+      const img = new Image();
+      img.src = icon;
+      img.style.width = "20px";
+      img.style.height = "20px";
+      img.style.objectFit = "cover";
+      option.appendChild(img);
+    }
+  });
 
-      select.addEventListener('change', (e) => {
-        const selectedOption = options[select.selectedIndex];
-        const icon = selectedOption.getAttribute('data-icon');
-        select.style.backgroundImage = `url(${icon})`;
-      });
-    });
-document.addEventListener('DOMContentLoaded', function() {
-  const selects = document.querySelectorAll('select');
+  select.addEventListener("change", (e) => {
+    const selectedOption = options[select.selectedIndex];
+    const icon = selectedOption.getAttribute("data-icon");
+    select.style.backgroundImage = `url(${icon})`;
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const selects = document.querySelectorAll("select");
 
   // Проверка начального значения каждого select
-  selects.forEach(select => {
+  selects.forEach((select) => {
     updateSelectColor(select);
-    select.addEventListener('change', function() {
+    select.addEventListener("change", function () {
       updateSelectColor(this);
     });
   });
 
   function updateSelectColor(selectElement) {
     if (selectElement.value) {
-      selectElement.classList.add('color-selected');
+      selectElement.classList.add("color-selected");
     } else {
-      selectElement.classList.remove('color-selected');
+      selectElement.classList.remove("color-selected");
     }
   }
 });
@@ -96,13 +99,13 @@ document.addEventListener("DOMContentLoaded", function () {
 function next() {
   const items = document.querySelectorAll(".gallery-item");
   const container = document.querySelector(".gallery-container");
-  
+
   if (currentItemIndex < items.length - 1) {
     currentItemIndex++;
     const item = items[currentItemIndex];
     container.scroll({
       left: item.offsetLeft - container.offsetLeft,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
     updateIndexDisplay(currentItemIndex + 1, items.length);
   }
@@ -117,7 +120,7 @@ function previous() {
     const item = items[currentItemIndex];
     container.scroll({
       left: item.offsetLeft - container.offsetLeft,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
     updateIndexDisplay(currentItemIndex + 1, items.length);
   }
@@ -130,10 +133,9 @@ function updateIndexDisplay(current, total) {
 // Hero
 function endQuiz() {
   // Implement any actions to take place when the quiz ends, such as hiding the quiz container or showing a message
-  const faqSection = document.querySelector('.container-fluid.mt-5');
-  faqSection.scrollIntoView({ behavior: 'smooth' });
+  const faqSection = document.querySelector(".container-fluid.mt-5");
+  faqSection.scrollIntoView({ behavior: "smooth" });
 }
-
 
 // Hero
 
@@ -229,13 +231,11 @@ function nextStage() {
   currentStage++;
   if (currentStage <= totalStages) {
     showStage(currentStage);
-    updateProgress(currentStage / totalStages * 100);
+    updateProgress((currentStage / totalStages) * 100);
   } else {
     console.log("Quiz completed");
     // Here you might finalize the quiz, show results, etc.
-    
   }
-  
 }
 
 function toggleDropdown(element) {
@@ -243,11 +243,13 @@ function toggleDropdown(element) {
 }
 
 function selectItem(element, value) {
-  var selected = element.closest(".custom-select").querySelector(".select-selected");
+  var selected = element
+    .closest(".custom-select")
+    .querySelector(".select-selected");
   selected.innerHTML = element.innerHTML; // Update the displayed value
   toggleDropdown(element.closest(".custom-select"));
 
-  var hiddenInput = document.getElementById('language-input');
+  var hiddenInput = document.getElementById("language-input");
   hiddenInput.value = value; // Update the hidden input value
 
   // Optionally trigger other actions when language changes
@@ -260,8 +262,8 @@ function updateQuizLanguage(language) {
 }
 
 function updateProgress(percent) {
-  const progressBarFill = document.querySelector('.progress-fill');
-  progressBarFill.style.width = percent + '%';
+  const progressBarFill = document.querySelector(".progress-fill");
+  progressBarFill.style.width = percent + "%";
 }
 document.querySelectorAll(".quiz-answers .answer-button").forEach((button) => {
   button.addEventListener("click", function () {
@@ -291,9 +293,17 @@ const cars = [
     engine: "4L",
     power: "416 HP",
     fuelRating: "12/6/2.4",
-    description: "Spacious, advanced, luxurious and timeless, the G550 is an icon of capability and pure design. Crafted by hand, with an exceptional variety of ways to personalize it, you can take your G virtually anywhere you want.",
-    images: ["../assets/images/venicle-galery/1/1-mercedes-g550.png", "../assets/images/venicle-galery/1/2-mercedes-g550.png", "../assets/images/venicle-galery/1/3-mercedes-g550.png", "../assets/images/venicle-galery/1/4-mercedes-g550.png", "../assets/images/venicle-galery/1/5-mercedes-g550.png", "../assets/images/venicle-galery/1/6-mercedes-g550.png"],
-  }
+    description:
+      "Spacious, advanced, luxurious and timeless, the G550 is an icon of capability and pure design. Crafted by hand, with an exceptional variety of ways to personalize it, you can take your G virtually anywhere you want.",
+    images: [
+      "../assets/images/venicle-galery/1/1-mercedes-g550.png",
+      "../assets/images/venicle-galery/1/2-mercedes-g550.png",
+      "../assets/images/venicle-galery/1/3-mercedes-g550.png",
+      "../assets/images/venicle-galery/1/4-mercedes-g550.png",
+      "../assets/images/venicle-galery/1/5-mercedes-g550.png",
+      "../assets/images/venicle-galery/1/6-mercedes-g550.png",
+    ],
+  },
   // other cars...
 ];
 
@@ -337,9 +347,9 @@ function createModal(car) {
               <li><span>Power:</span> 416 HP</li>
               <li><span>Fuel Rating:</span> 12/6/2.4</li>
             </ul>
-            <p>Spacious, advanced, luxurious and timeless, the G550 is an icon of capability and pure design. Crafted by hand, with an exceptional variety of ways to personalize it, you can take your G virtually anywhere you want.</p>
+            <p>${car.description}</p>  <!-- Вставка описания из константы -->
             <div class="contact-info">
-  <h4>Contact our manager for more info</h4>
+  <h3>Contact our manager for more info</h3>
   <div class="contact-btns">
     <button class="contact-btn telegram">TELEGRAM</button>
     <button class="contact-btn whatsapp">WHATSAPP</button>
@@ -353,7 +363,6 @@ function createModal(car) {
   `;
   document.body.insertAdjacentHTML("beforeend", modalHTML);
 }
-
 
 
 function openModal(carId) {
@@ -376,9 +385,9 @@ function closeModal(id) {
 
 function changeImage(carId, direction) {
   const modal = document.getElementById(`modal${carId}`);
-  const mainImage = modal.querySelector('.main-image');
-  const thumbnails = Array.from(modal.querySelectorAll('.thumbnail img'));
-  const images = thumbnails.map(img => img.src);
+  const mainImage = modal.querySelector(".main-image");
+  const thumbnails = Array.from(modal.querySelectorAll(".thumbnail img"));
+  const images = thumbnails.map((img) => img.src);
   let currentIndex = images.indexOf(mainImage.src);
 
   currentIndex += direction;
@@ -393,27 +402,27 @@ function changeImage(carId, direction) {
 
 function setImage(carId, imgSrc) {
   const modal = document.getElementById(`modal${carId}`);
-  const mainImage = modal.querySelector('.main-image');
+  const mainImage = modal.querySelector(".main-image");
   mainImage.src = imgSrc;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  cars.forEach(car => createModal(car));
+  cars.forEach((car) => createModal(car));
 });
 
-// interactive block 
+// interactive block
 
 function showText(id) {
-  document.getElementById(id).style.opacity = '1';
+  document.getElementById(id).style.opacity = "1";
 }
 
 function hideText(id) {
-  document.getElementById(id).style.opacity = '0';
+  document.getElementById(id).style.opacity = "0";
 }
 
 // Instagram
-document.addEventListener('DOMContentLoaded', (event) => {
-  const instagramPostsContainer = document.querySelector('.instagram-posts');
+document.addEventListener("DOMContentLoaded", (event) => {
+  const instagramPostsContainer = document.querySelector(".instagram-posts");
 
   let isDown = false;
   let startX;
@@ -437,8 +446,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     requestAnimationFrame(step);
   };
 
-  instagramPostsContainer.addEventListener('mousedown', (e) => {
-    if (e.target.tagName === 'IMG') {
+  instagramPostsContainer.addEventListener("mousedown", (e) => {
+    if (e.target.tagName === "IMG") {
       e.preventDefault();
     }
     isDown = true;
@@ -448,16 +457,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     clearTimeout(autoScrollTimeout); // Очистить таймаут автопрокрутки
   });
 
-  instagramPostsContainer.addEventListener('mouseleave', () => {
+  instagramPostsContainer.addEventListener("mouseleave", () => {
     isDown = false;
   });
 
-  instagramPostsContainer.addEventListener('mouseup', () => {
+  instagramPostsContainer.addEventListener("mouseup", () => {
     isDown = false;
     startAutoScrollWithDelay(); // Начать автопрокрутку с задержкой
   });
 
-  instagramPostsContainer.addEventListener('mousemove', (e) => {
+  instagramPostsContainer.addEventListener("mousemove", (e) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - instagramPostsContainer.offsetLeft;
@@ -465,12 +474,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     instagramPostsContainer.scrollLeft = scrollLeft - walk;
   });
 
-  
-
   let scrollAmount = 1; // Шаг автопрокрутки
   const autoScroll = () => {
-    instagramPostsContainer.scrollLeft = lerp(instagramPostsContainer.scrollLeft, instagramPostsContainer.scrollLeft + scrollAmount, 0.1);
-    if (instagramPostsContainer.scrollLeft >= (instagramPostsContainer.scrollWidth - instagramPostsContainer.clientWidth)) {
+    instagramPostsContainer.scrollLeft = lerp(
+      instagramPostsContainer.scrollLeft,
+      instagramPostsContainer.scrollLeft + scrollAmount,
+      0.1
+    );
+    if (
+      instagramPostsContainer.scrollLeft >=
+      instagramPostsContainer.scrollWidth - instagramPostsContainer.clientWidth
+    ) {
       instagramPostsContainer.scrollLeft = 0;
     }
     requestId = requestAnimationFrame(autoScroll);
@@ -488,7 +502,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     autoScrollTimeout = setTimeout(startAutoScroll, 3000); // Задержка 3 секунды
   };
 
-  instagramPostsContainer.addEventListener('mouseenter', stopAutoScroll);
-  instagramPostsContainer.addEventListener('mouseleave', startAutoScrollWithDelay);
-
+  instagramPostsContainer.addEventListener("mouseenter", stopAutoScroll);
+  instagramPostsContainer.addEventListener(
+    "mouseleave",
+    startAutoScrollWithDelay
+  );
 });
