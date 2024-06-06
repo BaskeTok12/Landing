@@ -292,7 +292,7 @@ const cars = [
     power: "416 HP",
     fuelRating: "12/6/2.4",
     description: "Spacious, advanced, luxurious and timeless, the G550 is an icon of capability and pure design. Crafted by hand, with an exceptional variety of ways to personalize it, you can take your G virtually anywhere you want.",
-    images: ["Landing/assets/images/venicle-galery/1/1-mercedes-g550.png", "Landing/assets/images/venicle-galery/1/2-mercedes-g550.jpg", "Landing/assets/images/venicle-galery/1/3-mercedes-g550.png", "Landing/assets/images/venicle-galery/1/4-mercedes-g550.png", "Landing/assets/images/venicle-galery/1/5-mercedes-g550.png", "Landing/assets/images/venicle-galery/1/6-mercedes-g550.png"],
+    images: ["../assets/images/venicle-galery/1/1-mercedes-g550.png", "../assets/images/venicle-galery/1/2-mercedes-g550.png", "../assets/images/venicle-galery/1/3-mercedes-g550.png", "../assets/images/venicle-galery/1/4-mercedes-g550.png", "../assets/images/venicle-galery/1/5-mercedes-g550.png", "../assets/images/venicle-galery/1/6-mercedes-g550.png"],
   }
   // other cars...
 ];
@@ -339,10 +339,13 @@ function createModal(car) {
             </ul>
             <p>Spacious, advanced, luxurious and timeless, the G550 is an icon of capability and pure design. Crafted by hand, with an exceptional variety of ways to personalize it, you can take your G virtually anywhere you want.</p>
             <div class="contact-info">
-              <p>Contact our manager for more info</p>
-              <button class="contact-btn telegram">TELEGRAM</button>
-              <button class="contact-btn whatsapp">WHATSAPP</button>
-            </div>
+  <h4>Contact our manager for more info</h4>
+  <div class="contact-btns">
+    <button class="contact-btn telegram">TELEGRAM</button>
+    <button class="contact-btn whatsapp">WHATSAPP</button>
+  </div>
+</div>
+
           </div>
         </div>
       </div>

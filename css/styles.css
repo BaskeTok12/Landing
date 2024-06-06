@@ -1432,6 +1432,9 @@ opacity: 1!important;
 .modal {
   display: none; /* Скрыто по умолчанию */
   position: fixed; /* Фиксированное позиционирование */
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* ограничиваем высоту по высоте видимой области */
   left: 0;
   top: 0;
   width: 100%; /* Ширина всего экрана */
@@ -1456,9 +1459,12 @@ opacity: 1!important;
 }
 
 .modal-body {
+  
   display: flex;
   flex: 1;
   color: white;
+  max-height: 100%; /* ограничиваем максимальную высоту, чтобы предотвратить выход за пределы .modal-content */
+  overflow-y: auto;
 }
 
 .gallery {
@@ -1473,6 +1479,7 @@ opacity: 1!important;
   position: relative;
   width: 100%; /* Занимает всю ширину своего родителя */
   height: auto; /* Высота автоматически соответствует содержимому */
+  margin-bottom: 5px;
 }
 
 .main-image-container img {
@@ -1501,7 +1508,7 @@ opacity: 1!important;
 
 .thumbnail {
   flex: 1; /* Каждая миниатюра занимает равное пространство */
-  margin: 5px; /* Отступы вокруг миниатюры */
+  margin: 10px; /* Отступы вокруг миниатюры */
 }
 
 .thumbnail img {
@@ -1555,33 +1562,83 @@ opacity: 1!important;
   right: 10px;
 }
 
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* Выравнивание элементов по нижнему краю */
+  padding: 20px;
+}
+.contact-info h4 {
+  flex: 1; /* Занимает всё доступное пространство, отодвигая кнопки вправо */
+  margin: 0; /* Убираем стандартные отступы */
+  text-align: left; /* Центрирование заголовка */
+color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  font-weight: 400;
+}
+.contact-btns {
+  display: flex;
+  flex-direction: column; /* Располагаем кнопки вертикально */
+  align-items: flex-start; /* Выравнивание кнопок по левому краю */
+}
+
+.contact-btn:last-child {
+  margin-bottom: 0; /* Убираем отступ у последней кнопки */
+}
+
 .info {
   width: 40%;
   overflow-y: auto;
-  padding-left: 20px;
+  padding-left: 50px;
   box-sizing: border-box;
 }
 
 .info h1 {
-  text-align: center; /* Центрирование заголовка */
+  text-align: left; /* Центрирование заголовка */
   margin-bottom: 20px; /* Отступ снизу для заголовка */
+  font-size: 40px;
+  font-weight: bold;
 }
+
+.info h2 {
+  text-align: left; /* Центрирование заголовка */
+  margin-bottom: 20px; /* Отступ снизу для заголовка */
+  font-size: 20px;
+  font-weight: bold;
+  color: #B3B3B3;
+}
+
+.info P {
+  text-align: left; /* Центрирование заголовка */
+color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+}
+
 
 .specs {
   list-style: none; /* Убираем стандартные маркеры списка */
   padding: 0;
-  margin: 0 0 20px 0; /* Отступы вокруг списка характеристик */
+  margin: 0 0 50px 0; /* Отступы вокруг списка характеристик */
 }
 
 .specs li {
   display: flex;
   justify-content: space-between; /* Распределяем содержимое между началом и концом элемента */
   margin-bottom: 10px; /* Отступ между элементами списка */
-  border-bottom: 1px solid #eee; /* Добавляем тонкую линию под каждым элементом */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4); /* Добавляем тонкую линию под каждым элементом */
 }
 
+.specs li:last-child {
+  border-bottom: none; /* Добавляем тонкую линию под каждым элементом */
+}
+
+
 .specs span {
-  font-weight: bold; /* Сделаем название характеристики жирным */
+  font-weight: 500; /* Сделаем название характеристики жирным */
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
 }
 
 .close {
