@@ -26,22 +26,35 @@ function showForm(formType) {
   }
 }
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const toggleButton = document.querySelector(".form-toggle-button");
   const formContainer = document.querySelector(".form-container");
+  const col = document.querySelector(".col-lg-4");
+  const formP = document.querySelector(".form-header p");
+  const formHeader = document.querySelector(".form-header");
+  const contactForm = document.querySelector(".contact-form");
 
   toggleButton.addEventListener("click", function () {
-    if (
-      formContainer.style.display === "none" ||
-      formContainer.style.display === ""
-    ) {
+    if (formContainer.style.display === "none" || formContainer.style.display === "") {
       formContainer.style.display = "block";
+      formP.style.display = "block";
+      col.style.zIndex = "20000000"; // Set a high z-index to bring the form to the foreground
+      contactForm.style.flexDirection  = "column";
+      contactForm.style.paddingTop = "20px";
+      formHeader.style.order = "0";
     } else {
       formContainer.style.display = "none";
+      formP.style.display = "none";
+      formContainer.style.zIndex = "0"; // Reset z-index when hiding the form
+      col.styledisplay = "flex";
+      
+      contactForm.style.paddingTop = "0px";
+      formHeader.style.order = "1";
     }
   });
 });
-
 document.addEventListener("DOMContentLoaded", () => {
   const select = document.querySelector(".lang-select");
   const options = select.querySelectorAll("option");
@@ -549,4 +562,112 @@ document.getElementById('consult-form').addEventListener('submit', function(even
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error:', error));
+});
+
+
+jQuery.noConflict();
+jQuery(document).ready(function($) {
+  $('.select').each(function() {
+    const _this = $(this),
+        selectOption = _this.find('option'),
+        selectOptionLength = selectOption.length,
+        selectedOption = selectOption.filter(':selected'),
+        duration = 450; // длительность анимации 
+
+    _this.hide();
+    _this.wrap('<div class="select"></div>');
+    $('<div>', {
+        class: 'new-select',
+        text: _this.children('option:disabled').text()
+    }).insertAfter(_this);
+
+    const selectHead = _this.next('.new-select');
+    $('<div>', {
+        class: 'new-select__list'
+    }).insertAfter(selectHead);
+
+    const selectList = selectHead.next('.new-select__list');
+    for (let i = 1; i < selectOptionLength; i++) {
+        $('<div>', {
+            class: 'new-select__item',
+            html: $('<span>', {
+                text: selectOption.eq(i).text()
+            })
+        })
+        .attr('data-value', selectOption.eq(i).val())
+        .appendTo(selectList);
+    }
+
+    const selectItem = selectList.find('.new-select__item');
+    selectList.slideUp(0);
+    selectHead.on('click', function() {
+        if (!$(this).hasClass('on')) {
+            $(this).addClass('on');
+            selectList.slideDown(duration);
+
+            selectItem.on('click', function() {
+                let chooseItem = $(this).data('value');
+
+                $('select').val(chooseItem).attr('selected', 'selected');
+                selectHead.text($(this).find('span').text());
+
+                selectHead.addClass('selected'); // Добавляем класс, который изменит цвет текста
+
+                selectList.slideUp(duration);
+                selectHead.removeClass('on');
+            });
+
+        } else {
+            $(this).removeClass('on');
+            selectList.slideUp(duration);
+        }
+    });
+  });
+});
+jQuery(document).ready(function($) {
+  // Функция валидации поля по пустому значению или плейсхолдеру
+  function validateField(field) {
+    if (field.val() === "" || field.val() === field.attr('placeholder')) {
+      field.css('border', '2px solid red'); // Добавляем красную обводку
+      return false;
+    } else {
+      field.css('border', ''); // Убираем красную обводку
+      return true;
+    }
+  }
+
+  // Обработка отправки формы
+  $('form').on('submit', function(e) {
+    let isValid = true;
+    
+    // Валидация текстовых полей и телефона
+    $(this).find('input[type="text"], input[type="tel"]').each(function() {
+      if (!validateField($(this))) {
+        isValid = false;
+      }
+    });
+
+    // Валидация кастомных селектов
+    $('.new-select').each(function() {
+      if ($(this).text() === $(this).prev('select').children('option:disabled').text()) {
+        $(this).css('border', '2px solid red'); // Добавляем красную обводку
+        isValid = false;
+      } else {
+        $(this).css('border', ''); // Убираем красную обводку
+      }
+    });
+
+    // Валидация чекбокса
+    if (!$('input[type="checkbox"][name="consent"]').is(':checked')) {
+      $('input[type="checkbox"][name="consent"]').next('label').css('color', 'red'); // Красный цвет текста лейбла
+      isValid = false;
+    } else {
+      $('input[type="checkbox"][name="consent"]').next('label').css('color', ''); // Убираем красный цвет
+    }
+
+    // Если форма не валидна, предотвращаем отправку
+    if (!isValid) {
+      e.preventDefault(); // Предотвращаем отправку формы
+    }
+  });
 });

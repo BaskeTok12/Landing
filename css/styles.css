@@ -461,8 +461,11 @@ img,
   .btn-check-inventory {
     width: 100%; /* Заставляем кнопку занимать всю ширину строки */
     max-width: none; /* Устанавливаем максимальную ширину */
- 
 
+  }
+
+  .form-header p{
+    display: none;
   }
 }
 
@@ -667,16 +670,28 @@ img,
   .form-row{
     display: block;
   }
+  .header-wrapper {
+    display: flex; /* Используем flexbox для выравнивания */
+    align-items: center; /* Центрируем элементы по вертикали */
+  }
   .contact-form{
     position: i;
     z-index: 20000000;
     min-height: auto;
+
     
+    padding-top: 0;
+  }
+
+  .form-header{
+    order: 1; /* Заголовок с описанием будет вторым */
+    flex-grow: 1; /* Заголовок и описание будут занимать все доступное пространство */
+    text-align: center; /* Выравнивание текста по центру */
   }
 
   .col-lg-4{
     z-index: 500;
-    max-height: 150px;
+    max-height: 100px;
     border-radius: 10px;
   }
 
@@ -686,12 +701,14 @@ img,
 
   .form-toggle-button {
     position:inherit;
-
     background: transparent;
     border: none;
     color: white;
     font-size: 24px;
     cursor: pointer;
+    order: 2; 
+padding: 0;
+align-self: flex-start;
   }
   .form-container {
     display: none;
@@ -742,12 +759,19 @@ img,
   text-indent: 30px; /* Hide text and ensure it doesn't overlap icon */
 }
 
-.lang-select:focus {
-  background-color: #141414 !important;
-  outline: none; /* Remove default focus outline */
-  border-color: #6cfffd !important; /* Border color on focus */
-  border: 1px solid #6cfffd66 !important; /* Border styling */
+.form-row select:focus {
+  background-color: #141414;
+  border: 1px solid #6cfffd;
+
+  border-color: #6cfffd66;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
 }
+
+
+
 /* Styles for the form rows */
 .form-row .lang-select {
   flex: 0 0 60px; /* Set a fixed width for the language select */
@@ -2870,3 +2894,82 @@ button[type="submit"] {
 }
 
 /* Footer */
+.select {
+  display: block;
+  height: 50px;
+  width: 100%;
+  position: relative;
+  width: 100%!important;
+  margin-top: 10px;
+}
+
+.new-select {
+  text-align: left;
+  position: relative;
+  border: 1px solid #6CFFFD66;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: gray;
+  user-select: none;
+  height: 50px;
+
+  border-radius: 5px;
+}
+
+.new-select__list {
+  border-radius: 5px;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  border: 1px solid #6CFFFD66;
+  cursor: pointer;
+  width: 100%;
+  z-index: 2;
+  color: gray;
+  background: #141414;
+  user-select: none;
+}
+
+.new-select__list.on {
+  display: block;
+}
+
+.new-select__item span {
+  display: block;
+  padding: 10px 15px;
+}
+
+.new-select__item span:hover {
+  background-color: rgba(108, 255, 253, 0.1);
+}
+
+.new-select:after {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 9px;
+  top: 9px;
+
+  opacity: 0.6;
+
+  -webkit-transition: all .27s ease-in-out;
+      -o-transition: all .27s ease-in-out;
+          transition: all .27s ease-in-out;
+
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+       -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.new-select.on:after {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.new-select.selected {
+  color: white; /* Устанавливает белый цвет текста для выбранного элемента */
+}
