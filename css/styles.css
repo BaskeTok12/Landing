@@ -12,7 +12,7 @@ html {
   overflow-x: hidden;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1200px) {
  body,
   html {
     font-size: 14px; /* Уменьшение основного размера шрифта */
@@ -97,7 +97,10 @@ img,
   padding: 10px 0; /* Уменьшенные вертикальные отступы для полос */
   background: #141414;
 }
-@media (max-width: 768px) {
+.navbar-toggler-icon-close {
+  display: none; /* Скрыто по умолчанию */
+}
+@media (max-width: 1200px) {
   .navbar {
     z-index: 100000000000;
     padding: 5px;
@@ -122,9 +125,12 @@ img,
 }
 
   .navbar-toggler {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 100000000001;
     margin-left: auto; /* Переместить кнопку вправо */
+    padding: 0!important;
     margin-right: 10px;
     background-size: contain;
     border: none;
@@ -137,12 +143,26 @@ img,
     margin: 0!important;
     max-width: none!important;
   }
-
+  #navbarNav {
+    display: none;
+  }
+  
+  #navbarNav.show {
+    display: block;
+  }
   .navbar-toggler-icon {
     background: url('/assets/images/navbar-toggler.png') no-repeat center center!important;
     align-self: center;
+padding: 0;
+width: 100%;
+height: 100%;
   }
-
+  .navbar-toggler-icon-close {
+    background-image: url('/assets/images/navbar-close.png'); /* Путь к вашей иконке крестика */
+    align-self: center;
+    width: 32px;
+    height: 32px;
+  }
   .navbar-toggler:focus {
     box-shadow: none!important;
   }
@@ -208,6 +228,7 @@ img,
   }
 
   .text-container h2{
+    margin-top: 15%;
 font-size: 16px;
 font-weight: 600;
 color: #FF5A00;
@@ -472,7 +493,7 @@ color: #FF5A00;
   color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .custom-display {
     display: block !important; /* Переопределяем display для этого конкретного случая */
   }
@@ -521,7 +542,7 @@ color: #FF5A00;
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .container-fluid {
     width: 90%!important;
     padding: 5px!important;
@@ -550,7 +571,7 @@ color: #FF5A00;
 
 /* Стили для планшетов */
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .hero {
     flex-direction: column;
     justify-content: flex-start;
@@ -565,7 +586,7 @@ color: #FF5A00;
 }
 
 /* Стили для мобильных устройств */
-@media (max-width: 480px) {
+@media (max-width: 1200px) {
   .navbar {
     padding: 5px;
   }
@@ -584,7 +605,7 @@ color: #FF5A00;
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
   .hero {
     flex-direction: column;
   }
@@ -710,7 +731,7 @@ color: #FF5A00;
   cursor: not-allowed;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .form-row{
     display: block;
   }
@@ -978,7 +999,7 @@ align-self: flex-start;
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 .features{
   display: block!important;
 }
@@ -1106,7 +1127,7 @@ align-self: flex-start;
   min-width: 40px; /* Устанавливаем минимальную ширину для чисел */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .advantages-section{
     display: block;
   }
@@ -1195,7 +1216,7 @@ align-self: flex-start;
   margin: 40px;
   padding: 40px;
   border-radius: 4px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow:none;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -1245,7 +1266,11 @@ align-self: flex-start;
   opacity: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  .interactive-block:hover{
+    cursor: auto;
+  }
+
   .b2b-deals-text,
   .b2b-pricing-text {
 opacity: 1!important;
@@ -1253,10 +1278,12 @@ opacity: 1!important;
 
   .b2b-deals-highlight{
     color: #FF5A00;
+    cursor: auto!important;
   }
   
   .b2b-pricing-highlight{
     color: #FF5A00;
+    cursor: auto!important;
   }
   .b2b-deals-text-2{
     display: block!important;
@@ -1543,7 +1570,7 @@ opacity: 1!important;
   flex: 1;
   color: white;
   max-height: 100%; /* ограничиваем максимальную высоту, чтобы предотвратить выход за пределы .modal-content */
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .gallery {
@@ -1667,7 +1694,7 @@ opacity: 1!important;
 
 .info {
   width: 40%;
-  overflow-y: auto;
+  overflow: hidden;
   padding-left: 50px;
   box-sizing: border-box;
 }
@@ -1754,6 +1781,80 @@ color: rgba(255, 255, 255, 0.8);
   border-radius: 4px;
 }
 
+
+@media (max-width: 1200px) {
+  .modal-body{
+    flex-direction: column;
+  }
+.info{
+  width: 100%;
+  order: 1;
+  padding: 0;
+}
+.info h1{
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.info p{
+  font-size: 14px;
+}
+
+.contact-info{
+  display: none;
+}
+.specs{
+  margin: 0 0 10px 0;
+}
+
+  .gallery{
+    order:2;
+    width: 100%;
+  }
+  
+.main-image-container{
+  display: none;
+}
+
+  .thumbnails-container {
+    display: flex;
+    overflow-x: auto; /* Включает горизонтальный скролл */
+    scrollbar-width: thin; /* Для Firefox */
+    scrollbar-color: #ff5a00 transparent; /* Для Firefox, оранжевый скроллбар */
+    height: 100%;
+    width: 100%;
+  }
+
+  /* Стили для скроллбара в Webkit-браузерах (Chrome, Safari, новые версии Edge) */
+  .thumbnails-container::-webkit-scrollbar,
+  .thumbnail-row::-webkit-scrollbar {
+    height: 1px; /* Высота скроллбара */
+  }
+
+  .thumbnails-container::-webkit-scrollbar-track {
+    background: transparent; /* Прозрачный фон трека */
+  }
+
+  .thumbnails-container::-webkit-scrollbar-thumb {
+    background-color: #ff5a00; /* Оранжевый цвет скроллбара */
+    border-radius: 1px; /* Скругление углов скроллбара */
+  }
+  
+  .thumbnail-row {
+    display: flex;
+    flex-direction: row; /* Выставляет миниатюры в ряд */
+    min-width: 100%; /* Убеждаемся, что ряд занимает минимум всю ширину контейнера */
+    min-height: 100%;
+    overflow: hidden; /* Включает горизонтальный скролл для каждого ряда */
+  }
+  .thumbnail {
+    flex: 0 0 auto; /* Элементы не растягиваются и не сжимаются, но могут быть 'авто' */
+    width: 370px; /* Задает фиксированную ширину для каждой миниатюры */
+    height: 309px;
+    margin-right: 10px; /* Отступ справа для разделения миниатюр */
+  }
+}
 /* Modal */
 
 .consultation-block {
@@ -1837,7 +1938,7 @@ width: 100%;
   overflow: hidden;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 .consultation-text{
   display: none;
 }
@@ -2027,7 +2128,7 @@ color: #000;
 }
 
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .start-button {
     bottom: -50px;
     right: -60px;
@@ -2038,7 +2139,7 @@ color: #000;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .start-button {
     bottom: -40px;
     right: -50px;
@@ -2049,32 +2150,6 @@ color: #000;
   }
 
   
-}
-
-@media (max-width: 576px) {
-  .start-button {
-    bottom: -30px;
-    right: -40px;
-  }
-  .start-arrow {
-    bottom: -30px;
-    right: 60px;
-  }
-}
-
-@media (max-width: 480px) {
-  .start-button {
-    bottom: -20px;
-    right: -30px;
-    width: 120px; /* Adjust the size for smaller screens */
-    height: 120px; /* Adjust the size for smaller screens */
-  }
-  .start-arrow {
-    bottom: -20px;
-    right: 50px;
-    width: 100px; /* Adjust the size for smaller screens */
-    height: 80px; /* Adjust the size for smaller screens */
-  }
 }
 
 .speedometer-container {
@@ -2263,7 +2338,7 @@ color: #000;
   background-color: #e65a00;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .speedometer-container{
     display: none;
   }
@@ -2780,7 +2855,7 @@ button[type="submit"] {
   margin-left: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 .split-container{
   display: block;
   background: none;
@@ -2840,7 +2915,7 @@ button[type="submit"] {
 
 /* Footer */
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .footer-column {
     flex: 0 0 50%; /* Занимает 50% ширины родительского контейнера */
     max-width: 50%; /* Ограничивает максимальную ширину элемента */

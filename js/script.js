@@ -1,7 +1,7 @@
 let currentStage = 0;
 let currentIndex = 0; // Starting index of visible gallery item
 let currentItemIndex = 0;
-var mobileWidthThreshold = 768;
+var mobileWidthThreshold = 1200;
 const totalStages = 4; // Общее количество вопросов
 
 function showForm(formType) {
@@ -27,8 +27,6 @@ function showForm(formType) {
   }
 }
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const toggleButton = document.querySelector(".form-toggle-button");
   const formContainer = document.querySelector(".form-container");
@@ -38,11 +36,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const contactForm = document.querySelector(".contact-form");
 
   toggleButton.addEventListener("click", function () {
-    if (formContainer.style.display === "none" || formContainer.style.display === "") {
+    if (
+      formContainer.style.display === "none" ||
+      formContainer.style.display === ""
+    ) {
       formContainer.style.display = "block";
       formP.style.display = "block";
       col.style.zIndex = "20000000"; // Set a high z-index to bring the form to the foreground
-      contactForm.style.flexDirection  = "column";
+      contactForm.style.flexDirection = "column";
       contactForm.style.paddingTop = "20px";
       formHeader.style.order = "0";
     } else {
@@ -50,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       formP.style.display = "none";
       formContainer.style.zIndex = "0"; // Reset z-index when hiding the form
       col.styledisplay = "flex";
-      
+
       contactForm.style.paddingTop = "0px";
       formHeader.style.order = "1";
     }
@@ -329,24 +330,40 @@ function createModal(car) {
         <div class="modal-body">
           <div class="gallery">
             <div class="main-image-container">
-              <img src="${car.images[0]}" alt="${car.name} main image" class="main-image" style="object-fit: cover; object-position: center;" loading="lazy">
-              <button class="gallery-prev" onclick="changeImage(${car.id}, -1)">&#10094;</button>
-              <button class="gallery-next" onclick="changeImage(${car.id}, 1)">&#10095;</button>
+              <img src="${car.images[0]}" alt="${
+    car.name
+  } main image" class="main-image" style="object-fit: cover; object-position: center;" loading="lazy">
+              <button class="gallery-prev" onclick="changeImage(${
+                car.id
+              }, -1)">&#10094;</button>
+              <button class="gallery-next" onclick="changeImage(${
+                car.id
+              }, 1)">&#10095;</button>
             </div>
             <div class="thumbnails-container">
               <div class="thumbnail-row">
-                ${car.images.slice(0, 3).map(img => `
+                ${car.images
+                  .slice(0, 3)
+                  .map(
+                    (img) => `
                   <div class="thumbnail" onclick="setImage(${car.id}, '${img}')">
                     <img src="${img}" alt="Thumbnail" loading="lazy">
                   </div>
-                `).join('')}
+                `
+                  )
+                  .join("")}
               </div>
               <div class="thumbnail-row">
-                ${car.images.slice(3, 6).map(img => `
+                ${car.images
+                  .slice(3, 6)
+                  .map(
+                    (img) => `
                   <div class="thumbnail" onclick="setImage(${car.id}, '${img}')">
                     <img src="${img}" alt="Thumbnail" loading="lazy">
                   </div>
-                `).join('')}
+                `
+                  )
+                  .join("")}
               </div>
             </div>
           </div>
@@ -363,13 +380,12 @@ function createModal(car) {
             </ul>
             <p>${car.description}</p>  <!-- Вставка описания из константы -->
             <div class="contact-info">
-  <h3>Contact our manager for more info</h3>
-  <div class="contact-btns">
-    <button class="contact-btn telegram">TELEGRAM</button>
-    <button class="contact-btn whatsapp">WHATSAPP</button>
-  </div>
-</div>
-
+             <h3>Contact our manager for more info</h3>
+              <div class="contact-btns">
+                <button class="contact-btn telegram">TELEGRAM</button>
+                <button class="contact-btn whatsapp">WHATSAPP</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -377,7 +393,6 @@ function createModal(car) {
   `;
   document.body.insertAdjacentHTML("beforeend", modalHTML);
 }
-
 
 function openModal(carId) {
   const modal = document.getElementById(`modal${carId}`);
@@ -423,6 +438,20 @@ function setImage(carId, imgSrc) {
 document.addEventListener("DOMContentLoaded", () => {
   cars.forEach((car) => createModal(car));
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const swiper = new Swiper('.thumbnails-container', {
+    slidesPerView: 'auto', // Позволяет слайдам занимать ширину в зависимости от их контента
+    spaceBetween: 10, // Расстояние между слайдами
+    freeMode: true, // Режим без фиксированных позиций
+    scrollbar: {
+      el: '.swiper-scrollbar', // Селектор для кастомного скроллбара
+      draggable: true, // Позволяет перетаскивать скроллбар
+    },
+    mousewheel: true, // Поддержка прокрутки колесиком мыши
+  });
+});
+
 
 // interactive block
 
@@ -523,12 +552,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
   );
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Функция для удаления класса 'text-end'
   function removeTextEnd() {
-    var elements = document.querySelectorAll('.col-md-9.text-end');
-    elements.forEach(function(element) {
-      element.classList.remove('text-end');
+    var elements = document.querySelectorAll(".col-md-9.text-end");
+    elements.forEach(function (element) {
+      element.classList.remove("text-end");
     });
   }
 
@@ -538,153 +567,180 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Добавляем слушатель событий на изменение размера окна, чтобы повторно проверять при изменении размера
-  window.addEventListener('resize', function() {
+  window.addEventListener("resize", function () {
     if (window.innerWidth <= mobileWidthThreshold) {
       removeTextEnd();
     }
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleButton = document.querySelector(".navbar-toggler");
+  const navMenu = document.querySelector("#navbarNav"); // Убедитесь, что этот селектор соответствует вашему HTML
 
+  toggleButton.addEventListener("click", function () {
+    const isOpen = navMenu.classList.contains("show");
+    if (isOpen) {
+      navMenu.classList.remove("show");
+      toggleButton.querySelector(".navbar-toggler-icon").style.display =
+        "block";
+      toggleButton.querySelector(".navbar-toggler-icon-close").style.display =
+        "none";
+    } else {
+      navMenu.classList.add("show");
+      toggleButton.querySelector(".navbar-toggler-icon").style.display = "none";
+      toggleButton.querySelector(".navbar-toggler-icon-close").style.display =
+        "block";
+    }
+  });
+});
 
-jQuery(document).ready(function($) {
-  const ignoreValidationValues = ["", "Messenger", "Color", "Year", "Type your comment here..."];
+jQuery(document).ready(function ($) {
+  const ignoreValidationValues = [
+    "",
+    "Messenger",
+    "Color",
+    "Year",
+    "Type your comment here...",
+  ];
   const optionalFields = ["color", "year"];
 
   function validateField(field) {
-      if (field.val() === "" && !optionalFields.includes(field.attr('name'))) {
-          field.css({
-              'border': '2px solid red',
-              'background-color': '#FF001F1A',
-              'color': 'red'
-          });
-          return false;
-      } else {
-          field.css({
-              'border': '',
-              'background-color': '',
-              'color': ''
-          });
-          return true;
-      }
+    if (field.val() === "" && !optionalFields.includes(field.attr("name"))) {
+      field.css({
+        border: "2px solid red",
+        "background-color": "#FF001F1A",
+        color: "red",
+      });
+      return false;
+    } else {
+      field.css({
+        border: "",
+        "background-color": "",
+        color: "",
+      });
+      return true;
+    }
   }
 
   function validateSelect(field) {
-      var newSelect = field.next('.new-select');
-        var selectedValue = field.val();
-    
+    var newSelect = field.next(".new-select");
+    var selectedValue = field.val();
 
-      if ((!selectedValue || ignoreValidationValues.includes(selectedValue)) && !optionalFields.includes(field.attr('name')) || selectedValue == null) {
-          newSelect.css({
-              'border': '2px solid red',
-              'background-color': '#FF001F1A',
-              'color': 'red'
-          });
+    if (
+      ((!selectedValue || ignoreValidationValues.includes(selectedValue)) &&
+        !optionalFields.includes(field.attr("name"))) ||
+      selectedValue == null
+    ) {
+      newSelect.css({
+        border: "2px solid red",
+        "background-color": "#FF001F1A",
+        color: "red",
+      });
 
-          return false;
-      } else {
-          newSelect.css({
-              'border': '',
-              'background-color': '',
-              'color': ''
-          });
-          console.log('neКРАСНО', selectedValue);
-          return true;
-      }
+      return false;
+    } else {
+      newSelect.css({
+        border: "",
+        "background-color": "",
+        color: "",
+      });
+      console.log("neКРАСНО", selectedValue);
+      return true;
+    }
   }
 
   // Вызов функции валидации при отправке формы
-  $('form').on('submit', function(event) {
-      let isValid = true;
+  $("form").on("submit", function (event) {
+    let isValid = true;
 
-      // Валидация текстовых полей
-      $(this).find('input[type="text"], input[type="tel"], textarea').each(function() {
-          if (!validateField($(this))) {
-              isValid = false;
-          }
+    // Валидация текстовых полей
+    $(this)
+      .find('input[type="text"], input[type="tel"], textarea')
+      .each(function () {
+        if (!validateField($(this))) {
+          isValid = false;
+        }
       });
 
-      // Валидация селектов
-      $(this).find('select').each(function() {
-          if (!validateSelect($(this))) {
-              isValid = false;
-          }
+    // Валидация селектов
+    $(this)
+      .find("select")
+      .each(function () {
+        if (!validateSelect($(this))) {
+          isValid = false;
+        }
       });
 
-      if (!isValid) {
-          event.preventDefault(); // Остановить отправку формы, если есть ошибки
-      }
+    if (!isValid) {
+      event.preventDefault(); // Остановить отправку формы, если есть ошибки
+    }
   });
 
   // Валидация при изменении полей
-  $('select').on('change', function() {
-      validateSelect($(this));
+  $("select").on("change", function () {
+    validateSelect($(this));
   });
 
-  $('input[type="text"], input[type="tel"], textarea').on('input', function() {
-      validateField($(this));
+  $('input[type="text"], input[type="tel"], textarea').on("input", function () {
+    validateField($(this));
   });
-
-
-
-
 
   // Ваш существующий код для кастомного селекта
-  $('.select').each(function() {
-      const _this = $(this),
-          selectOption = _this.find('option'),
-          selectOptionLength = selectOption.length,
-          selectedOption = selectOption.filter(':selected'),
-          duration = 450; // длительность анимации 
+  $(".select").each(function () {
+    const _this = $(this),
+      selectOption = _this.find("option"),
+      selectOptionLength = selectOption.length,
+      selectedOption = selectOption.filter(":selected"),
+      duration = 450; // длительность анимации
 
-      _this.hide();
-      _this.wrap('<div class="select"></div>');
-      $('<div>', {
-          class: 'new-select',
-          text: _this.children('option:disabled').text()
-      }).insertAfter(_this);
+    _this.hide();
+    _this.wrap('<div class="select"></div>');
+    $("<div>", {
+      class: "new-select",
+      text: _this.children("option:disabled").text(),
+    }).insertAfter(_this);
 
-      const selectHead = _this.next('.new-select');
-      $('<div>', {
-          class: 'new-select__list'
-      }).insertAfter(selectHead);
+    const selectHead = _this.next(".new-select");
+    $("<div>", {
+      class: "new-select__list",
+    }).insertAfter(selectHead);
 
-      const selectList = selectHead.next('.new-select__list');
-      for (let i = 1; i < selectOptionLength; i++) {
-          $('<div>', {
-              class: 'new-select__item',
-              html: $('<span>', {
-                  text: selectOption.eq(i).text()
-              })
-          })
-          .attr('data-value', selectOption.eq(i).val())
-          .appendTo(selectList);
+    const selectList = selectHead.next(".new-select__list");
+    for (let i = 1; i < selectOptionLength; i++) {
+      $("<div>", {
+        class: "new-select__item",
+        html: $("<span>", {
+          text: selectOption.eq(i).text(),
+        }),
+      })
+        .attr("data-value", selectOption.eq(i).val())
+        .appendTo(selectList);
+    }
+
+    const selectItem = selectList.find(".new-select__item");
+    selectList.slideUp(0);
+    selectHead.on("click", function () {
+      if (!$(this).hasClass("on")) {
+        $(this).addClass("on");
+        selectList.slideDown(duration);
+
+        selectItem.on("click", function () {
+          let chooseItem = $(this).data("value");
+
+          _this.val(chooseItem).attr("selected", "selected");
+          selectHead.text($(this).find("span").text());
+
+          selectList.slideUp(duration);
+          selectHead.removeClass("on");
+
+          // Вызов валидации после выбора значения
+          validateSelect(_this);
+        });
+      } else {
+        $(this).removeClass("on");
+        selectList.slideUp(duration);
       }
-
-      const selectItem = selectList.find('.new-select__item');
-      selectList.slideUp(0);
-      selectHead.on('click', function() {
-          if (!$(this).hasClass('on')) {
-              $(this).addClass('on');
-              selectList.slideDown(duration);
-
-              selectItem.on('click', function() {
-                  let chooseItem = $(this).data('value');
-
-                  _this.val(chooseItem).attr('selected', 'selected');
-                  selectHead.text($(this).find('span').text());
-
-                  selectList.slideUp(duration);
-                  selectHead.removeClass('on');
-
-                  // Вызов валидации после выбора значения
-                  validateSelect(_this);
-              });
-
-          } else {
-              $(this).removeClass('on');
-              selectList.slideUp(duration);
-          }
-      });
+    });
   });
 });
