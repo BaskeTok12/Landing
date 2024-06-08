@@ -79,9 +79,11 @@
               <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
             </ul>
             <div class="navbar-bottom-content">
-              <span>24/7</span>
-              <p>Multilingual customer support</p>
-              <span>+1 267 282 6010</span>
+              <div class="image-container"></div>
+              <div class="text-container">
+                <h2>Multilingual customer support</h2>
+                <p>+1 267 282 6010</p>
+            </div>
             </div>
           </div>
           <span class="navbar-text">
@@ -147,35 +149,12 @@
                       required
                     />
                     <div class="lang-select-wrapper">
-                      <select class="lang-select" name="language" required>
-                        <option
-                          value="en"
-                          data-icon="/assets/images/flag-georgia.png"
-                        >
-                          <img
-                            src="/assets/images/flag-georgia.png"
-                            alt="Feature 3"
-                          />
-                        </option>
-                        <option
-                          value="fr"
-                          data-icon="/assets/images/flag-georgia.png"
-                        >
-                          <img
-                            src="/assets/images/flag-georgia.png"
-                            alt="Feature 3"
-                          />
-                        </option>
-                        <option
-                          value="es"
-                          data-icon="./assets/images/flag-georgia.png"
-                        >
-                          <img
-                            src="./assets/images/flag-georgia.png"
-                            alt="Feature 3"
-                          />
-                        </option>
-                      </select>
+                      <select class="lang-select select" name="language" required>
+                        <option value="" data-icon="./assets/images/flag-georgia.png">Select Language</option>
+                        <option value="en" data-icon="/assets/images/flag-georgia.png">English</option>
+                        <option value="fr" data-icon="./assets/images/flag-georgia.png">French</option>
+                        <option value="es" data-icon="./assets/images/flag-georgia.png">Spanish</option>
+                    </select>
                     </div>
                     <input
                       type="tel"
@@ -202,7 +181,7 @@
                   <div class="form-row">
                     <select class="select" name="model" required>
                       <option value="" disabled selected hidden>
-                        Model <svg src="">*</svg>
+                        Model
                       </option>
                       <option value="sedan">Sedan</option>
                       <option value="suv">SUV</option>
@@ -1180,10 +1159,10 @@
           </p>
           <h4>Contact our customer support at</h4>
           <button class="telegram-button">
-            <i class="fab fa-telegram-plane"></i> Telegram
+            Telegram<i class="fab fa-telegram-plane"></i> 
           </button>
           <button class="whatsapp-button">
-            <i class="fab fa-whatsapp"></i> Whatsapp
+             Whatsapp<i class="fab fa-whatsapp"></i>
           </button>
         </div>
       </div>

@@ -1,6 +1,7 @@
 let currentStage = 0;
 let currentIndex = 0; // Starting index of visible gallery item
 let currentItemIndex = 0;
+var mobileWidthThreshold = 768;
 const totalStages = 4; // Общее количество вопросов
 
 function showForm(formType) {
@@ -522,152 +523,168 @@ document.addEventListener("DOMContentLoaded", (event) => {
   );
 });
 
-
-document.getElementById('consult-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Предотвратить стандартное поведение формы
-
-  // Сбор данных из формы
-  var formData = {
-    name: document.querySelector('#consult-form [name="name"]').value,
-    language: document.querySelector('#consult-form [name="language"]').value,
-    phone: document.querySelector('#consult-form [name="phone"]').value,
-    messenger: document.querySelector('#consult-form [name="messenger"]').value,
-    nickname: document.querySelector('#consult-form [name="nickname"]').value
-  };
-
-  // Отправка данных в Facebook Conversions API
-  fetch('https://graph.facebook.com/v11.0/1418306608861447/events', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      data: [
-        {
-          event_name: 'Lead',
-          event_time: Math.floor(Date.now() / 1000),
-          action_source: 'website',
-          user_data: {
-            ph: btoa(formData.phone), // Кодирование номера телефона в Base64
-            em: btoa(formData.nickname) // Кодирование никнейма в Base64
-          },
-          custom_data: {
-            content_name: 'Consultation Request',
-            content_category: 'Consultation'
-          }
-        }
-      ]
-    })
-  })
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
-});
-
-
-jQuery.noConflict();
-jQuery(document).ready(function($) {
-  $('.select').each(function() {
-    const _this = $(this),
-        selectOption = _this.find('option'),
-        selectOptionLength = selectOption.length,
-        selectedOption = selectOption.filter(':selected'),
-        duration = 450; // длительность анимации 
-
-    _this.hide();
-    _this.wrap('<div class="select"></div>');
-    $('<div>', {
-        class: 'new-select',
-        text: _this.children('option:disabled').text()
-    }).insertAfter(_this);
-
-    const selectHead = _this.next('.new-select');
-    $('<div>', {
-        class: 'new-select__list'
-    }).insertAfter(selectHead);
-
-    const selectList = selectHead.next('.new-select__list');
-    for (let i = 1; i < selectOptionLength; i++) {
-        $('<div>', {
-            class: 'new-select__item',
-            html: $('<span>', {
-                text: selectOption.eq(i).text()
-            })
-        })
-        .attr('data-value', selectOption.eq(i).val())
-        .appendTo(selectList);
-    }
-
-    const selectItem = selectList.find('.new-select__item');
-    selectList.slideUp(0);
-    selectHead.on('click', function() {
-        if (!$(this).hasClass('on')) {
-            $(this).addClass('on');
-            selectList.slideDown(duration);
-
-            selectItem.on('click', function() {
-                let chooseItem = $(this).data('value');
-
-                $('select').val(chooseItem).attr('selected', 'selected');
-                selectHead.text($(this).find('span').text());
-
-                selectHead.addClass('selected'); // Добавляем класс, который изменит цвет текста
-
-                selectList.slideUp(duration);
-                selectHead.removeClass('on');
-            });
-
-        } else {
-            $(this).removeClass('on');
-            selectList.slideUp(duration);
-        }
+document.addEventListener("DOMContentLoaded", function() {
+  // Функция для удаления класса 'text-end'
+  function removeTextEnd() {
+    var elements = document.querySelectorAll('.col-md-9.text-end');
+    elements.forEach(function(element) {
+      element.classList.remove('text-end');
     });
-  });
-});
-jQuery(document).ready(function($) {
-  // Функция валидации поля по пустому значению или плейсхолдеру
-  function validateField(field) {
-    if (field.val() === "" || field.val() === field.attr('placeholder')) {
-      field.css('border', '2px solid red'); // Добавляем красную обводку
-      return false;
-    } else {
-      field.css('border', ''); // Убираем красную обводку
-      return true;
-    }
   }
 
-  // Обработка отправки формы
-  $('form').on('submit', function(e) {
-    let isValid = true;
-    
-    // Валидация текстовых полей и телефона
-    $(this).find('input[type="text"], input[type="tel"]').each(function() {
-      if (!validateField($(this))) {
-        isValid = false;
-      }
-    });
+  // Выполнение функции при загрузке, если ширина экрана меньше или равна 768 пикселей
+  if (window.innerWidth <= mobileWidthThreshold) {
+    removeTextEnd();
+  }
 
-    // Валидация кастомных селектов
-    $('.new-select').each(function() {
-      if ($(this).text() === $(this).prev('select').children('option:disabled').text()) {
-        $(this).css('border', '2px solid red'); // Добавляем красную обводку
-        isValid = false;
+  // Добавляем слушатель событий на изменение размера окна, чтобы повторно проверять при изменении размера
+  window.addEventListener('resize', function() {
+    if (window.innerWidth <= mobileWidthThreshold) {
+      removeTextEnd();
+    }
+  });
+});
+
+
+
+jQuery(document).ready(function($) {
+  const ignoreValidationValues = ["", "Messenger", "Color", "Year", "Type your comment here..."];
+  const optionalFields = ["color", "year"];
+
+  function validateField(field) {
+      if (field.val() === "" && !optionalFields.includes(field.attr('name'))) {
+          field.css({
+              'border': '2px solid red',
+              'background-color': '#FF001F1A',
+              'color': 'red'
+          });
+          return false;
       } else {
-        $(this).css('border', ''); // Убираем красную обводку
+          field.css({
+              'border': '',
+              'background-color': '',
+              'color': ''
+          });
+          return true;
       }
-    });
+  }
 
-    // Валидация чекбокса
-    if (!$('input[type="checkbox"][name="consent"]').is(':checked')) {
-      $('input[type="checkbox"][name="consent"]').next('label').css('color', 'red'); // Красный цвет текста лейбла
-      isValid = false;
-    } else {
-      $('input[type="checkbox"][name="consent"]').next('label').css('color', ''); // Убираем красный цвет
-    }
+  function validateSelect(field) {
+      var newSelect = field.next('.new-select');
+        var selectedValue = field.val();
+    
 
-    // Если форма не валидна, предотвращаем отправку
-    if (!isValid) {
-      e.preventDefault(); // Предотвращаем отправку формы
-    }
+      if ((!selectedValue || ignoreValidationValues.includes(selectedValue)) && !optionalFields.includes(field.attr('name')) || selectedValue == null) {
+          newSelect.css({
+              'border': '2px solid red',
+              'background-color': '#FF001F1A',
+              'color': 'red'
+          });
+
+          return false;
+      } else {
+          newSelect.css({
+              'border': '',
+              'background-color': '',
+              'color': ''
+          });
+          console.log('neКРАСНО', selectedValue);
+          return true;
+      }
+  }
+
+  // Вызов функции валидации при отправке формы
+  $('form').on('submit', function(event) {
+      let isValid = true;
+
+      // Валидация текстовых полей
+      $(this).find('input[type="text"], input[type="tel"], textarea').each(function() {
+          if (!validateField($(this))) {
+              isValid = false;
+          }
+      });
+
+      // Валидация селектов
+      $(this).find('select').each(function() {
+          if (!validateSelect($(this))) {
+              isValid = false;
+          }
+      });
+
+      if (!isValid) {
+          event.preventDefault(); // Остановить отправку формы, если есть ошибки
+      }
+  });
+
+  // Валидация при изменении полей
+  $('select').on('change', function() {
+      validateSelect($(this));
+  });
+
+  $('input[type="text"], input[type="tel"], textarea').on('input', function() {
+      validateField($(this));
+  });
+
+
+
+
+
+  // Ваш существующий код для кастомного селекта
+  $('.select').each(function() {
+      const _this = $(this),
+          selectOption = _this.find('option'),
+          selectOptionLength = selectOption.length,
+          selectedOption = selectOption.filter(':selected'),
+          duration = 450; // длительность анимации 
+
+      _this.hide();
+      _this.wrap('<div class="select"></div>');
+      $('<div>', {
+          class: 'new-select',
+          text: _this.children('option:disabled').text()
+      }).insertAfter(_this);
+
+      const selectHead = _this.next('.new-select');
+      $('<div>', {
+          class: 'new-select__list'
+      }).insertAfter(selectHead);
+
+      const selectList = selectHead.next('.new-select__list');
+      for (let i = 1; i < selectOptionLength; i++) {
+          $('<div>', {
+              class: 'new-select__item',
+              html: $('<span>', {
+                  text: selectOption.eq(i).text()
+              })
+          })
+          .attr('data-value', selectOption.eq(i).val())
+          .appendTo(selectList);
+      }
+
+      const selectItem = selectList.find('.new-select__item');
+      selectList.slideUp(0);
+      selectHead.on('click', function() {
+          if (!$(this).hasClass('on')) {
+              $(this).addClass('on');
+              selectList.slideDown(duration);
+
+              selectItem.on('click', function() {
+                  let chooseItem = $(this).data('value');
+
+                  _this.val(chooseItem).attr('selected', 'selected');
+                  selectHead.text($(this).find('span').text());
+
+                  selectList.slideUp(duration);
+                  selectHead.removeClass('on');
+
+                  // Вызов валидации после выбора значения
+                  validateSelect(_this);
+              });
+
+          } else {
+              $(this).removeClass('on');
+              selectList.slideUp(duration);
+          }
+      });
   });
 });

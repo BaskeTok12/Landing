@@ -99,6 +99,7 @@ img,
 }
 @media (max-width: 768px) {
   .navbar {
+    z-index: 100000000000;
     padding: 5px;
     justify-content: space-between;
   }
@@ -106,10 +107,23 @@ img,
   .navbar-brand {
     display: flex;
     align-items: center;
+    z-index: 100000000001;
   }
+
+  .navbar-nav .nav-item:first-child::after {
+    content: "";
+    position: absolute;
+    align-self: center;
+  transform: translateY(10px);
+    left: 30%;
+    right: 30%;
+    height: 1px;
+    background: linear-gradient( to right, transparent, rgba(255, 255, 255, 0.4), transparent );
+}
 
   .navbar-toggler {
     display: block;
+    z-index: 100000000001;
     margin-left: auto; /* Переместить кнопку вправо */
     margin-right: 10px;
     background-size: contain;
@@ -173,10 +187,40 @@ img,
   }
 
   .navbar-bottom-content {
-    display: block;
+    display: flex!important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     text-align: center;
   }
+
+  .image-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-image: url('../assets/images/navbar-back.png'); /* Замените путь к вашему изображению */
+    height: 200px; /* Высота контейнера с изображением */
+    width: 200px;
+  
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .text-container h2{
+font-size: 16px;
+font-weight: 600;
+color: #FF5A00;
+  }
+  .text-container p{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+  }
+  
 }
+
+
 
   .navbar-bottom-content {
     display: none;
@@ -602,7 +646,7 @@ img,
   border-radius: 5px;
   border: none;
   background: none; /* Темный фон для полей ввода */
-  color: white; /* Белый текст */
+  color: #5CCFCD; /* Белый текст */
   border: 1px solid #6cfffd66; /* Немного контраста */
   box-shadow: none; /* Убрать тени */
 }
@@ -616,7 +660,7 @@ img,
 }
 
 .form-content select:valid {
-  color: white; /* Белый цвет текста, когда значение выбрано */
+  color: #5CCFCD; /* Белый цвет текста, когда значение выбрано */
 }
 .form-content .submit-btn {
   width: 100%;
@@ -693,6 +737,7 @@ img,
     z-index: 500;
     max-height: 100px;
     border-radius: 10px;
+    transform: translateY(10px);
   }
 
   .form-toggle-container {
@@ -732,12 +777,13 @@ align-self: flex-start;
 }
 
 .lang-select {
+  -webkit-appearance: none; /* Для Safari и Chrome */
+  -moz-appearance: none;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 100%;
-  height: 40px;
-  background: transparent;
+  background-size: 20px 20px;
   border: 1px solid #6cfffd66;
   padding-left: 40px; /* Оставляем место для иконки */
   color: transparent; /* Hide the text in the select */
@@ -2663,8 +2709,10 @@ faq-header h2 {
 }
 
 .contact-section h2 {
-  font-weight: bold;
+  font-weight: 900;
   font-size: 54px;
+  color: #141414;
+  text-transform: uppercase;
 }
 
 .contact-section h2,
@@ -2691,6 +2739,7 @@ button {
   padding: 10px 20px;
   font-size: 14px; /* Adjust font size */
   display: block; /* Ensure buttons are block elements to stack them */
+  border-radius: 5px;
 }
 
 .telegram-button {
@@ -2727,6 +2776,43 @@ button[type="submit"] {
   color: white;
 }
 
+.fab {
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+.split-container{
+  display: block;
+  background: none;
+}
+
+.contact-wrapper{
+  width: 100%;
+}
+
+.contact-section h2{
+  font-size: 32px;
+}
+
+.telegram-button{
+  width: 100%;
+}
+
+.whatsapp-button{
+  width: 100%;
+}
+
+.form-wrapper{
+  width: 100%;
+}
+
+.form-wrapper h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #141414;
+}
+}
+
 /* Form2 */
 
 /* Map */
@@ -2753,6 +2839,54 @@ button[type="submit"] {
 /* Map */
 
 /* Footer */
+
+@media (max-width: 768px) {
+  .footer-column {
+    flex: 0 0 50%; /* Занимает 50% ширины родительского контейнера */
+    max-width: 50%; /* Ограничивает максимальную ширину элемента */
+  }
+
+  .newsletter-form .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%; /* Заставляет элементы занимать всю доступную ширину */
+    margin-bottom: 10px!important; /* Добавляет небольшой отступ снизу каждого элемента */
+
+  }
+
+  /* Удалить отступ для последнего элемента, чтобы не было лишнего пространства под кнопкой */
+  .newsletter-form button {
+    margin-bottom: 0;
+  border-radius: 5px!important;
+  }
+
+  .col-md-3 p{
+    display: flex;
+    flex-direction: column; /* Стек элементов вертикально */
+    justify-content: center; /* Центрирование содержимого по главной оси */
+    align-items: center; /* Центрирование содержимого по поперечной оси */
+    text-align: center; /* Центрирование текста внутри блоков */
+    padding: 20px 0; /* Добавляет паддинг сверху и снизу для дополнительного пространства */
+    background-color: #141414; /* Фоновый цвет футера */
+    color: #fff; /* Цвет текста */
+  }
+
+  .col-md-3 a{
+    margin: 0 5px;
+    text-align: center!important;
+  }
+
+  
+
+  .col-md-9{
+    text-align: center!important;
+  }
+}
 
 .footer {
   background-color: #141414;
@@ -2971,5 +3105,5 @@ button[type="submit"] {
           transform: rotate(180deg);
 }
 .new-select.selected {
-  color: white; /* Устанавливает белый цвет текста для выбранного элемента */
-}
+  color: #5CCFCD; /* Устанавливает белый цвет текста для выбранного элемента */
+} 
