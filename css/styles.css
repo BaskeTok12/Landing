@@ -16,7 +16,7 @@ html {
  body,
   html {
     font-size: 14px; /* Уменьшение основного размера шрифта */
-    padding: 10px; /* Уменьшение отступов */
+    /* Уменьшение отступов */
   }
 }
 
@@ -100,6 +100,8 @@ img,
 .navbar-toggler-icon-close {
   display: none; /* Скрыто по умолчанию */
 }
+
+
 @media (max-width: 1200px) {
   .navbar {
     z-index: 100000000000;
@@ -143,13 +145,7 @@ img,
     margin: 0!important;
     max-width: none!important;
   }
-  #navbarNav {
-    display: none;
-  }
-  
-  #navbarNav.show {
-    display: block;
-  }
+ 
   .navbar-toggler-icon {
     background: url('/assets/images/navbar-toggler.png') no-repeat center center!important;
     align-self: center;
@@ -175,7 +171,7 @@ height: 100%;
     border: none!important;
   }
 
-  .navbar-collapse {
+  .navbar-collapse-2-2 {
     display: none;
     flex-direction: column;
     position: fixed;
@@ -190,7 +186,7 @@ height: 100%;
     padding-top: 60px; /* Чтобы не перекрывать кнопку */
   }
 
-  .navbar-collapse.show {
+  .navbar-collapse-2-2.show {
     display: flex;
   }
 
@@ -740,7 +736,7 @@ color: #FF5A00;
     align-items: center; /* Центрируем элементы по вертикали */
   }
   .contact-form{
-    position: i;
+  
     z-index: 20000000;
     min-height: auto;
 
@@ -754,7 +750,13 @@ color: #FF5A00;
     text-align: center; /* Выравнивание текста по центру */
   }
 
+.form-header h2{
+  max-width: 100%;
+  width: 100%;
+}
+
   .col-lg-4{
+    width: 100%!important;
     z-index: 500;
     max-height: 100px;
     border-radius: 10px;
@@ -999,7 +1001,34 @@ align-self: flex-start;
   font-weight: bold;
 }
 
+.video-carousel-header-2{
+  display: none;
+}
 @media (max-width: 1200px) {
+
+  .container-fluid .row{
+    display: block!important;
+   
+  }
+
+  .container-fluid .col-md-5{
+    width: 100%;
+  
+  }
+
+  .video-carousel-header{
+    display: none!important;
+  }
+
+  .video-carousel-header-2{
+    margin-top: 20px;
+    display: block;
+  }
+  .container-fluid .col-md-7{
+    align-self: center;
+    width: 90%;
+    margin: auto;
+  }
 .features{
   display: block!important;
 }
@@ -1822,8 +1851,8 @@ color: rgba(255, 255, 255, 0.8);
     overflow-x: auto; /* Включает горизонтальный скролл */
     scrollbar-width: thin; /* Для Firefox */
     scrollbar-color: #ff5a00 transparent; /* Для Firefox, оранжевый скроллбар */
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: auto;
   }
 
   /* Стили для скроллбара в Webkit-браузерах (Chrome, Safari, новые версии Edge) */
@@ -1849,10 +1878,7 @@ color: rgba(255, 255, 255, 0.8);
     overflow: hidden; /* Включает горизонтальный скролл для каждого ряда */
   }
   .thumbnail {
-    flex: 0 0 auto; /* Элементы не растягиваются и не сжимаются, но могут быть 'авто' */
-    width: 370px; /* Задает фиксированную ширину для каждой миниатюры */
-    height: 309px;
-    margin-right: 10px; /* Отступ справа для разделения миниатюр */
+    
   }
 }
 /* Modal */

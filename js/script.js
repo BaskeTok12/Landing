@@ -574,26 +574,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const toggleButton = document.querySelector(".navbar-toggler");
-  const navMenu = document.querySelector("#navbarNav"); // Убедитесь, что этот селектор соответствует вашему HTML
-
-  toggleButton.addEventListener("click", function () {
-    const isOpen = navMenu.classList.contains("show");
-    if (isOpen) {
-      navMenu.classList.remove("show");
-      toggleButton.querySelector(".navbar-toggler-icon").style.display =
-        "block";
-      toggleButton.querySelector(".navbar-toggler-icon-close").style.display =
-        "none";
-    } else {
-      navMenu.classList.add("show");
-      toggleButton.querySelector(".navbar-toggler-icon").style.display = "none";
-      toggleButton.querySelector(".navbar-toggler-icon-close").style.display =
-        "block";
-    }
-  });
-});
 
 jQuery(document).ready(function ($) {
   const ignoreValidationValues = [
